@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'IPWeb API Docs',
-  tagline: 'IPWeb API Docs',
+  title: '006ip API Docs',
+  tagline: '006ip API Docs',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -86,9 +86,9 @@ const config: Config = {
       maxHeadingLevel: 6,
     },
     navbar: {
-      title: 'IPWeb API Docs',
+      title: '006ip API Docs',
       logo: {
-        alt: 'IPWeb API Docs Logo',
+        alt: '006ip API Docs Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -111,7 +111,7 @@ const config: Config = {
       //     title: "Docs",
       //     items: [
       //       {
-      //         label: "IPWeb Docs",
+      //         label: "006ip Docs",
       //         to: "/docs/intro",
       //       },
       //     ],
@@ -147,7 +147,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()}  IPWeb, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()}  006ip, Inc.`,
     },
     prism: {
       theme: prismThemes.github,
