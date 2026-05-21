@@ -1,49 +1,49 @@
----
+﻿---
 sidebar_position: 2
 slug: /api-dynamic-customer
-description: 开放平台客户记录 API：查询客户列表，请求示例、响应格式与错误码说明。
+description: Agent customer API — list customers, create accounts, update passwords, and change account status.
 ---
 
-# 代理客户
+# Agent Customers
 
 ---
-## 1. 获取代理的客户记录
+## 1. List agent customers
 
 **GET** `/open/customer/list`
 
-**功能描述：** 获取代理的客户记录，支持分页查询和条件过滤
+**Description:** Returns agent customer records with pagination and optional filters.
 
-#### 请求参数
+#### Request parameters
 
-| 参数名   | 类型    | 必填 | 说明     | 默认值 |
-| -------- | ------- | ---- | -------- | ------ |
-| pageNum  | Integer | 否   | 页码     | 1      |
-| pageSize | Integer | 否   | 每页条数 | 10     |
-| userName | String  | 否   | 客户账号 | null   |
+| Name     | Type    | Required | Description      | Default |
+| -------- | ------- | -------- | ---------------- | ------- |
+| pageNum  | Integer | No       | Page number      | 1       |
+| pageSize | Integer | No       | Page size        | 10      |
+| userName | String  | No       | Customer account | null    |
 
-#### 响应数据格式
+#### Response format
 
-| 字段名                   | 类型                  | 说明                     |
-| ------------------------ | --------------------- | ------------------------ |
-| code                     | Integer               | 响应状态码，200 表示成功 |
-| msg                      | String                | 响应消息                 |
-| data                     | Object                | 响应数据对象             |
-| data.total               | Long                  | 总记录数                 |
-| data.rows                | `` `Array<Object>` `` | 数据列表                 |
-| data.rows[].trafficCount | BigDecimal            | 充值流量数（单位 MB）    |
-| data.rows[].residualFlow | BigDecimal            | 剩余流量（单位 MB）      |
-| data.rows[].customerId   | Long                  | customerId               |
-| data.rows[].userName     | String                | 用户账号（登录名称）     |
+| Field                    | Type            | Description                    |
+| ------------------------ | --------------- | ------------------------------ |
+| code                     | Integer         | `200` = success                |
+| msg                      | String          | Message                        |
+| data                     | Object          | Payload                        |
+| data.total               | Long            | Total records                  |
+| data.rows                | `Array<Object>` | Rows                           |
+| data.rows[].trafficCount | BigDecimal      | Recharged traffic (MB)         |
+| data.rows[].residualFlow | BigDecimal      | Remaining traffic (MB)         |
+| data.rows[].customerId   | Long            | Customer ID                    |
+| data.rows[].userName     | String          | Login username                 |
 
-#### 请求示例
+#### Request example
 
 ```bash
 curl -X GET "http://user.ipweb.cc/prod-api/open/customer/list?pageNum=1&pageSize=10&userName=" -H "token: your-access-token"
 ```
 
-#### 响应示例
+#### Response example
 
-**成功响应：**
+**Success:**
 
 ```json
 {
@@ -66,7 +66,7 @@ curl -X GET "http://user.ipweb.cc/prod-api/open/customer/list?pageNum=1&pageSize
 }
 ```
 
-**认证失败响应：**
+**Authentication failed:**
 
 ```json
 {
@@ -76,29 +76,30 @@ curl -X GET "http://user.ipweb.cc/prod-api/open/customer/list?pageNum=1&pageSize
 }
 ```
 
-## 2.  创建账号
+## 2. Create account
 
 **GET** `/api/agent/addUser?userName=lisi@q.com`
 
-**功能描述:** 创建用户账号
+**Description:** Create a user account.
 
-### 请求参数：
+### Request parameters
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-userName |  是 |  String |  创建账号昵称(邮箱格式)  
+| Name     | Required | Type   | Description                    |
+| -------- | -------- | ------ | ------------------------------ |
+| userName | Yes      | String | Account email                  |
 
-### 返回结果：
+### Response fields
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，201表示名称存在,是该渠道的客户，202表示名称存在,不是该渠道的客户 其他表示失败  
-msg |  String |  响应描述  
-customerId |  Integer |  客户id  
-Token |  String |  用户Token  
-password |  String |  用户随机验证密码  
+| Name       | Type    | Description                                                                 |
+| ---------- | ------- | --------------------------------------------------------------------------- |
+| code       | Integer | `200` success; `201` name exists (your channel); `202` exists (other channel); else failure |
+| msg        | String  | Message                                                                     |
+| customerId | Integer | Customer ID                                                                 |
+| Token      | String  | User token                                                                  |
+| password   | String  | Random verification password                                                |
 
-### 返回示例：
+### Response example
+
 ```text
 {
     "msg": "注册失败，该用户名已存在,不是该渠道的客户",
@@ -113,54 +114,54 @@ password |  String |  用户随机验证密码
     "Token": "AAEYX6KEXMJUZ86NVZRASRZF50A"
 }
 ```
-## 3. 修改验证(代理)密码
+
+## 3. Update proxy password
 
 **GET** `/api/agent/updatePwd?customerId=888&password=123456`
 
+### Request parameters
 
+| Name       | Required | Type   | Description        |
+| ---------- | -------- | ------ | ------------------ |
+| customerId | Yes      | String | Target customer ID |
+| password   | Yes      | String | New password       |
 
-### 请求参数：
+### Response fields
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-customerId |  是 |  String |  被修改的客户id  
-password |  是 |  String |  客户新密码  
+| Name | Type    | Description                                      |
+| ---- | ------- | ------------------------------------------------ |
+| code | Integer | `200` success; `201` name exists (your channel); else failure |
+| msg  | String  | Message                                          |
 
-### 返回结果：
+### Response example
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，201表示名称存在,是该渠道的客户，其他表示失败  
-msg |  String |  响应描述  
-
-### 返回示例：
 ```text
 {
     "msg": "成功",
     "code": 200
 }
 ```
-## 4. 客户关停
+
+## 4. Enable or disable customer
 
 **GET** `/api/agent/changeStatus?customerId=888&customerState=1`
 
- 
+### Request parameters
 
-### 请求参数：
+| Name          | Required | Type    | Description                    |
+| ------------- | -------- | ------- | ------------------------------ |
+| customerId    | Yes      | String  | Target customer ID             |
+| customerState | Yes      | Integer | `0` = active; `1` = disabled   |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-customerId |  是 |  String |  被修改的客户id  
-customerState |  是 |  Integer |  关停状态 （0正常 1停用）  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                                      |
+| ---- | ------- | ------------------------------------------------ |
+| code | Integer | `200` success; `201` name exists (your channel); else failure |
+| msg  | String  | Message                                          |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，201表示名称存在,是该渠道的客户，其他表示失败  
-msg |  String |  响应描述  
+### Response example
 
-### 返回示例：
 ```text
 {
     "msg": "成功",
@@ -169,6 +170,6 @@ msg |  String |  响应描述
 ```
 
 ---
-© 2025 代理客户查询 API 文档 - 版本 1.0.0
+© 2025 Agent Customer API — v1.0.0
 
-最后更新时间：2025 年 12 月 26 日
+Last updated: December 26, 2025

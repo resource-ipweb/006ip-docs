@@ -1,34 +1,33 @@
----
+﻿---
 sidebar_position: 1
 slug: /api-dynamic-ip
-description: 动态流量 API：查询动态IP信息
+description: Dynamic IP API — city/state IP volume distribution and proxy group IDs.
 ---
-# 动态IP
+# Dynamic IP
 ---
-## 1.   获取城市ip量分布
+## 1. Get city IP volume distribution
 
 **GET** `/api/agent/cityCount/{countryId}/{areaId}`
 
- 
+### Request parameters
 
-### 请求参数：
+| Name      | Required | Type   | Description        |
+| --------- | -------- | ------ | ------------------ |
+| countryId | Yes      | String | Country/region ID  |
+| areaId    | Yes      | String | State/province ID  |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-countryId |  是 |  String |  国家/地区id  
-areaId |  是  |  String |  州id  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                                      |
+| ---- | ------- | ------------------------------------------------ |
+| code | Integer | `200` = success; other values = failure          |
+| row  | Array   |                                                  |
+|      | cityId  | String | City ID                                   |
+|      | cityName | String | City name                                |
+|      | label   | String | IP volume tier: low / medium / high (少/较多/多) |
 
-参数名 |  |  类型 |  说明  
----|---|---|---  
-code |  |  Integer |  200表示成功，其他表示失败  
-row |  |  Array |
-|  cityId |  String |  城市id  
-|  cityName |  String |  城市名称  
-|  label  |  String |  ip量级，[少，较多，多]  
+### Response example
 
-### 返回示例：
 ```text
 {
     "rows": [
@@ -52,27 +51,28 @@ row |  |  Array |
     "msg": "查询成功"
 }
 ```
-## 2. 获取分组
+
+## 2. Get proxy group ID
 
 **GET** `/api/agent/account?country=us&times=5&repeat=1`
 
+### Request parameters
 
-### 请求参数：
+| Name    | Required | Type    | Description                          |
+| ------- | -------- | ------- | ------------------------------------ |
+| country | Yes      | String  | Country/region code (English)        |
+| times   | Yes      | Integer | Session duration                     |
+| repeat  | Yes      | Integer | `1` = allow duplicate; `0` = dedupe  |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-country |  是 |  String |  国家/地区英文  
-times |  是  |  Integer |  有效时长  
-repeat |  是 |  Integer |  1重复  0去重  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| code | Integer | `200` = success; other values = failure |
+| data | String  | Group ID                                |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-data |  String |  分组号  
+### Response example
 
-### 返回示例：
 ```text
 {
     "msg": "成功",
@@ -80,29 +80,30 @@ data |  String |  分组号
     "data": "100004509283"
 }
 ```
-## 3. 批量获取分组
+
+## 3. Batch get proxy group IDs
 
 **GET** `/api/agent/account?countrys=us&times=5&repeat=1`
 
+### Request parameters
 
-### 请求参数：
+| Name    | Required | Type    | Description                          |
+| ------- | -------- | ------- | ------------------------------------ |
+| country | Yes      | String  | Country/region code (English)        |
+| times   | Yes      | Integer | Session duration                     |
+| repeat  | Yes      | Integer | `1` = allow duplicate; `0` = dedupe  |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-country |  是 |  String |  国家/地区英文  
-times |  是  |  Integer |  有效时长  
-repeat |  是 |  Integer |  1重复  0去重  
+### Response fields
 
-### 返回结果：
+| Name    | Type    | Description                             |
+| ------- | ------- | --------------------------------------- |
+| code    | Integer | `200` = success; other values = failure |
+| data    | Array   |                                         |
+| country | String  | Country code                            |
+| groupId | String  | Group ID                                |
 
-参数名 |  |  类型 |  说明  
----|---|---|---  
-code |  |  Integer |  200表示成功，其他表示失败  
-data |  |  Array |
-|  country |  String |  国家  
-|  groupId |  String |  分组号  
+### Response example
 
-### 返回示例：
 ```text
 {
     "msg": "成功",
@@ -119,28 +120,29 @@ data |  |  Array |
     ]
 }
 ```
-## 4.  获取州ip量分布
+
+## 4. Get state IP volume distribution
 
 **GET** `/api/agent/countArea/{countryId}`
 
+### Request parameters
 
-### 请求参数：
+| Name      | Required | Type   | Description       |
+| --------- | -------- | ------ | ----------------- |
+| countryId | Yes      | String | Country/region ID |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-countryId |  是 |  String |  国家/地区id  
+### Response fields
 
-### 返回结果：
+| Name     | Type    | Description                                      |
+| -------- | ------- | ------------------------------------------------ |
+| code     | Integer | `200` = success; other values = failure          |
+| row      | Array   |                                                  |
+| areaId   | String  | State ID                                         |
+| areaName | String  | State name                                       |
+| label    | String  | IP volume tier: low / medium / high (少/较多/多) |
 
-参数名 |  |  类型 |  说明  
----|---|---|---  
-code |  |  Integer |  200表示成功，其他表示失败  
-row |  |  Array |
-|  areaId |  String |  州id  
-|  areaName |  String |  州名称  
-|  label  |  String |  ip量级，[少，较多，多]  
+### Response example
 
-### 返回示例：
 ```text
 {
     "rows": [
@@ -164,9 +166,10 @@ row |  |  Array |
     "msg": "查询成功"
 }
 ```
+
 ---
 
 
-© 2025 动态流量 API 接口文档 - 版本 1.0.0
+© 2025 Dynamic IP API — v1.0.0
 
-最后更新时间：2025 年 12 月 26 日
+Last updated: December 26, 2025

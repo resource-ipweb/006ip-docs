@@ -32,12 +32,24 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // 默认语言 en 部署在站点根路径，访问 / 为英文
   i18n: {
-    defaultLocale: 'cn',
-    locales: ['cn'],
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en',
+        direction: 'ltr',
+        baseUrl: '/',
+      },
+      zh: {
+        label: '中文',
+        htmlLang: 'zh-Hans',
+        direction: 'ltr',
+        baseUrl: '/zh/',
+      },
+    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -92,16 +104,10 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        // {
-        //   to: '/',
-        //   label: '文档',
-        //   position: 'left',
-        // },
-        // {
-        //   to: '/user-guide',
-        //   label: '使用指南',
-        //   position: 'left',
-        // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {

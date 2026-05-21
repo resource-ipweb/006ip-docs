@@ -1,139 +1,139 @@
----
+﻿---
 sidebar_position: 3
 slug: /user-guide
-description: 006ip 代理使用指南：导出动态住宅代理、解析代理信息、验证有效性、使用自编规则生成全球随机代理，并选择合适的代理服务器。
+description: 006ip proxy user guide — export dynamic residential proxies, parse proxy strings, verify connectivity, custom account rules, and choose proxy gateways.
 ---
 
-# 006ip 代理使用指南
+# 006ip Proxy User Guide
 
-## 一、如何在 006ip 用户后台导出动态住宅代理？
+## 1. How to export dynamic residential proxies in the 006ip dashboard?
 
-![006ip 用户后台动态住宅代理页面](https://oss.ipweb.cc/docs/imgs/bf78991b9d05a5d.png)
+![006ip dashboard — dynamic residential proxies](https://oss.ipweb.cc/docs/imgs/bf78991b9d05a5d.png)
 
-登录 006ip 的用户后台，左侧点击"动态住宅代理"后，您将会看到如上图所示内容。在这个页面，就可以生成完整的代理信息，具体操作步骤如下：
+After logging in to the 006ip dashboard, click **Dynamic Residential Proxy** in the left menu. You will see the page above. Follow these steps to generate full proxy credentials:
 
-### 操作步骤
+### Steps
 
-1. **获取代理**：左侧点击"获取代理"，如上述 ① 处所示。
+1. **Get proxy:** Click **Get Proxy** on the left (step ① above).
 
-2. **国家/地区**：根据您的业务需求，选择对应的国家。比如：您的业务需要美国代理 IP，那您在此处就选择"美国"，如上述 ② 处所示。如果您的业务不需要精准定位到"州/城市"，那么"州/城市"这两处则可以不选择，如此导出的 IP 就是美国任意地区的代理 IP。
+2. **Country/region:** Choose the country that matches your use case. For example, select **United States** if you need US IPs (step ②). If you do not need state/city-level targeting, leave **State** and **City** empty to receive IPs from anywhere in that country.
 
-3. **代理服务器**：当您选择好国家后，006ip 会根据您所选择的国家自动分配"代理服务器"，如上述 ③ 处所示。
+3. **Proxy server:** After you select a country, 006ip assigns a **proxy server** automatically (step ③).
 
-4. **IP 持续时间**：是指该 IP 最长使用时间，时间一到会自动更换 IP。IP 更换不会导致网络中断，该代理账号是一直可以使用，只是 IP 会变。根据您的业务需求，选择不同的 IP 持续时间，如上述 ④ 处所示。
+4. **IP session duration:** Maximum time a single IP can be used. When the period ends, the IP rotates without disconnecting your session—the account stays usable; only the exit IP changes. Choose a duration that fits your workload (step ④).
 
-5. **代理数量**：是指导出代理账号的数量。比如：您希望导出 5 条代理账号，那么就在该处填写 5，如上述 ⑤ 处所示。值得注意的是，单次导出代理账号数量最大不超过 1000 条。如果您的业务需求需要更多的代理账号，请使用 006ip 的"自编代理账号"，更加方便，更加灵活。如果您希望使用"自编代理账号"，建议您只需导出 1 条代理，根据这条代理，可编排出无限的代理数量。
+5. **Proxy count:** Number of proxy lines to export. For example, enter `5` for five lines (step ⑤). Each export is limited to **1,000** lines. For larger scale, use **custom proxy accounts**: export one line and derive unlimited variants. If you use custom accounts, exporting a single reference line is enough.
 
-6. **生成代理**：当您完成上述 5 个步骤后，点击"生成代理"，会下载一个 txt 文件。该文件的内容就是根据您的选择生成的一些代理，如上述 ⑥ 处所示。
+6. **Generate:** After completing the steps above, click **Generate Proxy** to download a `.txt` file with your proxies (step ⑥).
 
-7. **修改代理密码**：当您首次生成代理账号时，需要先设置一个代理密码，这个密码就是指您生成代理账号的密码。需要注意的是：如果修改密码，生效时间为 1 分钟左右。如果出现代理信息外泄或者被盗，请您及时修改代理密码。
+7. **Change proxy password:** Set a proxy password the first time you generate accounts. This password applies to generated proxy credentials. Password updates take about **one minute** to take effect. If credentials leak, change the password immediately.
 
 ---
 
-## 二、导出的代理各项内容代表什么？
+## 2. What do the exported proxy fields mean?
 
-第一步的操作完成之后，打开下载的 txt 文件，显示的内容就是一些代理的信息。
+Open the downloaded `.txt` file to view proxy lines.
 
-006ip 严格依据 SOCKS5/HTTP 代理协议，Socks5/HTTP 代理（账号密码模式）格式如下：
-
-```
-代理服务器(IP/域名):端口:代理账号:密码
-```
-
-有些代理 IP 的同行也会提供这种排列方式：
+006ip follows SOCKS5/HTTP proxy conventions. Username/password format:
 
 ```
-代理账号:密码:代理服务器(IP/域名):端口
+proxy_host(IP_or_domain):port:username:password
 ```
 
-### 示例说明
+Some providers use:
 
-**示例代理信息：**
+```
+username:password:proxy_host(IP_or_domain):port
+```
+
+### Example
+
+**Sample line:**
 
 ```
 gate1.ipweb.cc:7778:B_36307_US_1474_10748_5_Ab000001:123456
 ```
 
-**各项内容解析：**
+**Field breakdown:**
 
-- **代理服务器**：`gate1.ipweb.cc`
-- **代理服务器端口**：`7778`
-- **用户编号**：`B_36307`
-- **国家代码**：`US`
-- **州代码**：`1474`
-- **城市代码**：`10748`
-- **IP 持续时间**（单位：分钟）：`5`
-- **SID**：`Ab000001`
-- **代理密码**：`123456`
-- **代理协议**：同时支持 socks5/http(s)，不需修改端口
+- **Proxy server:** `gate1.ipweb.cc`
+- **Port:** `7778`
+- **User ID:** `B_36307`
+- **Country code:** `US`
+- **State code:** `1474`
+- **City code:** `10748`
+- **Session duration (minutes):** `5`
+- **SID:** `Ab000001`
+- **Proxy password:** `123456`
+- **Protocols:** SOCKS5 and HTTP(S) on the same port
 
-### 图文说明
+### Diagram
 
-![代理信息结构说明图](https://oss.ipweb.cc/docs/imgs/503010952dd7970.png)
+![Proxy string structure](https://oss.ipweb.cc/docs/imgs/503010952dd7970.png)
 
-### 验证代理有效性
+### Verify the proxy
 
-让我们验证一下上面导出的这条 IP 是否有效。我们可以通过 curl 命令来验证：
+Test the exported line with `curl`:
 
 ```bash
 curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.ipweb.cc:7778 ipinfo.io
 ```
 
-![curl 验证结果](https://oss.ipweb.cc/docs/imgs/71f9b316d82b791.png)
+![curl verification result](https://oss.ipweb.cc/docs/imgs/71f9b316d82b791.png)
 
-我们通过执行 curl 命令，成功获取到一条来自美国 US（国家代码：US）纽约州 New York（州代码：1474）纽约城市 New York City（城市代码：10748）的代理 IP。
+A successful response shows a US IP (country `US`), New York state (code `1474`), New York City (code `10748`).
 
 ---
 
-## 三、如何使用"自编代理账号"生成代理？
+## 3. How to build proxies with custom account rules?
 
-"自编代理账号"是指按照 006ip 的规则手动或者程序生成代理账号的方式。通过这种方式，您可以灵活地生成所需的代理信息。
+**Custom proxy accounts** follow 006ip formatting rules—manually or programmatically—to produce the proxy lines you need.
 
-### 1. 修改国家、州和城市代码
+### 3.1 Change country, state, and city codes
 
-按照上面的示例，更改国家代码、州代码及地区代码，就可以生成其他您想要的代理 IP。当然，其中州代码和地区代码可以不填，例如：
-
-```
-gate1.ipweb.cc:7778:B_36424_US___5_Ab000001:123456
-```
-
-因为这两项并非必填项，如果州代码及地区代码您不填，这表示您要获取一条美国的代理 IP（且不限制州和地区）。
-
-**如何查询国家代码、州代码及地区代码？**
-
-登录 006ip 后台 http://user.ipweb.cc，左侧菜单点击"帮助中心"中的"国家/地区/城市编码"可查询全球 200 多个国家近 20000 多个城市对应的代码。
-
-![国家地区城市编码查询页面](https://oss.ipweb.cc/docs/imgs/2f8f03c1f872bdc.png)
-
-### 2. 修改国家代码和 IP 持续时间
-
-以上述代理 IP 为例：
+From the sample above, change country/state/city codes to target other locations. State and city are optional:
 
 ```
 gate1.ipweb.cc:7778:B_36424_US___5_Ab000001:123456
 ```
 
-假设需要获取一条香港的代理 IP，则将上述中的"US"更改为"HK"，更改后完整代理 IP 信息如下：
+Empty state and city means any location within the US.
+
+**Where to find codes?**
+
+Log in at http://user.ipweb.cc → **Help Center** → **Country/Region/City Codes** for 200+ countries and ~20,000 cities.
+
+![Country, region, and city codes](https://oss.ipweb.cc/docs/imgs/2f8f03c1f872bdc.png)
+
+### 3.2 Change country and session duration
+
+Starting from:
+
+```
+gate1.ipweb.cc:7778:B_36424_US___5_Ab000001:123456
+```
+
+For Hong Kong, replace `US` with `HK`:
 
 ```
 gate1.ipweb.cc:7778:B_36424_HK___5_Ab000001:123456
 ```
 
-同样，如果我们希望代理 IP 有效时长想从原来的 5 分钟调整至 10 分钟，则将上述中的"5"变更为"10"，更改后的完整代理 IP 信息如下：
+For a 10-minute session instead of 5, change `5` to `10`:
 
 ```
 gate1.ipweb.cc:7778:B_36424_HK___10_Ab000001:123456
 ```
 
-### 3. 如何根据 006ip 的自编代理规则生成多条代理？
+### 3.3 Generate many proxies by changing SID
 
-以这条 IP 为例：
+Example base line:
 
 ```
 gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000001:123456
 ```
 
-我们需要更改 SID 就可以变化 IP。利用这一点，我们可以利用 006ip 的自编代理功能生成无限的代理 IP，例如：
+Change the **SID** to obtain different exit IPs:
 
 ```
 gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000001:123456
@@ -143,15 +143,13 @@ gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000003:123456
 gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_X9999999:123456
 ```
 
-> **注意**：SID 随机码可以修改成任意 8 位字符，大小写字母、数字或其组合都可以（不能包含特殊字符，如"@！%……\*"）。
+> **Note:** SID must be exactly **8** alphanumeric characters (letters and digits). Special characters (e.g. `@!%*`) are not allowed.
 
-通过修改 SID，理论上您可以无限生成代理。当然，通过修改 SID，也可以起到切换 IP 地址的效果。
+Changing SID lets you scale proxies or rotate IPs on demand.
 
-### 4. 如何根据 006ip 的代理 IP 自编功能规则生成全球随机代理？
+### 3.4 Worldwide random proxies
 
-我们在实际使用中，可能需要的代理 IP 并不希望限制某个国家，希望获取的代理 IP 是来自全球任意国家的。IPWEB 称为获取全球随机代理 IP，利用 006ip 代理 IP 自编功能可以轻松将它实现。
-
-我们仅仅只需要将国家代码一处填写为"000"，则表示获取的代理 IP 为全球随机代理 IP，示例如下：
+Set the country code to **`000`** for a random country:
 
 ```
 gate1.ipweb.cc:7778:B_36424_000___10_Ab000001:123456
@@ -159,12 +157,12 @@ gate1.ipweb.cc:7778:B_36424_000___10_Ab000001:123456
 
 ---
 
-## 四、如何选择代理服务器？
+## 4. How to choose a proxy server?
 
-006ip 目前在全球三个区域布有大量代理服务器：
+006ip operates gateways in three regions:
 
-1. **美洲区**（南美与北美）：`gate1.ipweb.cc:7778`
-2. **亚太地区**（包括大洋洲）：`gate2.ipweb.cc:7778`
-3. **欧洲及非洲**：`gate3.ipweb.cc:7778`
+1. **Americas (North & South):** `gate1.ipweb.cc:7778`
+2. **Asia-Pacific (incl. Oceania):** `gate2.ipweb.cc:7778`
+3. **Europe & Africa:** `gate3.ipweb.cc:7778`
 
-根据您自己的业务以及业务服务器所在区域综合考虑选择代理服务器，建议使用 006ip 自动分配的代理服务器，这样延迟更低。也可以咨询 006ip 技术支持与客服来选择最佳的代理服务器。
+Pick a gateway based on your workload and where your application runs. The auto-assigned gateway usually offers the lowest latency. Contact 006ip support if you need help choosing.

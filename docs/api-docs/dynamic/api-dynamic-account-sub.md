@@ -1,144 +1,140 @@
----
+﻿---
 sidebar_position: 4
 slug: /api-dynamic-account-sub
-description: 动态代理子账号API, 用于获取动态代理子账号信息、创建动态代理子账号、修改动态代理子账号信息
+description: Dynamic proxy sub-account API — create, update, list sub-accounts, and fetch proxy credentials.
 ---
-# 代理子账号
+# Sub-Accounts
 ---
-请求地址（baseUrl）： `http://api.ipweb.cc:8004`
+Base URL (`baseUrl`): `http://api.ipweb.cc:8004`
 
-## 1. 创建子账号
+## 1. Create sub-account
 
 **POST** `{baseUrl}/api/agent/childAccount/add`
 
+### Request parameters
 
-### 请求参数：
+| Name      | Required | Type    | Description                                      |
+| --------- | -------- | ------- | ------------------------------------------------ |
+| username  | Yes      | String  | Sub-account (2–12 letters/digits)                |
+| pwd       | Yes      | String  | Password (4–12 letters/digits)                   |
+| limitFlow | No       | Integer | Traffic cap in MB; `< 0` = unlimited (default -1) |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-username |  是 |  String |  子账号（字母和数字2到12位）  
-pwd |  是  |  String |  子账号密码（字母和数字 4到12位）  
-limitFlow |  否 |  Integer |  流量限制M 小于0为不限制）默认-1  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| code | Integer | `200` = success; other values = failure |
+| msg  | String  | Message                                 |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-msg |  String |  描述  
+### Response example
 
-### 返回示例：
 ```text
 {
     "code": 200,
     "msg": "查询成功"
 }
 ```
-## 2. 修改子账号密码
+
+## 2. Update sub-account password
 
 **POST** `{baseUrl}/api/agent/childAccount/updatePwd`
 
-### 请求参数：
+### Request parameters
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-username |  是 |  String |  子账号  
-pwd |  是  |  String |  子账号密码（字母和数字 4到12位）  
+| Name     | Required | Type   | Description                        |
+| -------- | -------- | ------ | ---------------------------------- |
+| username | Yes      | String | Sub-account                        |
+| pwd      | Yes      | String | New password (4–12 letters/digits) |
 
-### 返回结果：
+### Response fields
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-msg |  String |  描述  
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| code | Integer | `200` = success; other values = failure |
+| msg  | String  | Message                                 |
 
-### 返回示例：
+### Response example
+
 ```text
 {
-
   "code": 200,
-
   "msg": "操作成功"
-
 }
 ```
-## 3. 修改子账号流量限制
+
+## 3. Update sub-account traffic limit
 
 **POST** `{baseUrl}/api/agent/childAccount/updateLimitFlow`
 
+### Request parameters
 
-### 请求参数：
+| Name      | Required | Type    | Description                          |
+| --------- | -------- | ------- | ------------------------------------ |
+| username  | Yes      | String  | Sub-account                          |
+| limitFlow | Yes      | Integer | Cap in MB; `< 0` = unlimited (default -1) |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-username |  是 |  String |  子账号  
-limitFlow |  是  |  Integer |  流量限制M（小于0为不限制）默认-1  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| code | Integer | `200` = success; other values = failure |
+| msg  | String  | Message                                 |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-msg |  String |  描述  
+### Response example
 
-### 返回示例：
 ```text
 {
-
   "code": 200,
-
   "msg": "操作成功"
-
 }
 ```
-## 4. 修改子账号状态
+
+## 4. Update sub-account status
 
 **POST** `{baseUrl}/api/agent/childAccount/updateStatus`
 
+### Request parameters
 
-### 请求参数：
+| Name     | Required | Type    | Description                    |
+| -------- | -------- | ------- | ------------------------------ |
+| username | Yes      | String  | Sub-account                    |
+| status   | Yes      | Integer | `0` = disabled; `1` = active   |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-username |  是 |  String |  子账号  
-status |  是  |  Integer |  状态（0停用 1正常）  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                             |
+| ---- | ------- | --------------------------------------- |
+| code | Integer | `200` = success; other values = failure |
+| msg  | String  | Message                                 |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-msg |  String |  描述  
+### Response example
 
-### 返回示例：
 ```text
 {
-
   "code": 200,
-
   "msg": "操作成功"
-
 }
 ```
-## 5. 获取子账号列表
+
+## 5. List sub-accounts
 
 **POST** `{baseUrl}/api/agent/childAccount/users`
 
+### Response fields
 
-### 返回结果：
+| Name          | Type    | Description                          |
+| ------------- | ------- | ------------------------------------ |
+| code          | Integer | `200` = success; other values = failure |
+| data          | Array   |                                      |
+| download_flow | Float   | Download traffic (MB)                |
+| upload_flow   | Float   | Upload traffic (MB)                  |
+| limit_flow    | Integer | Cap in MB; `< 0` = unlimited         |
+| pwd           | String  | Password                             |
+| username      | String  | Username                             |
+| status        | Integer | `0` = disabled; `1` = active         |
 
-参数名 |  |  类型 |  说明  
----|---|---|---  
-code |  |  Integer |  200表示成功，其他表示失败  
-data |  |  Array |
-|  download_flow |  Float |  下载流量M  
-|  upload_flow |  Float |  上传流量M  
-|  limit_flow |  Integer |  流量限制M（小于0为不限制）  
-|  pwd |  String |  密码  
-|  username |  String |  用户名  
-|  status |  Integer |  状态（0停用 1正常）  
+### Response example
 
-### 返回示例：
 ```text
 {
     "msg": "操作成功",
@@ -156,28 +152,30 @@ data |  |  Array |
     ]
 }
 ```
-## 6. 获取用户
+
+## 6. Get proxy user
 
 **GET** `{baseUrl}/api/agent/account?country=us&time=5`
 
-### 请求参数：
+### Request parameters
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-country |  是 |  String |  国家/地区 英文简称  
-times |  是  |  Integer |  ip有效时长  
-repeat |  否 |  Integer |  1重复 0去重 默认1  
+| Name    | Required | Type    | Description                          |
+| ------- | -------- | ------- | ------------------------------------ |
+| country | Yes      | String  | Country/region code (English)        |
+| times   | Yes      | Integer | IP session duration                  |
+| repeat  | No       | Integer | `1` = allow duplicate; `0` = dedupe (default 1) |
 
-### 返回结果：
+### Response fields
 
-参数名 |  |  类型 |  说明  
----|---|---|---  
-code |  |  Integer |  200表示成功，其他表示失败  
-data |  |  Json |
-|  userName |  String |  用户名  
-|  upload_flow |  String |  密码  
+| Name     | Type   | Description |
+| -------- | ------ | ----------- |
+| code     | Integer | `200` = success |
+| data     | Json   |             |
+| userName | String | Username    |
+| passWord | String | Password    |
 
-### 返回示例：
+### Response example
+
 ```text
 {
     "msg": "操作成功",
@@ -188,28 +186,29 @@ data |  |  Json |
     }
 }
 ```
-## 7. 批量获取用户
+
+## 7. Batch get proxy users
 
 **GET** `{baseUrl}/api/agent/account2?country=us&time=5&limit=3`
 
+### Request parameters
 
-### 请求参数：
+| Name    | Required | Type    | Description                          |
+| ------- | -------- | ------- | ------------------------------------ |
+| country | Yes      | String  | Country/region code (English)        |
+| times   | Yes      | Integer | IP session duration                  |
+| limit   | Yes      | Integer | Number of accounts to return         |
+| repeat  | No       | Integer | `1` = allow duplicate; `0` = dedupe (default 1) |
 
-参数名 |  是否必传 |  类型 |  说明  
----|---|---|---  
-country |  是 |  String |  国家/地区 英文简称  
-times |  是  |  Integer |  ip有效时长  
-limit |  是 |  Integer |  获取账号数量  
-repeat |  否 |  Integer |  1重复 0去重 默认1  
+### Response fields
 
-### 返回结果：
+| Name | Type    | Description                    |
+| ---- | ------- | ------------------------------ |
+| code | Integer | `200` = success                |
+| data | Array   | Items as `username:password`   |
 
-参数名 |  类型 |  说明  
----|---|---  
-code |  Integer |  200表示成功，其他表示失败  
-data |  Array |  格式: 用户名:密码  
+### Response example
 
-### 返回示例：
 ```text
 {
     "msg": "操作成功",
@@ -221,31 +220,35 @@ data |  Array |  格式: 用户名:密码
     ]
 }
 ```
-## 8. 子账号格式定义
 
-### 1、粘贴方式  
+## 8. Sub-account format reference
+
+### 8.1 Sticky session format
+
 ```text
-账号（12位数字与字母)_custom_zone_us_st_[areaId]_city_[cityId]_sid_(8位数字)_time_(时长小于90分钟)
+{account12}_custom_zone_us_st_{areaId}_city_{cityId}_sid_{sid8}_time_{minutes_under_90}
 
+Global random:
+{account12}_custom_zone_global_sid_{sid8}_time_{minutes_under_90}
 
-全球随机：
-账号（12位数字与字母)_custom_zone_global_sid_(8位数字)_time_(时长小于90分钟)
-洲随机：
-账号（12位数字与字母)_custom_zone_asia_sid_(8位数字)_time_(时长小于90分钟)
-账号（12位数字与字母)_custom_zone_europe_sid_(8位数字)_time_(时长小于90分钟)
-账号（12位数字与字母)_custom_zone_africa_sid_(8位数字)_time_(时长小于90分钟)
-账号（12位数字与字母)_custom_zone_america_sid_(8位数字)_time_(时长小于90分钟)        
+Continent random:
+{account12}_custom_zone_asia_sid_{sid8}_time_{minutes_under_90}
+{account12}_custom_zone_europe_sid_{sid8}_time_{minutes_under_90}
+{account12}_custom_zone_africa_sid_{sid8}_time_{minutes_under_90}
+{account12}_custom_zone_america_sid_{sid8}_time_{minutes_under_90}
 ```
 
-### 2、轮转
+### 8.2 Rotating format
 
 ```text
-账号（12位数字与字母)_custom_zone_us_st_[areaId]_city_[cityId]
-全球随机：
-账号（12位数字与字母)_custom_zone_global
-洲随机：
-账号（12位数字与字母)_custom_zone_asia
-账号（12位数字与字母)_custom_zone_europe
-账号（12位数字与字母)_custom_zone_africa
-账号（12位数字与字母)_custom_zone_america
+{account12}_custom_zone_us_st_{areaId}_city_{cityId}
+
+Global random:
+{account12}_custom_zone_global
+
+Continent random:
+{account12}_custom_zone_asia
+{account12}_custom_zone_europe
+{account12}_custom_zone_africa
+{account12}_custom_zone_america
 ```
