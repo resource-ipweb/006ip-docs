@@ -8,7 +8,7 @@ description: 006ip proxy user guide — export dynamic residential proxies, pars
 
 ## 1. How to export dynamic residential proxies in the 006ip dashboard?
 
-![006ip dashboard — dynamic residential proxies](https://oss.ipweb.cc/docs/imgs/bf78991b9d05a5d.png)
+![006ip dashboard — dynamic residential proxies](https://oss.ipweb.cc/docs/imgs/en/bf78991b9d05a5d.png)
 
 After logging in to the 006ip dashboard, click **Dynamic Residential Proxy** in the left menu. You will see the page above. Follow these steps to generate full proxy credentials:
 
@@ -69,7 +69,7 @@ gate1.ipweb.cc:7778:B_36307_US_1474_10748_5_Ab000001:123456
 
 ### Diagram
 
-![Proxy string structure](https://oss.ipweb.cc/docs/imgs/503010952dd7970.png)
+![Proxy string structure](https://oss.ipweb.cc/docs/imgs/en/503010952dd7970.png)
 
 ### Verify the proxy
 
@@ -101,9 +101,9 @@ Empty state and city means any location within the US.
 
 **Where to find codes?**
 
-Log in at http://user.ipweb.cc → **Help Center** → **Country/Region/City Codes** for 200+ countries and ~20,000 cities.
+Log in at [https://006ip.com/iproxy/login](https://006ip.com/iproxy/login?lang=en) → **Help Center** → **Country/Region/City Codes** for 200+ countries and ~20,000 cities.
 
-![Country, region, and city codes](https://oss.ipweb.cc/docs/imgs/2f8f03c1f872bdc.png)
+![Country, region, and city codes](https://oss.ipweb.cc/docs/imgs/en/2f8f03c1f872bdc.png)
 
 ### 3.2 Change country and session duration
 

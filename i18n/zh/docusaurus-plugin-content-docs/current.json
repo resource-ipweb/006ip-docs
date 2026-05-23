@@ -3,12 +3,12 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.defaultSidebar.category.开放平台": {
+  "sidebar.defaultSidebar.category.Open Platform": {
     "message": "开放平台",
-    "description": "The label for category '开放平台' in sidebar 'defaultSidebar'"
+    "description": "The label for category 'Open Platform' in sidebar 'defaultSidebar'"
   },
-  "sidebar.defaultSidebar.category.动态代理": {
+  "sidebar.defaultSidebar.category.Dynamic Proxy": {
     "message": "动态代理",
-    "description": "The label for category '动态代理' in sidebar 'defaultSidebar'"
+    "description": "The label for category 'Dynamic Proxy' in sidebar 'defaultSidebar'"
   }
 }
