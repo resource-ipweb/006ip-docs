@@ -101,7 +101,7 @@ Empty state and city means any location within the US.
 
 **Where to find codes?**
 
-Log in at [https://006ip.com/iproxy/login](https://006ip.com/iproxy/login?lang=en) → **Help Center** → **Country/Region/City Codes** for 200+ countries and ~20,000 cities.
+Log in at [https://006ip.com/iproxy/login](https://006ip.com/iproxy/login?lang=en&channelCode=006) → **Help Center** → **Country/Region/City Codes** for 200+ countries and ~20,000 cities.
 
 ![Country, region, and city codes](https://oss.ipweb.cc/docs/imgs/en/2f8f03c1f872bdc.png)
 
