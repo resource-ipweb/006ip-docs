@@ -1,37 +1,37 @@
-﻿---
+---
 sidebar_position: 3
 slug: /api-static-residential
-description: Static residential proxy V2 API — countries, cities, purchase, renew, segment batch buy, and debugging.
+description: 静态住宅代理 V2 API：国家与城市查询、创建静态代理与续费、调试测试及响应格式说明。
 ---
 
-# Static Proxy
+# 静态代理
 ---
 
-## 1. Overview
+## 1. 接口概述
 
-The Static IP V2 API provides full lifecycle management for static residential proxies: list resources, create proxies, renew, query inventory, and more.
+静态 IP V2 API 提供了完整的静态住宅代理 IP 管理功能，包括查询可用资源、创建代理、续费等操作。
 
 ---
 
-## 2. List countries
+## 2. 获取国家列表
 
-**Method:** `GET /v2/static-residential/listCountry`
+**请求方式：** `GET /v2/static-residential/listCountry`
 
-**Description:** Returns supported country codes.
+**功能描述：** 获取支持的国家代码列表
 
-#### Request parameters
+#### 请求参数
 
-None.
+无需请求参数
 
-#### Response format
+#### 响应数据格式
 
-| Field | Type            | Description                          |
-| ----- | --------------- | ------------------------------------ |
-| data  | Array`<String>` | Country codes, e.g. `["US","UK","CA"]` |
+| 字段名 | 类型            | 说明                                 |
+| ------ | --------------- | ------------------------------------ |
+| data   | Array`<String>` | 国家代码数组，如：["US", "UK", "CA"] |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -43,27 +43,27 @@ None.
 
 ---
 
-## 3. List cities
+## 3. 获取城市列表
 
-**Method:** `GET /v2/static-residential/listCity`
+**请求方式：** `GET /v2/static-residential/listCity`
 
-**Description:** Returns cities for a given country.
+**功能描述：** 根据国家代码获取支持的城市列表
 
-#### Request parameters
+#### 请求参数
 
-| Name         | Type   | Required | Description              |
-| ------------ | ------ | -------- | ------------------------ |
-| country_code | String | Yes      | Country code, e.g. US, UK |
+| 参数名       | 类型   | 必填 | 说明                    |
+| ------------ | ------ | ---- | ----------------------- |
+| country_code | String | 是   | 国家代码，如：US、UK 等 |
 
-#### Response format
+#### 响应数据格式
 
-| Field | Type            | Description                                |
-| ----- | --------------- | ------------------------------------------ |
-| data  | Array`<String>` | City names, e.g. `["New York","Los Angeles"]` |
+| 字段名 | 类型            | 说明                                          |
+| ------ | --------------- | --------------------------------------------- |
+| data   | Array`<String>` | 城市名称数组，如：["New York", "Los Angeles"] |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -75,57 +75,63 @@ None.
 
 ---
 
-## 4. List business types
+## 4. 获取业务名称集合
 
-**Method:** `GET /v2/static-residential/listBusiness`
+**请求方式：** `GET /v2/static-residential/listBusiness`
 
-**Description:** Returns available business/use-case names.
+**功能描述：** 获取可用的业务名称列表
 
-#### Request parameters
+#### 请求参数
 
-None.
+无需请求参数
 
-#### Response format
+#### 响应数据格式
 
-| Field               | Type            | Description                                      |
-| ------------------- | --------------- | ------------------------------------------------ |
-| data                | Array`<Object>` | Business objects                                 |
-| data[].BusinessName | String          | e.g. general, social_media, e_commerce, YouTube  |
+| 字段名              | 类型            | 说明                                            |
+| ------------------- | --------------- | ----------------------------------------------- |
+| data                | Array`<Object>` | 业务名称对象数组                                |
+| data[].BusinessName | String          | 业务名称，如：general、social_media、e_commerce |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
   "code": 200,
   "msg": "操作成功",
   "data": [
-    { "BusinessName": "YouTube" },
-    { "BusinessName": "TikTok" },
-    { "BusinessName": "other" }
+    {
+      "BusinessName": "YouTube"
+    },
+    {
+      "BusinessName": "TikTok"
+    },
+    {
+      "BusinessName": "other"
+    }
   ]
 }
 ```
 
 ---
 
-## 5. Count available IPs
+## 5. 获取空闲 IP 数
 
-**Method:** `POST /v2/static-residential/countIdleIP`
+**请求方式：** `POST /v2/static-residential/countIdleIP`
 
-**Description:** Returns available IP count for the given filters.
+**功能描述：** 查询指定条件下的可用 IP 数量
 
-#### Request parameters
+#### 请求参数
 
-| Name         | Type    | Required | Description                              | Example   |
-| ------------ | ------- | -------- | ---------------------------------------- | --------- |
-| country_code | String  | Yes      | Country code                             | US        |
-| city_name    | String  | No       | City; empty = random                     | New York  |
-| business     | String  | Yes      | From `listBusiness`                      | general   |
-| line_type    | Integer | Yes      | Quality: 1 basic, 2 standard, 3 premium  | 1         |
+| 参数名       | 类型    | 必填 | 说明                                 | 示例值   |
+| ------------ | ------- | ---- | ------------------------------------ | -------- |
+| country_code | String  | 是   | 国家编码                             | US       |
+| city_name    | String  | 否   | 城市名称，空表示随机                 | New York |
+| business     | String  | 是   | 业务名称，通过 listBusiness 接口获取 | general  |
+| line_type    | Integer | 是   | IP 质量：1-基础，2-标准，3-高端      | 1        |
 
-#### Request example
+#### 请求示例
 
 ```json
 {
@@ -136,15 +142,15 @@ None.
 }
 ```
 
-#### Response format
+#### 响应数据格式
 
-| Field | Type    | Description      |
-| ----- | ------- | ---------------- |
-| data  | Integer | Available count  |
+| 字段名 | 类型    | 说明         |
+| ------ | ------- | ------------ |
+| data   | Integer | 可用 IP 数量 |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -156,28 +162,28 @@ None.
 
 ---
 
-## 6. Create static proxy IPs
+## 6 创建静态代理 IP
 
-**Method:** `POST /v2/static-residential/newIP`
+**请求方式：** `POST /v2/static-residential/newIP`
 
-**Description:** Create a new static proxy order.
+**功能描述：** 创建新的静态代理 IP 订单
 
-**Permission:** Customer access control required.
+**权限要求：** 需要客户访问控制权限
 
-#### Request parameters
+#### 请求参数
 
-| Name         | Type    | Required | Description                         | Constraints                          | Example   |
-| ------------ | ------- | -------- | ----------------------------------- | ------------------------------------ | --------- |
-| country_code | String  | Yes      | Country code                        | —                                    | US        |
-| city_name    | String  | No       | City; empty = random                | —                                    | New York  |
-| days         | Integer | Yes      | Lease duration (days)               | 1, 7, 15, 30, 60, 90, 365            | 30        |
-| count        | Integer | Yes      | Quantity                            | 1–500                                | 10        |
-| line_type    | Integer | Yes      | Quality: 1 basic, 2 standard, 3 premium | 1–3                                | 1         |
-| is_udp       | Integer | No       | UDP: 1 on, 0 off                     | 0–1, default 0                       | 0         |
-| business     | String  | Yes      | From `listBusiness`                 | —                                    | general   |
-| customer_id  | Integer | No       | Order on behalf of user; null = self  | —                                    | null      |
+| 参数名       | 类型    | 必填 | 说明                                 | 限制                              | 示例值   |
+| ------------ | ------- | ---- | ------------------------------------ | --------------------------------- | -------- |
+| country_code | String  | 是   | 国家编码                             | -                                 | US       |
+| city_name    | String  | 否   | 城市名称，空表示随机                 | -                                 | New York |
+| days         | Integer | 是   | 购买的代理天数                       | 可选值：1、7、15、30、60、90、365 | 30       |
+| count        | Integer | 是   | 购买的代理数量                       | 1-500                             | 10       |
+| line_type    | Integer | 是   | IP 质量：1-基础，2-标准，3-高端      | 1-3                               | 1        |
+| is_udp       | Integer | 否   | UDP 启用：1 启用，0 不启用           | 0-1，默认 0                       | 0        |
+| business     | String  | 是   | 业务类型，通过 listBusiness 接口获取 | -                                 | general  |
+| customer_id  | Integer | 否   | 指定下单用户，null 表示自己          | -                                 | null     |
 
-#### Request example
+#### 请求示例
 
 ```json
 {
@@ -192,27 +198,27 @@ None.
 }
 ```
 
-#### Response format
+#### 响应数据格式
 
-| Field                 | Type            | Description           |
-| --------------------- | --------------- | --------------------- |
-| data                  | Object          | Order result          |
-| data.order_id         | String          | Order ID              |
-| data.total            | Integer         | IPs created           |
-| data.amount           | Double          | Order amount          |
-| data.currency         | String          | Currency              |
-| data.created_at       | Date            | Created at            |
-| data.expired_at       | Date            | Expires at            |
-| data.allots           | Array`<Object>` | Allocated proxies     |
-| data.allots[].ip      | String          | Exit IP               |
-| data.allots[].node_domain | String      | Proxy host            |
-| data.allots[].node_port   | Integer     | Proxy port            |
-| data.allots[].account     | String      | Username              |
-| data.allots[].password    | String      | Password              |
+| 字段名                    | 类型            | 说明               |
+| ------------------------- | --------------- | ------------------ |
+| data                      | Object          | 创建结果对象       |
+| data.order_id             | String          | 订单号             |
+| data.total                | Integer         | 创建的 IP 数量     |
+| data.amount               | Double          | 订单金额           |
+| data.currency             | String          | 计费货币           |
+| data.created_at           | Date            | 创建时间           |
+| data.expired_at           | Date            | 到期时间           |
+| data.allots               | Array`<Object>` | 分配的代理信息数组 |
+| data.allots[].ip          | String          | 出口 IP 地址       |
+| data.allots[].node_domain | String          | 代理服务器域名     |
+| data.allots[].node_port   | Integer         | 代理端口           |
+| data.allots[].account     | String          | 代理账号           |
+| data.allots[].password    | String          | 代理密码           |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -247,22 +253,22 @@ None.
 
 ---
 
-## 7. Renew static proxy
+## 7. 静态代理续费
 
-**Method:** `POST /v2/static-residential/renewIP`
+**请求方式：** `POST /v2/static-residential/renewIP`
 
-**Description:** Renew an existing static proxy IP.
+**功能描述：** 为现有静态代理 IP 续费
 
-**Permission:** Customer access control required.
+**权限要求：** 需要客户访问控制权限
 
-#### Request parameters
+#### 请求参数
 
-| Name | Type    | Required | Description   | Constraints                | Example       |
-| ---- | ------- | -------- | ------------- | -------------------------- | ------------- |
-| ip   | String  | Yes      | IP to renew   | —                          | 192.168.1.100 |
-| days | Integer | Yes      | Renewal days  | 1, 7, 15, 30, 60, 90, 365  | 30            |
+| 参数名 | 类型    | 必填 | 说明             | 限制                              | 示例值        |
+| ------ | ------- | ---- | ---------------- | --------------------------------- | ------------- |
+| ip     | String  | 是   | 要续费的 IP 地址 | -                                 | 192.168.1.100 |
+| days   | Integer | 是   | 续费天数         | 可选值：1、7、15、30、60、90、365 | 30            |
 
-#### Request example
+#### 请求示例
 
 ```json
 {
@@ -271,27 +277,27 @@ None.
 }
 ```
 
-#### Response format
+#### 响应数据格式
 
-| Field                 | Type            | Description           |
-| --------------------- | --------------- | --------------------- |
-| data                  | Object          | Renewal result        |
-| data.order_id         | String          | Renewal order ID      |
-| data.total            | Integer         | IPs renewed           |
-| data.amount           | Double          | Renewal amount        |
-| data.currency         | String          | Currency              |
-| data.created_at       | Date            | Renewed at            |
-| data.expired_at       | Date            | New expiry time       |
-| data.allots           | Array`<Object>` | Renewed proxies       |
-| data.allots[].ip      | String          | Renewed IP            |
-| data.allots[].node_domain | String      | Proxy host            |
-| data.allots[].node_port   | Integer     | Proxy port            |
-| data.allots[].account     | String      | Username              |
-| data.allots[].password    | String      | Password              |
+| 字段名                    | 类型            | 说明               |
+| ------------------------- | --------------- | ------------------ |
+| data                      | Object          | 续费结果对象       |
+| data.order_id             | String          | 续费订单号         |
+| data.total                | Integer         | 续费的 IP 数量     |
+| data.amount               | Double          | 续费金额           |
+| data.currency             | String          | 计费货币           |
+| data.created_at           | Date            | 续费时间           |
+| data.expired_at           | Date            | 新的到期时间       |
+| data.allots               | Array`<Object>` | 续费的代理信息数组 |
+| data.allots[].ip          | String          | 续费的 IP 地址     |
+| data.allots[].node_domain | String          | 代理服务器域名     |
+| data.allots[].node_port   | Integer         | 代理端口           |
+| data.allots[].account     | String          | 代理账号           |
+| data.allots[].password    | String          | 代理密码           |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -319,21 +325,21 @@ None.
 
 ---
 
-## 8. List purchasable IP segments
+## 8. 查询剩余可买 IP 列表
 
-**Method:** `POST /availableIpSegments`
+**请求方式：** `POST /availableIpSegments`
 
-**Description:** Query remaining purchasable IP list by filters. Returns only each IP segment and its available quantity. User info is taken from authentication; no need to pass it in the request.
+**功能描述：** 根据筛选条件查询剩余可买 IP 列表，仅返回各 IP 段及对应剩余可买数量。用户信息从鉴权获取，无需传入。
 
-#### Request parameters
+#### 请求参数
 
-| Name         | Type    | Required | Description                    | Constraints     | Example  |
-| ------------ | ------- | -------- | ------------------------------ | --------------- | -------- |
-| country_code | String  | Yes      | Country/region code            | e.g. HK, US     | HK       |
-| city_name    | String  | No       | City; empty = random           | —               | HongKong |
-| line_type    | Integer | No       | Quality: 1 basic, 2 standard, 3 premium | 1–3, default 1 | 1        |
+| 参数名       | 类型    | 必填 | 说明                        | 限制     | 示例值   |
+| ------------ | ------- | ---- | --------------------------- | -------- | -------- |
+| country_code | String  | 是   | 国家/地区编码               | 如 HK、US | HK       |
+| city_name    | String  | 否   | 城市名称，空表示随机        | -        | HongKong |
+| line_type    | Integer | 否   | IP 质量：1-基础，2-标准，3-高端 | 1-3，默认 1 | 1        |
 
-#### Request example
+#### 请求示例
 
 ```json
 {
@@ -343,19 +349,19 @@ None.
 }
 ```
 
-#### Response format
+#### 响应数据格式
 
-| Field                      | Type            | Description                    |
+| 字段名                     | 类型            | 说明                           |
 | -------------------------- | --------------- | ------------------------------ |
-| data                       | Object          | Query result                   |
-| data.total_quantity        | Integer         | Total available across segments |
-| data.segments              | Array`<Object>` | Per-segment inventory          |
-| data.segments[].ip_segment | String          | CIDR, e.g. `62.72.182.0/24`    |
-| data.segments[].quantity   | Integer         | Available in segment           |
+| data                       | Object          | 查询结果对象                   |
+| data.total_quantity        | Integer         | 剩余可买 IP 总数（所有段汇总） |
+| data.segments              | Array`<Object>` | 各 IP 段及对应剩余可买数量     |
+| data.segments[].ip_segment | String          | IP 段，CIDR 格式，如 62.72.182.0/24 |
+| data.segments[].quantity   | Integer         | 该段剩余可买数量               |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -373,28 +379,28 @@ None.
 
 ---
 
-## 9. Batch purchase by IP segment
+## 9. 按 IP 段批量购买系统静态 IP
 
-**Method:** `POST /batchPurchaseBySegment`
+**请求方式：** `POST /batchPurchaseBySegment`
 
-**Description:** Specify multiple IP segment prefixes (e.g. `66.92.226`, `66.93.86`) plus a total count; allocate in segment order until the count is met. Authenticated user only. Returns order ID, allocated count, and expiry time.
+**功能描述：** 指定多个 IP 段前缀（如 66.92.226 开头、66.93.86 开头）+ 一个总数量，按 IP 段顺序依次分配直至达到数量。仅限当前鉴权用户，返回订单号、分配数量、过期时间。
 
-**Permission:** Customer access control required (agent users).
+**权限要求：** 需要客户访问控制权限（代理商用户）
 
-#### Request parameters
+#### 请求参数
 
-| Name                | Type            | Required | Description                                      | Constraints              | Example                |
-| ------------------- | --------------- | -------- | -------------------------------------------------- | ------------------------ | ---------------------- |
-| country_code        | String          | Yes      | Country/region                                     | e.g. HK, US              | HK                     |
-| city_name           | String          | No       | City; empty = random                               | —                        | HongKong               |
-| line_type           | Integer         | No       | Quality: 1 basic, 2 standard, 3 premium              | 1–3, default 1           | 2                      |
-| business            | String          | No       | From `listBusiness`                                | default `other`          | other                  |
-| ip_segment_prefixes | Array`<String>` | Yes      | Prefix list in allocation order. e.g. `["66.92.226","66.93.86"]` allocates from `66.92.226.x` first, then `66.93.86.x` if needed | — | `["66.92.226","66.93.86"]` |
-| count               | Integer         | Yes      | Total IPs to allocate from selected segments       | 1–500                    | 20                     |
-| days                | Integer         | Yes      | Lease days                                         | 1, 7, 15, 30, 60, 90, 365 | 30                  |
-| is_udp              | Integer         | No       | UDP: 1 on, 0 off                                   | 0–1, default 0           | 0                      |
+| 参数名                | 类型            | 必填 | 说明                                                                 | 限制              | 示例值                 |
+| --------------------- | --------------- | ---- | -------------------------------------------------------------------- | ----------------- | ---------------------- |
+| country_code          | String          | 是   | 国家/地区编码                                                        | 如 HK、US         | HK                     |
+| city_name             | String          | 否   | 城市名称，空表示随机                                                 | -                 | HongKong               |
+| line_type             | Integer         | 否   | IP 质量：1-基础，2-标准，3-高端                                       | 1-3，默认 1       | 2                      |
+| business              | String          | 否   | 业务类型，通过 listBusiness 获取                                     | 默认 other        | other                  |
+| ip_segment_prefixes   | Array`<String>` | 是   | IP 段前缀列表，按此顺序依次分配。如 ["66.92.226","66.93.86"] 表示先从 66.92.226.x 分配，不够再从 66.93.86.x | -                 | ["66.92.226","66.93.86"] |
+| count                 | Integer         | 是   | 购买总数量（从选定 IP 段中按顺序分配直至达到此数量）                  | 1-500             | 20                     |
+| days                  | Integer         | 是   | 购买天数                                                             | 1、7、15、30、60、90、365 | 30                     |
+| is_udp                 | Integer         | 否   | UDP 启用：1 启用，0 不启用                                           | 0-1，默认 0       | 0                      |
 
-#### Request example
+#### 请求示例
 
 ```json
 {
@@ -409,18 +415,18 @@ None.
 }
 ```
 
-#### Response format
+#### 响应数据格式
 
-| Field           | Type    | Description        |
-| --------------- | ------- | ------------------ |
-| data            | Object  | Order info         |
-| data.order_id   | String  | Order ID           |
-| data.total      | Integer | Allocated count    |
-| data.expired_at | String  | ISO 8601 expiry    |
+| 字段名           | 类型   | 说明                     |
+| ---------------- | ------ | ------------------------ |
+| data             | Object | 订单相关信息             |
+| data.order_id    | String | 订单号                   |
+| data.total       | Integer | 分配数量                 |
+| data.expired_at  | String | 过期时间（ISO 8601）     |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -436,39 +442,39 @@ None.
 
 ---
 
-## 10. List allocated IPs by order ID
+## 10. 根据订单 ID 查询分配 IP 列表
 
-**Method:** `GET /orderAllots`
+**请求方式：** `GET /orderAllots`
 
-**Description:** Returns all allocated IPs for an order (no pagination). Authenticated user can only query their own orders. Does not return order ID; returns allocation list only.
+**功能描述：** 根据订单 ID 查询该订单下所有已分配 IP 列表，不分页。仅限当前鉴权用户查询本人订单。不返回订单 ID，仅返回分配 IP 列表。
 
-**Permission:** Customer access control required.
+**权限要求：** 需要客户访问控制权限
 
-#### Request parameters
+#### 请求参数
 
-| Name     | Type   | Required | Description | Constraints | Example        |
-| -------- | ------ | -------- | ----------- | ----------- | -------------- |
-| order_id | String | Yes      | Order ID    | Query param | SO202401010001 |
+| 参数名    | 类型   | 必填 | 说明     | 限制       | 示例值         |
+| --------- | ------ | ---- | -------- | ---------- | -------------- |
+| order_id  | String | 是   | 订单号   | Query 参数 | SO202401010001 |
 
-**Example:** `GET /orderAllots?order_id=SO202401010001`
+**请求示例：** `GET /orderAllots?order_id=SO202401010001`
 
-#### Response format
+#### 响应数据格式
 
-`data` is an array of all allocated IPs for the order.
+响应 `data` 为数组，即该订单下所有分配 IP 列表。
 
-| Field              | Type    | Description      |
-| ------------------ | ------- | ---------------- |
-| data               | Array   | Allocation list (see fields below) |
-| data[].ip          | String  | Exit IP          |
-| data[].node_domain | String  | Proxy host       |
-| data[].node_port   | Integer | Port             |
-| data[].account     | String  | Username         |
-| data[].password    | String  | Password         |
-| data[].expired_at  | String  | ISO 8601 expiry  |
+| 字段名              | 类型    | 说明                   |
+| ------------------- | ------- | ---------------------- |
+| data                | Array   | 分配 IP 列表（每项见下表） |
+| data[].ip           | String  | 出口 IP                |
+| data[].node_domain  | String  | 代理服务器域名         |
+| data[].node_port    | Integer | 代理端口               |
+| data[].account      | String  | 代理账号               |
+| data[].password     | String  | 代理密码               |
+| data[].expired_at   | String  | 过期时间（ISO 8601）   |
 
-#### Response example
+#### 响应示例
 
-**Success:**
+**成功响应：**
 
 ```json
 {
@@ -489,33 +495,33 @@ None.
 
 ---
 
-## 11. Debug / test
+## 11. 调试测试
 
-You can use the following examples to test the API:
+您可以使用以下工具测试 API 接口：
 
 
-### List countries
+### 获取国家列表
 
 ```bash
 curl -X GET "http://user.ipweb.cc/prod-api/v2/static-residential/listCountry" \
      -H "Token: your_access_token_here"
 ```
 
-### List cities
+### 获取城市列表
 
 ```bash
 curl -X GET "http://user.ipweb.cc/prod-api/v2/static-residential/listCity?country_code=US" \
      -H "Token: your_access_token_here"
 ```
 
-### List business types
+### 获取业务名称集合
 
 ```bash
 curl -X GET "http://user.ipweb.cc/prod-api/v2/static-residential/listBusiness" \
      -H "Token: your_access_token_here"
 ```
 
-### Count idle IPs
+### 获取空闲 IP 数
 
 ```bash
 curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/countIdleIP" \
@@ -529,7 +535,7 @@ curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/countIdleIP" \
      }'
 ```
 
-### Create static proxies
+### 创建静态代理 IP
 
 ```bash
 curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/newIP" \
@@ -547,7 +553,7 @@ curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/newIP" \
      }'
 ```
 
-### Renew static proxy
+### 静态代理续费
 
 ```bash
 curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/renewIP" \
@@ -559,7 +565,7 @@ curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/renewIP" \
      }'
 ```
 
-### List purchasable IP segments
+### 查询剩余可买 IP 列表
 
 ```bash
 curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/availableIpSegments" \
@@ -572,7 +578,7 @@ curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/availableIpSeg
      }'
 ```
 
-### Batch purchase by segment
+### 按 IP 段批量购买
 
 ```bash
 curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/batchPurchaseBySegment" \
@@ -590,38 +596,38 @@ curl -X POST "http://user.ipweb.cc/prod-api/v2/static-residential/batchPurchaseB
      }'
 ```
 
-### List allocated IPs by order ID
+### 根据订单 ID 查询分配 IP 列表
 
 ```bash
 curl -X GET "http://user.ipweb.cc/prod-api/v2/static-residential/orderAllots?order_id=SO202401010001" \
      -H "Token: your_access_token_here"
 ```
 
-**Note:** Replace `your_access_token_here` with your real token. We recommend using Postman or another API testing tool.
+**注意：** 请将 `your_access_token_here` 替换为您的实际 Token。建议使用 Postman 或其他专业的 API 测试工具进行测试。
 
 ---
 
-## 12. Error codes
+## 12. 错误码说明
 
-The following error codes may be returned by static IP APIs:
+以下是静态 IP 相关 API 接口可能返回的错误码及其说明：
 
-### Static IP business errors
+### 静态 IP 业务相关错误码
 
-| Code | Description                                      | Resolution                                      |
-| ---- | ------------------------------------------------ | ----------------------------------------------- |
-| 2000 | Static IP not under this account                 | Verify IP ownership                             |
-| 2001 | Insufficient static IP inventory                 | Try another region or retry later               |
-| 2002 | Static IP already in use                         | Choose another IP                               |
-| 2003 | Static IP configuration failed                   | Check parameters and retry                      |
-| 2004 | Static IP renewal failed                         | Check balance and renewal parameters            |
-| 2005 | Static IP expired                              | Purchase or renew                               |
-| 2006 | Static IP does not exist                       | IP released or invalid                          |
-| 2100 | Allowed days: 1, 7, 15, 30, 60, 90, 365        | Use an allowed `days` value                     |
-| 2101 | This IP only supports renewal: 30, 60, 90, 365 | Use supported renewal period                    |
+| 错误码 | 说明                                   | 解决方案                                            |
+| ------ | -------------------------------------- | --------------------------------------------------- |
+| 2000   | 静态 IP 不属于客户账号下               | 检查 IP 是否属于当前账户                            |
+| 2001   | 静态 IP 库存不足                       | 当前选择的地区暂无可用 IP，请选择其他地区或稍后重试 |
+| 2002   | 静态 IP 已被占用                       | 选择其他可用的 IP 地址                              |
+| 2003   | 静态 IP 配置失败                       | 检查配置参数，稍后重试                              |
+| 2004   | 静态 IP 续费失败                       | 检查账户余额和续费参数                              |
+| 2005   | 静态 IP 已过期                         | 重新购买或续费 IP                                   |
+| 2006   | 静态 IP 不存在                         | 指定的 IP 地址不存在或已被释放                      |
+| 2100   | 可选天数: 1、7、15、30、60、90、365 天 | 天数参数必须为：1、7、15、30、60、90、365 中的一个  |
+| 2101   | 当前 IP 仅支持: 30、60、90、365 天     | 当前 IP 的续费天数仅支持：30、60、90、365 天        |
 
-## 13. Error response examples
+## 13. 错误响应示例
 
-#### Insufficient inventory
+#### 静态 IP 库存不足示例
 
 ```json
 {
@@ -631,7 +637,7 @@ The following error codes may be returned by static IP APIs:
 }
 ```
 
-#### IP not found
+#### 静态 IP 不存在示例
 
 ```json
 {
@@ -641,7 +647,7 @@ The following error codes may be returned by static IP APIs:
 }
 ```
 
-#### Invalid days
+#### 天数参数错误示例
 
 ```json
 {
@@ -651,7 +657,7 @@ The following error codes may be returned by static IP APIs:
 }
 ```
 
-#### Renewal days restriction
+#### 续费天数限制示例
 
 ```json
 {
@@ -663,6 +669,6 @@ The following error codes may be returned by static IP APIs:
 
 ---
 
-**© 2024 Static IP V2 API — v1.10.0**
+**© 2024 静态 IP V2 API 接口文档 - 版本 1.10.0**
 
-**Last updated:** February 25, 2026
+**最后更新时间：** 2026 年 2 月 25 日
