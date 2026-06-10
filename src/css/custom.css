@@ -28,3 +28,28 @@
   --ifm-color-primary-lightest: #041936;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* iframe 嵌入模式：?link=insert */
+html.embed-insert-mode .theme-layout-navbar,
+html.embed-insert-mode nav.navbar,
+html.embed-insert-mode .navbar-sidebar,
+html.embed-insert-mode .navbar-sidebar__backdrop,
+html.embed-insert-mode .theme-doc-sidebar-container,
+html.embed-insert-mode aside[class*='docSidebarContainer'],
+html.embed-insert-mode nav.theme-doc-breadcrumbs,
+html.embed-insert-mode nav[class*='breadcrumbsContainer'],
+html.embed-insert-mode .theme-layout-footer,
+html.embed-insert-mode footer.footer {
+  display: none !important;
+}
+
+html.embed-insert-mode .main-wrapper,
+html.embed-insert-mode [class*='mainWrapper'] {
+  padding-top: 0 !important;
+}
+
+html.embed-insert-mode .docMainContainer,
+html.embed-insert-mode main[class*='docMainContainer'],
+html.embed-insert-mode [class*='docItemContainer'] {
+  max-width: 100% !important;
+}
