@@ -1,10 +1,10 @@
 ﻿---
-sidebar_position: 3
+sidebar_position: 4
 slug: /user-guide
-description: 006ip proxy user guide — export dynamic residential proxies, parse proxy strings, verify connectivity, custom account rules, and choose proxy gateways.
+description: 006ip dynamic proxy user guide — export dynamic residential proxies, parse proxy strings, verify connectivity, custom account rules, and choose proxy gateways.
 ---
 
-# 006ip Proxy User Guide
+# 006ip Dynamic Proxy User Guide
 
 ## 1. How to export dynamic residential proxies in the 006ip dashboard?
 
