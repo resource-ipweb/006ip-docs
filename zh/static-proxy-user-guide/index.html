@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-static-proxy-user-guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">006ip 静态代理使用指南 | 006ip API Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.006ip.com/zh/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.006ip.com/zh/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.006ip.com/zh/static-proxy-user-guide/"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="006ip 静态代理使用指南 | 006ip API Docs"><meta data-rh="true" name="description" content="006ip 静态代理使用指南：购买静态住宅代理、查看与管理已购 IP、续费、导出账密，以及测试静态 IP 连通性。"><meta data-rh="true" property="og:description" content="006ip 静态代理使用指南：购买静态住宅代理、查看与管理已购 IP、续费、导出账密，以及测试静态 IP 连通性。"><link data-rh="true" rel="icon" href="/zh/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.006ip.com/zh/static-proxy-user-guide/"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/static-proxy-user-guide/" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/zh/static-proxy-user-guide/" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/static-proxy-user-guide/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"006ip 静态代理使用指南","item":"https://docs.006ip.com/zh/static-proxy-user-guide"}]}</script><link rel="stylesheet" href="/zh/assets/css/styles.1324a35a.css">
+<script src="/zh/assets/js/runtime~main.a0554d42.js" defer="defer"></script>
+<script src="/zh/assets/js/main.b80f7911.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/zh/img/logo.svg"><link rel="preload" as="image" href="/zh/assets/images/purchase-basic-attributes-9aa0b91a8ec50cc25c8c709f7d74e50a.png"><link rel="preload" as="image" href="/zh/assets/images/purchase-by-city-111979dff06a0a6deca4d91f516e95d0.png"><link rel="preload" as="image" href="/zh/assets/images/purchase-by-ip-segment-6cdb116340e0ef2aa09cc162643c2155.png"><link rel="preload" as="image" href="/zh/assets/images/purchase-by-specific-ip-c52dfa75ec05590b00af8bb157806a29.png"><link rel="preload" as="image" href="/zh/assets/images/purchase-advanced-config-69c7dae79b12d799401bb2eeec5fbbaa.png"><link rel="preload" as="image" href="/zh/assets/images/order-confirm-1371beba721f5209d94b4b6cb846f5ce.png"><link rel="preload" as="image" href="/zh/assets/images/payment-wechat-0e15fe908695a52dd74fe05ee27c5a29.png"><link rel="preload" as="image" href="/zh/assets/images/payment-success-8b757ef0395f720c493dd28742c8ca23.png"><link rel="preload" as="image" href="/zh/assets/images/my-ip-list-5ceeab7c796178d833743d68d38566c1.png"><link rel="preload" as="image" href="/zh/assets/images/auto-renewal-66b13cd8dbf98f43fd024a3470094c91.png"><link rel="preload" as="image" href="/zh/assets/images/manual-renewal-e35f5ef98b9493c5dee146b61a3c2534.png"><link rel="preload" as="image" href="/zh/assets/images/export-credentials-7403fbe7460dd593014b0140f6846da1.png"><link rel="preload" as="image" href="/zh/assets/images/ipv4-connectivity-test-a8c3532e7a62a4c85e395ac64e8e0e0f.png"><link rel="preload" as="image" href="/zh/assets/images/ipv6-connectivity-test-ba65d24c8e41abed1f4a700ae628d5b6.png"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/zh/"><div class="navbar__logo"><img src="/zh/img/logo.svg" alt="006ip API Docs Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/zh/img/logo.svg" alt="006ip API Docs Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">006ip API Docs</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>中文</a><ul class="dropdown__menu"><li><a href="/static-proxy-user-guide/" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/zh/static-proxy-user-guide/" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">中文</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="跟随系统" aria-label="切换浅色/暗黑模式（当前为跟随系统）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/zh/"><span title="快速开始" class="linkLabel_WmDU">快速开始</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/zh/static-proxy-user-guide/"><span title="006ip 静态代理使用指南" class="linkLabel_WmDU">006ip 静态代理使用指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/zh/user-guide/"><span title="006ip 动态代理使用指南" class="linkLabel_WmDU">006ip 动态代理使用指南</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/zh/api-authentication/"><span title="开放平台" class="categoryLinkLabel_W154">开放平台</span></a></div></li></ul></nav><button type="button" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/zh/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">006ip 静态代理使用指南</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>006ip 静态代理使用指南</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="一如何购买静态住宅代理">一、如何购买静态住宅代理？<a href="#一如何购买静态住宅代理" class="hash-link" aria-label="一、如何购买静态住宅代理？的直接链接" title="一、如何购买静态住宅代理？的直接链接" translate="no">​</a></h2>
+<p>登录 006ip 的用户后台，左侧导航栏点击「静态代理」，选择「套餐购买」，在这个页面，就可以生成完整的静态代理信息，具体操作步骤如下：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-代理基础属性">1. 代理基础属性<a href="#1-代理基础属性" class="hash-link" aria-label="1. 代理基础属性的直接链接" title="1. 代理基础属性的直接链接" translate="no">​</a></h3>
+<p><img alt="静态代理购买 — 基础属性配置" src="/zh/assets/images/purchase-basic-attributes-9aa0b91a8ec50cc25c8c709f7d74e50a.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理购买 — 基础属性配置 (点击放大)"></p>
+<p>在购买静态代理时，您需要首先完成基础属性的筛选与配置。系统将根据您的选择，实时生成对应的价格与库存状态：</p>
+<ul>
+<li class="">
+<p><strong>独享级别：</strong> 平台提供「共享」与「独享」两种资源分配模式。<strong>共享 IP</strong> 适合对成本控制要求较高的常规网络访问场景；<strong>独享 IP</strong>（仅限 1–2 人使用）则提供更高的环境纯净度与网络稳定性，适用于对 IP 关联度有严格要求的进阶业务场景。</p>
+</li>
+<li class="">
+<p><strong>IP 质量：</strong> 划分为「基础」、「标准」与「高端」三个梯度。您可以根据目标平台的访问标准及自身业务的网络质量要求，匹配最合适的底层代理资源。</p>
+</li>
+<li class="">
+<p><strong>业务用途：</strong> 为保障最优的连通率，平台针对主流场景进行了网络路由适配。您可以直接勾选热门选项（如 TK、Google、亚马逊、eBay 等），或点击「更多业务用途」展开完整类目，确保分配到的 IP 池能精准适配您的实际业务环境。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-ip-配置支持-3-种购买方式">2. IP 配置（支持 3 种购买方式）<a href="#2-ip-配置支持-3-种购买方式" class="hash-link" aria-label="2. IP 配置（支持 3 种购买方式）的直接链接" title="2. IP 配置（支持 3 种购买方式）的直接链接" translate="no">​</a></h3>
+<p>支持按城市采购、按 IP 段采购、指定 IP 采购三种方式。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="按城市采购">按城市采购<a href="#按城市采购" class="hash-link" aria-label="按城市采购的直接链接" title="按城市采购的直接链接" translate="no">​</a></h4>
+<p><img alt="静态代理购买 — 按城市采购" src="/zh/assets/images/purchase-by-city-111979dff06a0a6deca4d91f516e95d0.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理购买 — 按城市采购 (点击放大)"></p>
+<ul>
+<li class="">
+<p><strong>跨区资源组合：</strong> 在地区配置模块，支持同时添加多个目标国家/地区，实现跨地域代理资源的统一采购。</p>
+</li>
+<li class="">
+<p><strong>精准区域定位：</strong> 在已选国家列表下，您可以根据业务的地理位置要求，指定「固定城市」进行精准覆盖，或选择「随机范围」进行国家级的泛节点分布。</p>
+</li>
+<li class="">
+<p><strong>按需分配配额：</strong> 在对应的城市或随机区域卡片中，直接输入所需提取的具体 IP 数量，系统将自动核算并锁定当前可用库存。</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="按-ip-段采购">按 IP 段采购<a href="#按-ip-段采购" class="hash-link" aria-label="按 IP 段采购的直接链接" title="按 IP 段采购的直接链接" translate="no">​</a></h4>
+<p><img alt="静态代理购买 — 按 IP 段采购" src="/zh/assets/images/purchase-by-ip-segment-6cdb116340e0ef2aa09cc162643c2155.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理购买 — 按 IP 段采购 (点击放大)"></p>
+<ul>
+<li class="">
+<p><strong>锁定目标国家：</strong> 根据实际业务的网络部署需求，在选框中添加单个或多个目标国家/地区。</p>
+</li>
+<li class="">
+<p><strong>网段细分筛选：</strong> 选定国家后，系统默认加载并展示该区域下全量可用的 IP 子网网段。若需提高节点定位精度，可展开「细分筛选」下拉菜单，通过检索或点选具体城市，对底层 IP 段进行地理位置的精准过滤。</p>
+</li>
+<li class="">
+<p><strong>按段分配配额：</strong> 在筛选出的城市 IP 段卡片中，核对对应的网段信息与可用库存，并直接输入所需的节点调配数量，即可完成该子网段的定向采购。</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="指定-ip-采购">指定 IP 采购<a href="#指定-ip-采购" class="hash-link" aria-label="指定 IP 采购的直接链接" title="指定 IP 采购的直接链接" translate="no">​</a></h4>
+<p><img alt="静态代理购买 — 指定 IP 采购" src="/zh/assets/images/purchase-by-specific-ip-c52dfa75ec05590b00af8bb157806a29.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理购买 — 指定 IP 采购 (点击放大)"></p>
+<ul>
+<li class="">
+<p><strong>锁定目标区域：</strong> 首先在选框中勾选您需要部署业务的目标国家。</p>
+</li>
+<li class="">
+<p><strong>切换目标网段：</strong> 选定国家后，系统面板将默认加载并展示该区域首个可用网段下的具体 IP 列表。您可以通过网段下拉菜单，检索并切换至您所需的特定 IP 网段。</p>
+</li>
+<li class="">
+<p><strong>精准点选节点：</strong> 在下方的节点资源池中，系统会以卡片形式平铺展示该网段内所有可用的独立 IP。直接点击您需要的具体 IP 卡片即可完成精准指定，实现节点级别的精细化采购。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-更多配置以及订单详情">3. 更多配置以及订单详情<a href="#3-更多配置以及订单详情" class="hash-link" aria-label="3. 更多配置以及订单详情的直接链接" title="3. 更多配置以及订单详情的直接链接" translate="no">​</a></h3>
+<p>更多配置中的选择会影响价格计算。</p>
+<p><img alt="静态代理购买 — 高级配置与订单详情" src="/zh/assets/images/purchase-advanced-config-69c7dae79b12d799401bb2eeec5fbbaa.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理购买 — 高级配置与订单详情 (点击放大)"></p>
+<ul>
+<li class="">
+<p><strong>端口带宽（Bandwidth）：</strong> 提供从 5M/s、10M/s 至「不限带宽」等多个峰值速率梯度，您可以依据实际业务的网络数据吞吐需求进行灵活选配。</p>
+</li>
+<li class="">
+<p><strong>并发连接数（QPS）：</strong> 即每秒查询率。系统预设了 100、500、1000 等常规档位，并支持「自定义」输入，全面适配从基础访问到高并发请求的各类网络环境。</p>
+</li>
+<li class="">
+<p><strong>UDP 协议支持：</strong> 默认为关闭状态。若您的应用场景需要处理实时数据流或依赖特定的通信架构，可手动勾选「开启」（注：开启 UDP 协议支持将产生一定的附加费用）。</p>
+</li>
+<li class="">
+<p><strong>授权订阅时长：</strong> 支持 7 天至 365 天等多个维度的生命周期管理。选择中长期（如 90 天、365 天）订阅套餐，系统将自动匹配并叠加阶梯式折扣优惠。</p>
+</li>
+</ul>
+<p>界面右侧的<strong>订单详情</strong>面板为您的实时账单核算中心。该区域会动态汇总您勾选的所有基础属性与高级配置参数，并按国家/地区节点清晰拆解明细。在为您核减「时长优惠金额」后，系统将输出最终的「支付价格」，点击「立即支付」即可进入订单确认页面。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-订单确认">4. 订单确认<a href="#4-订单确认" class="hash-link" aria-label="4. 订单确认的直接链接" title="4. 订单确认的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>进入订单确认页面会自动锁定已选择的 IP 资源 15 分钟，如果一直未支付过期会释放 IP 资源。</p>
+</li>
+<li class="">
+<p>支持账户余额支付、在线支付、组合支付。当存在账户余额时，支持使用余额支付，账户余额不足时支持与在线支付组合支付。</p>
+</li>
+<li class="">
+<p>使用账户余额支付需要输入在本平台设置的支付密码。</p>
+</li>
+</ul>
+<p><img alt="静态代理 — 订单确认与支付" src="/zh/assets/images/order-confirm-1371beba721f5209d94b4b6cb846f5ce.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 订单确认与支付 (点击放大)"></p>
+<p><strong>资源库存锁定：</strong> 进入 Checkout（订单确认）页面后，系统将根据您的配置清单，自动在底层网络池中锁定对应的代理 IP 资源库存。锁定期为 15 分钟，若超时未完成结算，系统将自动释放该批次节点的配额。</p>
+<p><strong>灵活组合支付：</strong> 平台结算网关支持「账户余额」、「在线支付」以及「余额 + 在线」的组合支付模式。当账户可用余额不足以覆盖全额订单时，系统优先扣减全额余额，剩余差价可无缝衔接主流在线支付渠道（如 USDT、微信支付、支付宝等）进行补齐。为保障资金账户安全，动用余额抵扣时需校验您的专属支付密码。</p>
+<p><strong>结算状态同步（以微信组合支付为例）：</strong></p>
+<ol>
+<li class="">
+<p>在支付面板勾选「微信支付」，点击底部按钮支付差额后，系统将生成专属在线收款二维码。</p>
+</li>
+<li class="">
+<p>移动端扫码付款完成后，请务必在系统界面点击「已支付」按钮，主动触发网关状态更新。</p>
+</li>
+<li class="">
+<p>随后系统将弹出「支付状态查询」对话框并向服务端发起校验。待回传「支付成功」指令，即代表资源已正式授权下发。</p>
+</li>
+<li class="">
+<p>点击弹窗右下角的「查看我的 IP」按钮，即可跳转至控制面板提取代理节点进行业务部署。</p>
+</li>
+</ol>
+<p><img alt="静态代理 — 微信支付流程" src="/zh/assets/images/payment-wechat-0e15fe908695a52dd74fe05ee27c5a29.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 微信支付流程 (点击放大)"></p>
+<p><img alt="静态代理 — 支付成功" src="/zh/assets/images/payment-success-8b757ef0395f720c493dd28742c8ca23.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 支付成功 (点击放大)"></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="二查看已购买的静态-ip">二、查看已购买的静态 IP<a href="#二查看已购买的静态-ip" class="hash-link" aria-label="二、查看已购买的静态 IP的直接链接" title="二、查看已购买的静态 IP的直接链接" translate="no">​</a></h2>
+<p>进入「我的 IP」菜单，可以查看所有已购买 IP 的信息，支持续费、停用、启用、导出账密等操作。</p>
+<p><img alt="静态代理 — 我的 IP 列表" src="/zh/assets/images/my-ip-list-5ceeab7c796178d833743d68d38566c1.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 我的 IP 列表 (点击放大)"></p>
+<p><strong>节点状态监控：</strong> 列表直观呈现各项核心网络参数（带宽、QPS、UDP 协议状态等），并实时追踪资源的使用状态（可用、已停用、即将到期、已过期保留等）。</p>
+<p><strong>生命周期调度：</strong> 在操作列中，支持对单一代理节点执行<strong>续费</strong>（延长授权期限）、<strong>停用 / 启用</strong>（按需阻断或恢复网络连接）以及查看底层网络<strong>详情</strong>，保障业务的连续性与灵活性。</p>
+<p><strong>鉴权凭证导出：</strong> 针对大规模集成需求，支持点击右上角的「导出账号」按钮，一键批量生成并下载代理节点的连接鉴权信息（账号/密码），便于快速对接到您的自动化业务运行环境中。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="自动续费">自动续费<a href="#自动续费" class="hash-link" aria-label="自动续费的直接链接" title="自动续费的直接链接" translate="no">​</a></h3>
+<p>到期后自动扣取账户余额进行续费。</p>
+<p><img alt="静态代理 — 自动续费设置" src="/zh/assets/images/auto-renewal-66b13cd8dbf98f43fd024a3470094c91.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 自动续费设置 (点击放大)"></p>
+<p>开启此策略并设定触发阈值（如「到期 3 天前续费」），系统将在设定的临期节点，自动从您的账户可用余额中划扣相应款项并完成授权延期。该策略可有效避免因遗忘操作导致节点被系统释放，确保底层网络环境的长效稳定。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="手动续费">手动续费<a href="#手动续费" class="hash-link" aria-label="手动续费的直接链接" title="手动续费的直接链接" translate="no">​</a></h3>
+<p><img alt="静态代理 — 手动续费" src="/zh/assets/images/manual-renewal-e35f5ef98b9493c5dee146b61a3c2534.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 手动续费 (点击放大)"></p>
+<p>当您需要即时延长代理节点的授权期限时，可通过「手动续费」功能进行单次结算。在弹窗面板中，您可通过下拉菜单灵活指定所需的「续费周期」（如 30 天）。系统将根据您选定的底层节点数量与续费时长，实时自动计算并展示对应的「预计金额」。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="导出静态-ip-账密数据">导出静态 IP 账密数据<a href="#导出静态-ip-账密数据" class="hash-link" aria-label="导出静态 IP 账密数据的直接链接" title="导出静态 IP 账密数据的直接链接" translate="no">​</a></h3>
+<p><img alt="静态代理 — 导出账号凭证" src="/zh/assets/images/export-credentials-7403fbe7460dd593014b0140f6846da1.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — 导出账号凭证 (点击放大)"></p>
+<p>为满足大规模环境部署与自动化集成需求，系统支持一键导出所选代理节点的连接凭证。</p>
+<ul>
+<li class="">
+<p><strong>触发凭证提取：</strong> 在明细列表界面右侧，点击「导出账号」按钮，唤出配置面板。系统将默认基于您当前的列表筛选条件，精准圈定需要导出的目标 IP 范围。</p>
+</li>
+<li class="">
+<p><strong>配置数据交互格式：</strong> 在弹窗面板中，您可通过「代理格式」下拉菜单，灵活选择匹配第三方软件或自研脚本的数据排列结构（如标准的 <code>IP:PORT:USERNAME:PASSWORD</code>），以实现底层业务系统的无缝对接。</p>
+</li>
+<li class="">
+<p><strong>安全核验与执行导出：</strong> 由于导出的文件包含明文的 IP、端口及账号密码凭证，出于最高级别的网络资产安全管控要求，您必须在指定输入框内填写当前账户的「登录密码」进行身份核验（此操作将自动写入系统审计日志）。验证无误后，点击「确认导出」即可安全获取节点配置文件。</p>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="三测试静态-ip-连通性">三、测试静态 IP 连通性<a href="#三测试静态-ip-连通性" class="hash-link" aria-label="三、测试静态 IP 连通性的直接链接" title="三、测试静态 IP 连通性的直接链接" translate="no">​</a></h2>
+<p>在获取节点鉴权凭证后，建议您通过本地终端命令行进行基础的网络连通性与出口 IP 验证。以下为基于 <code>curl</code> 工具的 IPv4 和 IPv6 节点测试命令规范：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ipv4-测试命令">IPv4 测试命令<a href="#ipv4-测试命令" class="hash-link" aria-label="IPv4 测试命令的直接链接" title="IPv4 测试命令的直接链接" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># http</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -x http://username:password@IP:PORT https://ifconfig.co</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># socks5</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -x socks5h://username:password@IP:PORT https://ifconfig.co</span><br></span></code></pre></div></div>
+<p><img alt="静态代理 — IPv4 连通性测试" src="/zh/assets/images/ipv4-connectivity-test-a8c3532e7a62a4c85e395ac64e8e0e0f.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — IPv4 连通性测试 (点击放大)"></p>
+<p>在发起请求前，请将上述命令中的 <code>username:password@IP:PORT</code> 替换为您实际提取的节点鉴权信息。在终端执行该命令后，系统会通过代理节点向目标检测站点（如 ifconfig.co）发起访问；若网络连通与鉴权均正常，终端将直接返回该代理节点的真实出口 IP 地址。核对返回结果与所购节点 IP 一致，即代表该资源已准备就绪。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ipv6-测试命令">IPv6 测试命令<a href="#ipv6-测试命令" class="hash-link" aria-label="IPv6 测试命令的直接链接" title="IPv6 测试命令的直接链接" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># http</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -x http://username:password@[IPv6]:PORT https://v6.ipinfo.io</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># socks5</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -x socks5h://username:password@[IPv6]:PORT https://v6.ipinfo.io</span><br></span></code></pre></div></div>
+<p><img alt="静态代理 — IPv6 连通性测试" src="/zh/assets/images/ipv6-connectivity-test-ba65d24c8e41abed1f4a700ae628d5b6.png" class="zoomableImage_cpOf" role="button" tabindex="0" aria-label="静态代理 — IPv6 连通性测试 (点击放大)"></p>
+<p>请将命令中的鉴权信息替换为您的真实节点凭证。执行请求后，代理节点将向支持纯 IPv6 访问的检测站点（如 <code>v6.ipinfo.io</code>）发起路由转发。若测试成功，终端将以 JSON 格式完整返回该节点的地理位置快照（包含真实的出口 IPv6 地址、城市、ASN 机构等网络环境信息），您可借此比对资源状态是否符合预期。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/zh/"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">快速开始</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/zh/user-guide/"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">006ip 动态代理使用指南</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#一如何购买静态住宅代理" class="table-of-contents__link toc-highlight">一、如何购买静态住宅代理？</a><ul><li><a href="#1-代理基础属性" class="table-of-contents__link toc-highlight">1. 代理基础属性</a></li><li><a href="#2-ip-配置支持-3-种购买方式" class="table-of-contents__link toc-highlight">2. IP 配置（支持 3 种购买方式）</a><ul><li><a href="#按城市采购" class="table-of-contents__link toc-highlight">按城市采购</a></li><li><a href="#按-ip-段采购" class="table-of-contents__link toc-highlight">按 IP 段采购</a></li><li><a href="#指定-ip-采购" class="table-of-contents__link toc-highlight">指定 IP 采购</a></li></ul></li><li><a href="#3-更多配置以及订单详情" class="table-of-contents__link toc-highlight">3. 更多配置以及订单详情</a></li><li><a href="#4-订单确认" class="table-of-contents__link toc-highlight">4. 订单确认</a></li></ul></li><li><a href="#二查看已购买的静态-ip" class="table-of-contents__link toc-highlight">二、查看已购买的静态 IP</a><ul><li><a href="#自动续费" class="table-of-contents__link toc-highlight">自动续费</a></li><li><a href="#手动续费" class="table-of-contents__link toc-highlight">手动续费</a></li><li><a href="#导出静态-ip-账密数据" class="table-of-contents__link toc-highlight">导出静态 IP 账密数据</a></li></ul></li><li><a href="#三测试静态-ip-连通性" class="table-of-contents__link toc-highlight">三、测试静态 IP 连通性</a><ul><li><a href="#ipv4-测试命令" class="table-of-contents__link toc-highlight">IPv4 测试命令</a></li><li><a href="#ipv6-测试命令" class="table-of-contents__link toc-highlight">IPv6 测试命令</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">版权所有 © 2026 006ip, Inc.</div></div></div></footer></div>
+</body>
+</html>
