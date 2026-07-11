@@ -8,71 +8,23 @@ description: 006ip static proxy user guide — purchase static residential proxi
 
 ## 1. How to purchase static residential proxies?
 
-Log in to the 006ip dashboard, open **Static Proxy** in the left sidebar, then select **Plan Purchase**. On this page you can configure and purchase static proxy resources. Follow the steps below:
+Log in to the 006ip dashboard, open **Static Proxy** in the left sidebar, then choose **Static Residential Native IP** or **Static Residential Broadcast IP** to enter the purchase page. On this page you can configure and purchase static proxy resources. Follow the steps below:
 
-### 1.1 Basic proxy attributes
+### 1.1 Proxy attribute settings
 
-![Static proxy purchase — basic attributes](/img/static-proxy/purchase-basic-attributes.png)
+![Static proxy purchase — attribute settings](/img/static-proxy/proxy-attribute-settings.png)
 
-When purchasing static proxies, start by configuring the basic attributes. The system updates pricing and inventory in real time based on your selections:
+- **Exclusivity level:** Choose between **Dedicated** and **Shared** allocation. **Dedicated IPs** offer higher environment purity and stability for workloads with strict IP isolation requirements. **Shared IPs** suit cost-sensitive, general browsing scenarios.
 
-- **Exclusivity level:** Choose between **Shared** and **Dedicated** allocation. **Shared IPs** suit cost-sensitive, general browsing workloads. **Dedicated IPs** (limited to 1–2 users) offer higher environment purity and stability for scenarios with strict IP isolation requirements.
+- **Precise geo targeting:** Select country/region and a specific city for exact coverage, or choose **Random range** for country-wide distribution.
 
-- **IP quality tier:** Three tiers — **Basic**, **Standard**, and **Premium**. Match the tier to your target platform requirements and expected network quality.
+- **Subscription duration:** Plans from 30 to 365 days. Longer terms (e.g. 90 or 365 days) include tiered discounts.
 
-- **Business use case:** To maximize success rates, the platform optimizes routing for popular scenarios. Select common options (e.g. TikTok, Google, Amazon, eBay) or expand **More use cases** to browse the full catalog and ensure the assigned IP pool fits your workload.
+- **Fixed configuration:** Concurrent connections (QPS), port bandwidth, and UDP support use fixed default settings. Refer to the values shown on the platform page for the actual configuration.
 
-### 1.2 IP configuration (three purchase modes)
+The **Order Summary** panel on the right aggregates your selections. Enter the number of IPs in the quantity field; the system validates inventory and calculates pricing. After discounts are applied, the final **Payment amount** is shown. Click **Pay Now** to proceed to checkout.
 
-You can purchase by city, by IP segment, or by specific IP.
-
-#### Purchase by city
-
-![Static proxy purchase — by city](/img/static-proxy/purchase-by-city.png)
-
-- **Multi-region bundles:** Add multiple countries or regions in the location module to purchase cross-region resources in one order.
-
-- **Precise geo targeting:** For each selected country, choose a **Fixed city** for exact coverage or **Random range** for country-wide distribution.
-
-- **Quantity per region:** Enter the number of IPs needed on each city or random-range card. The system calculates pricing and locks available inventory.
-
-#### Purchase by IP segment
-
-![Static proxy purchase — by IP segment](/img/static-proxy/purchase-by-ip-segment.png)
-
-- **Select target countries:** Add one or more countries or regions based on your deployment needs.
-
-- **Segment filtering:** After selecting a country, the system lists all available IP subnets. Expand **Refined filter** to search or select cities for more precise segment filtering.
-
-- **Allocate by segment:** On each segment card, review subnet details and available stock, then enter the quantity to purchase from that segment.
-
-#### Purchase by specific IP
-
-![Static proxy purchase — by specific IP](/img/static-proxy/purchase-by-specific-ip.png)
-
-- **Lock target region:** First select the country where you need to deploy.
-
-- **Switch subnet:** The panel loads the first available subnet and its IP list. Use the subnet dropdown to search and switch to the segment you need.
-
-- **Pick individual nodes:** Available IPs are shown as cards. Click the IP you want to add it to your order for node-level precision.
-
-### 1.3 Advanced options and order summary
-
-Advanced options affect the final price.
-
-![Static proxy purchase — advanced config and order summary](/img/static-proxy/purchase-advanced-config.png)
-
-- **Bandwidth:** Choose peak rates such as 5 Mbps, 10 Mbps, or **Unlimited**, based on your throughput needs.
-
-- **Concurrent connections (QPS):** Presets include 100, 500, and 1000, with a **Custom** option for high-concurrency workloads.
-
-- **UDP support:** Disabled by default. Enable it if your application requires real-time data or UDP-based protocols (additional fees apply).
-
-- **Subscription duration:** Plans from 7 to 365 days. Longer terms (e.g. 90 or 365 days) include tiered discounts.
-
-The **Order Summary** panel on the right aggregates all selected attributes and advanced settings, broken down by country/region. After duration discounts are applied, the final **Payment amount** is shown. Click **Pay Now** to proceed to checkout.
-
-### 1.4 Order confirmation
+### 1.2 Order payment
 
 - Selected IP resources are reserved for **15 minutes** on the checkout page. Unpaid orders release the reservation when the lock expires.
 
@@ -80,29 +32,15 @@ The **Order Summary** panel on the right aggregates all selected attributes and 
 
 ![Static proxy — order confirmation and payment](/img/static-proxy/order-confirm.png)
 
-**Inventory lock:** On the checkout page, the system locks the configured proxy IPs in the network pool for 15 minutes. If payment is not completed in time, the batch is released automatically.
+**Inventory lock:** On checkout, the system locks the configured proxy IPs in the network pool for 15 minutes. If payment is not completed in time, the batch is released automatically.
 
 **Flexible payment:** Use account balance, online payment, or a combination. When balance is insufficient, the full available balance is applied first and the remainder can be paid via online channels (e.g. USDT, WeChat Pay, Alipay). Balance deductions require your payment password.
-
-**Payment status sync (WeChat combined payment example):**
-
-1. Select **WeChat Pay** on the payment panel and pay the remaining amount to generate a QR code.
-
-2. After paying on mobile, click **Paid** in the dashboard to trigger a status update.
-
-3. A **Payment status** dialog queries the gateway. When the response is **Payment successful**, resources are provisioned.
-
-4. Click **View My IPs** in the dialog to open the control panel and deploy your proxy nodes.
-
-![Static proxy — WeChat payment flow](/img/static-proxy/payment-wechat.png)
-
-![Static proxy — payment success](/img/static-proxy/payment-success.png)
 
 ---
 
 ## 2. View purchased static IPs
 
-Open **My IPs** to see all purchased IPs. You can renew, disable, enable, export credentials, and more.
+After payment succeeds, open **My IPs** to see all purchased IPs. You can renew, disable, enable, export credentials, and more.
 
 ![Static proxy — My IPs list](/img/static-proxy/my-ip-list.png)
 
