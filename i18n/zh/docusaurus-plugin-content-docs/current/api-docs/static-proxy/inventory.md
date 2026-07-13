@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: /new-open-platform/inventory
+slug: /static-proxy/inventory
 description: 静态 IP 开放平台库存查询：国家库存树、CIDR 段库存。
 ---
 
@@ -8,7 +8,7 @@ description: 静态 IP 开放平台库存查询：国家库存树、CIDR 段库�
 
 **鉴权：** 须 `UserId`、`Token`。
 
-购买前按条件查询可购数量；`condition` 结构与 [购买](/new-open-platform/purchase) 报价/下单一致。
+购买前按条件查询可购数量；`condition` 结构与 [购买](/static-proxy/purchase) 报价/下单一致。
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /new-open-platform/location
+slug: /static-proxy/location
 description: 静态 IP 开放平台地理位置字典：大洲、国家、州省、城市列表。
 ---
 
@@ -8,7 +8,7 @@ description: 静态 IP 开放平台地理位置字典：大洲、国家、州省
 
 查询国家/城市字典，供库存、下单等接口使用 `countryCode`、`cityId`（`cityCode`）。
 
-**鉴权：** `/open/staticip/**` 须携带 `UserId`、`Token`（见 [接口认证](/new-open-platform/authentication)）。
+**鉴权：** `/open/staticip/**` 须携带 `UserId`、`Token`（见 [接口认证](/static-proxy/authentication)）。
 
 ---
 

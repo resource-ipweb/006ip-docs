@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-slug: /new-open-platform/purchase
+slug: /static-proxy/purchase
 description: 静态 IP 开放平台购买：配置项、报价、下单并支付。
 ---
 

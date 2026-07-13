@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
-slug: /new-open-platform/renewal
-description: Renewal APIs â€” quote and place-and-pay.
+slug: /static-proxy/renewal
+description: Renewal APIs â€?quote and place-and-pay.
 ---
 
 # Renewal
 
 Requires `UserId` and `Token`.
 
-`resourceIds` are user static IP primary keys (`t_static_user_ip.id`) from [My IPs](/new-open-platform/ips).
+`resourceIds` are user static IP primary keys (`t_static_user_ip.id`) from [My IPs](/static-proxy/ips).
 
 | Method | Path | Description |
 |--------|------|-------------|

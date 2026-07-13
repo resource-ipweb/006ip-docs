@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-slug: /new-open-platform/renewal
+slug: /static-proxy/renewal
 description: 静态 IP 开放平台续费：报价、续费并支付。
 ---
 
@@ -8,7 +8,7 @@ description: 静态 IP 开放平台续费：报价、续费并支付。
 
 **鉴权：** 须 `UserId`、`Token`。
 
-`resourceIds` 为 **用户静态 IP 主键**（`t_static_user_ip.id`），可从 [我的 IP](/new-open-platform/ips) 列表获取。
+`resourceIds` 为 **用户静态 IP 主键**（`t_static_user_ip.id`），可从 [我的 IP](/static-proxy/ips) 列表获取。
 
 ---
 

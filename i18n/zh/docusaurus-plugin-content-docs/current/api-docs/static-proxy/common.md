@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-slug: /new-open-platform/common
+slug: /static-proxy/common
 description: 静态 IP 新开放平台公共接口：连通性检测。
 ---
 

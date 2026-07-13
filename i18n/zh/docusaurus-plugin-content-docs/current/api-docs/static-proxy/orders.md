@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-slug: /new-open-platform/orders
+slug: /static-proxy/orders
 description: 静态 IP 开放平台订单查询：详情、状态。
 ---
 

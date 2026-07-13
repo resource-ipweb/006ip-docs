@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
-slug: /new-open-platform/location
-description: Location dictionary APIs â€” continents, countries, states, cities.
+slug: /static-proxy/location
+description: Location dictionary APIs â€?continents, countries, states, cities.
 ---
 
 # Location
 
-Country/city dictionary for inventory and purchase APIs. Requires `UserId` and `Token` â€” see [Authentication](/new-open-platform/authentication).
+Country/city dictionary for inventory and purchase APIs. Requires `UserId` and `Token` â€?see [Authentication](/static-proxy/authentication).
 
 | Method | Path | Description |
 |--------|------|-------------|

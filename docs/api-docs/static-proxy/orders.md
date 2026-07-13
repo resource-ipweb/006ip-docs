@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
-slug: /new-open-platform/orders
-description: Order query APIs â€” detail and status.
+slug: /static-proxy/orders
+description: Order query APIs â€?detail and status.
 ---
 
 # Orders

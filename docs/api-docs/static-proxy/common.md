@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
-slug: /new-open-platform/common
-description: Public endpoints â€” connectivity check.
+slug: /static-proxy/common
+description: Public endpoints â€?connectivity check.
 ---
 
 # Common

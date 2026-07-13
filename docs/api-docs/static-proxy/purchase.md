@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-slug: /new-open-platform/purchase
-description: Purchase APIs â€” options, quote, place and pay.
+slug: /static-proxy/purchase
+description: Purchase APIs â€?options, quote, place and pay.
 ---
 
 # Purchase
@@ -14,7 +14,7 @@ Requires `UserId` and `Token`.
 | POST | `/open/staticip/purchase/quote` | Quote (no order created) |
 | POST | `/open/staticip/purchase/orders/place-and-pay` | Create order and pay with wallet balance |
 
-Recommended flow: `options` â†’ `inventory` â†’ `quote` â†’ `place-and-pay`.
+Recommended flow: `options` â†?`inventory` â†?`quote` â†?`place-and-pay`.
 
 Use `X-Idempotency-Key` on place-and-pay. Pass `quoteId` and `quoteVersion` from the quote response.
 

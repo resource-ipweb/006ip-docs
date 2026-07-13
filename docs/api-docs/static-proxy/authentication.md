@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /new-open-platform/authentication
+slug: /static-proxy/authentication
 description: Static IP open platform authentication — developer credentials, headers, response format, and error codes.
 ---
 
@@ -12,14 +12,13 @@ description: Static IP open platform authentication — developer credentials, h
 
 **Base URL:**
 
-- **HTTPS (recommended):** `https://user.ipweb.cc/api`
-- **HTTP:** `http://user.ipweb.cc/api`
+- **HTTPS (recommended):** <ApiBaseUrl />
 
 **Format:** `application/json` (except `GET` endpoints without a body)
 
 **Encoding:** UTF-8
 
-Business APIs use the prefix `/open/staticip/**`. See [Common](/new-open-platform/common) for unauthenticated endpoints.
+Business APIs use the prefix `/open/staticip/**`. See [Common](/static-proxy/common) for unauthenticated endpoints.
 
 ---
 

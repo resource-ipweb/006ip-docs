@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-slug: /new-open-platform/ips
+slug: /static-proxy/ips
 description: 静态 IP 开放平台资产查询：IP 分页列表、IP 详情。
 ---
 

@@ -12,8 +12,7 @@ description: 静态 IP 新开放平台接口认证：获取开发者凭证、请
 
 **基础 URL：**
 
-- **HTTPS（推荐）：** `https://user.ipweb.cc/api`
-- **HTTP：** `http://user.ipweb.cc/api`
+- **HTTPS（推荐）：** <ApiBaseUrl />
 
 **数据格式：** `application/json`（`GET` 无 Body 的接口除外）
 
@@ -35,8 +34,8 @@ description: 静态 IP 新开放平台接口认证：获取开发者凭证、请
 
 | 控制台字段 | 请求头名称 | 说明 |
 |-----------|-----------|------|
-| userId（开发者 ID / key） | `UserId` | 开发者身份标识，对应库表 `principal` |
-| token | `Token` | 开发者密钥，对应库表 `credential` |
+| userId（开发者 ID / key） | `UserId` | 开发者身份标识 |
+| token | `Token` | 开发者密钥 |
 
 > **注意：** 请求头名为 `UserId`，填写的是开发者 ID（控制台 `key`），不是数值型的用户主键。
 

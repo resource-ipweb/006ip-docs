@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
-slug: /new-open-platform/ips
-description: Asset APIs â€” IP page list and detail.
+slug: /static-proxy/ips
+description: Asset APIs â€?IP page list and detail.
 ---
 
 # My IPs
@@ -15,4 +15,4 @@ Requires `UserId` and `Token`.
 
 Page body: `pageIndex`, `pageSize`, optional `criteria` (country, keyword, usage status).
 
-Detail body: `{ "id": "user-ip-primary-key" }` â€” use this `id` in renewal `resourceIds`.
+Detail body: `{ "id": "user-ip-primary-key" }` â€?use this `id` in renewal `resourceIds`.
