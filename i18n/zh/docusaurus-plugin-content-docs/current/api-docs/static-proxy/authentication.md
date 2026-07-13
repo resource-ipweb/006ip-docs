@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-slug: /new-open-platform/authentication
-description: 静态 IP 新开放平台接口认证：获取开发者凭证、请求头格式、响应约定与鉴权错误码。
+slug: /static-proxy/authentication
+description: 静态 IP 开放平台接口认证：获取开发者凭证、请求头格式、响应约定与鉴权错误码。
 ---
 
 # 接口认证
@@ -18,7 +18,7 @@ description: 静态 IP 新开放平台接口认证：获取开发者凭证、请
 
 **字符编码：** UTF-8
 
-静态 IP 新开放平台接口挂载在用户端 API 服务上，路径前缀为 `/open/staticip/**`（另有少量免鉴权公共接口见 [公共接口](/new-open-platform/common)）。
+静态 IP 开放平台接口挂载在用户端 API 服务上，路径前缀为 `/open/staticip/**`（另有少量免鉴权公共接口见 [公共接口](/static-proxy/common)）。
 
 ---
 

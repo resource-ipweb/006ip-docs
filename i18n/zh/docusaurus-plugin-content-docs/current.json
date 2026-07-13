@@ -10,5 +10,13 @@
   "sidebar.defaultSidebar.category.Dynamic Proxy": {
     "message": "动态代理",
     "description": "The label for category 'Dynamic Proxy' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Static Proxy": {
+    "message": "静态代理",
+    "description": "The label for category 'Static Proxy' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Static Proxy.link.generated-index.description": {
+    "message": "静态 IP 开放平台接口：UserId + Token 鉴权，路径前缀 /open/staticip。",
+    "description": "The generated-index page description for category 'Static Proxy' in sidebar 'defaultSidebar'"
   }
 }
