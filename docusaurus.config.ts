@@ -1,10 +1,11 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import { readApiPlaygroundBuildConfig } from './src/components/ApiPlayground/env';
+import { loadDocsEnv, readApiPlaygroundBuildConfig } from './src/components/ApiPlayground/env';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+loadDocsEnv();
 const apiPlaygroundBuildConfig = readApiPlaygroundBuildConfig();
 
 const config: Config = {

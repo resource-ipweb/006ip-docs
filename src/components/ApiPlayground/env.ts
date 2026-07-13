@@ -1,3 +1,6 @@
+import {existsSync, readFileSync} from 'node:fs';
+import {join} from 'node:path';
+
 /** 在线调试：构建时从环境变量读取，经 customFields 注入前端。 */
 export type ApiPlaygroundRuntimeConfig = {
 	/** 服务根地址，如 http://localhost:20021 或 https://006ip.com */
@@ -29,6 +32,46 @@ function resolveDevProxyTarget(defaultBaseUrl: string, explicitTarget?: string):
 		}
 	}
 	return API_PLAYGROUND_DEFAULTS.devProxyTarget;
+}
+
+function parseEnvFile(content: string): Record<string, string> {
+	const result: Record<string, string> = {};
+	for (const line of content.split(/\r?\n/)) {
+		const trimmed = line.trim();
+		if (!trimmed || trimmed.startsWith('#')) {
+			continue;
+		}
+		const eq = trimmed.indexOf('=');
+		if (eq === -1) {
+			continue;
+		}
+		const key = trimmed.slice(0, eq).trim();
+		let value = trimmed.slice(eq + 1).trim();
+		if (
+			(value.startsWith('"') && value.endsWith('"')) ||
+			(value.startsWith("'") && value.endsWith("'"))
+		) {
+			value = value.slice(1, -1);
+		}
+		result[key] = value;
+	}
+	return result;
+}
+
+/** 在 docusaurus.config.ts 最早调用，加载 .env / .env.[mode] / .env.local。 */
+export function loadDocsEnv(cwd = process.cwd()): void {
+	const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+	const files = ['.env', `.env.${mode}`, '.env.local', `.env.${mode}.local`];
+	for (const file of files) {
+		const filePath = join(cwd, file);
+		if (!existsSync(filePath)) {
+			continue;
+		}
+		const vars = parseEnvFile(readFileSync(filePath, 'utf8'));
+		for (const [key, value] of Object.entries(vars)) {
+			process.env[key] = value;
+		}
+	}
 }
 
 /** 拼接服务根地址与 API 前缀，得到完整 Base URL。 */
