@@ -58,9 +58,21 @@ function parseEnvFile(content: string): Record<string, string> {
 	return result;
 }
 
+/** 解析应加载的 env 模式。docusaurus build 时 config 往往早于 NODE_ENV=production。 */
+function resolveEnvMode(): 'production' | 'development' {
+	if (process.env.NODE_ENV === 'production') {
+		return 'production';
+	}
+	const argv = process.argv.join(' ');
+	if (/\b(build|deploy)\b/.test(argv)) {
+		return 'production';
+	}
+	return 'development';
+}
+
 /** 在 docusaurus.config.ts 最早调用，加载 .env / .env.[mode] / .env.local。 */
 export function loadDocsEnv(cwd = process.cwd()): void {
-	const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+	const mode = resolveEnvMode();
 	const files = ['.env', `.env.${mode}`, '.env.local', `.env.${mode}.local`];
 	for (const file of files) {
 		const filePath = join(cwd, file);
