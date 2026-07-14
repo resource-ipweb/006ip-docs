@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 slug: /static-proxy/common
-description: Public endpoints â€?connectivity check.
+description: Public endpoints ï¿½?connectivity check.
 ---
 
 # Common
@@ -9,7 +9,7 @@ description: Public endpoints â€?connectivity check.
 No `UserId` / `Token` required.
 
 ```bash
-curl -X GET "https://user.ipweb.cc/api/open/main/ping"
+curl -X GET "https://006ip.com/api/open/main/ping"
 ```
 
 <ApiPlayground method="GET" path="/open/main/ping" requireAuth={false} />

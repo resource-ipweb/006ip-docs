@@ -5,7 +5,7 @@ description: Dynamic proxy sub-account API — create, update, list sub-accounts
 ---
 # Sub-Accounts
 ---
-Base URL (`baseUrl`): `http://api.ipweb.cc:8004`
+Base URL (`baseUrl`): `http://api.006ip.com:8004`
 
 ## 1. Create sub-account
 

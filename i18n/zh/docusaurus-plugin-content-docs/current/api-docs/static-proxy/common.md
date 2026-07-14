@@ -28,7 +28,7 @@ description: 静态 IP 新开放平台公共接口：连通性检测。
 **示例：**
 
 ```bash
-curl -X GET "https://user.ipweb.cc/api/open/main/ping"
+curl -X GET "https://006ip.com/api/open/main/ping"
 ```
 
 ```json

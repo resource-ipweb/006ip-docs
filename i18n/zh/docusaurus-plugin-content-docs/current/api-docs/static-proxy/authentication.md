@@ -57,7 +57,7 @@ description: 静态 IP 开放平台接口认证：获取开发者凭证、请求
 ### 请求示例
 
 ```bash
-curl -X POST "https://user.ipweb.cc/api/open/staticip/inventory/countries" \
+curl -X POST "https://006ip.com/api/open/staticip/inventory/countries" \
   -H "Content-Type: application/json" \
   -H "UserId: your-developer-id" \
   -H "Token: your-developer-token" \

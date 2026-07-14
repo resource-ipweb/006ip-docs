@@ -5,7 +5,7 @@ description: 动态代理子账号API, 用于获取动态代理子账号信息�
 ---
 # 代理子账号
 ---
-请求地址（baseUrl）： `http://api.ipweb.cc:8004`
+请求地址（baseUrl）： `http://api.006ip.com:8004`
 
 ## 1. 创建子账号
 

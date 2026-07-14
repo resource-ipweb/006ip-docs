@@ -51,12 +51,12 @@ username:password:proxy_host(IP_or_domain):port
 **Sample line:**
 
 ```
-gate1.ipweb.cc:7778:B_36307_US_1474_10748_5_Ab000001:123456
+gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
 ```
 
 **Field breakdown:**
 
-- **Proxy server:** `gate1.ipweb.cc`
+- **Proxy server:** `gate1.006ip.com`
 - **Port:** `7778`
 - **User ID:** `B_36307`
 - **Country code:** `US`
@@ -76,7 +76,7 @@ gate1.ipweb.cc:7778:B_36307_US_1474_10748_5_Ab000001:123456
 Test the exported line with `curl`:
 
 ```bash
-curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.ipweb.cc:7778 ipinfo.io
+curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.006ip.com:7778 ipinfo.io
 ```
 
 ![curl verification result](https://oss.ipweb.cc/docs/imgs/71f9b316d82b791.png)
@@ -94,7 +94,7 @@ A successful response shows a US IP (country `US`), New York state (code `1474`)
 From the sample above, change country/state/city codes to target other locations. State and city are optional:
 
 ```
-gate1.ipweb.cc:7778:B_36424_US___5_Ab000001:123456
+gate1.006ip.com:7778:B_36424_US___5_Ab000001:123456
 ```
 
 Empty state and city means any location within the US.
@@ -110,19 +110,19 @@ Log in at [https://006ip.com/console/sign-in](https://006ip.com/console/sign-in?
 Starting from:
 
 ```
-gate1.ipweb.cc:7778:B_36424_US___5_Ab000001:123456
+gate1.006ip.com:7778:B_36424_US___5_Ab000001:123456
 ```
 
 For Hong Kong, replace `US` with `HK`:
 
 ```
-gate1.ipweb.cc:7778:B_36424_HK___5_Ab000001:123456
+gate1.006ip.com:7778:B_36424_HK___5_Ab000001:123456
 ```
 
 For a 10-minute session instead of 5, change `5` to `10`:
 
 ```
-gate1.ipweb.cc:7778:B_36424_HK___10_Ab000001:123456
+gate1.006ip.com:7778:B_36424_HK___10_Ab000001:123456
 ```
 
 ### 3.3 Generate many proxies by changing SID
@@ -130,17 +130,17 @@ gate1.ipweb.cc:7778:B_36424_HK___10_Ab000001:123456
 Example base line:
 
 ```
-gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000001:123456
+gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000001:123456
 ```
 
 Change the **SID** to obtain different exit IPs:
 
 ```
-gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000001:123456
-gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000002:123456
-gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_Ab000003:123456
+gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000001:123456
+gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000002:123456
+gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000003:123456
 ...
-gate1.ipweb.cc:7778:B_36424_US_1474_10748_5_X9999999:123456
+gate1.006ip.com:7778:B_36424_US_1474_10748_5_X9999999:123456
 ```
 
 > **Note:** SID must be exactly **8** alphanumeric characters (letters and digits). Special characters (e.g. `@!%*`) are not allowed.
@@ -152,7 +152,7 @@ Changing SID lets you scale proxies or rotate IPs on demand.
 Set the country code to **`000`** for a random country:
 
 ```
-gate1.ipweb.cc:7778:B_36424_000___10_Ab000001:123456
+gate1.006ip.com:7778:B_36424_000___10_Ab000001:123456
 ```
 
 ---
@@ -161,8 +161,8 @@ gate1.ipweb.cc:7778:B_36424_000___10_Ab000001:123456
 
 006ip operates gateways in three regions:
 
-1. **Americas (North & South):** `gate1.ipweb.cc:7778`
-2. **Asia-Pacific (incl. Oceania):** `gate2.ipweb.cc:7778`
-3. **Europe & Africa:** `gate3.ipweb.cc:7778`
+1. **Americas (North & South):** `gate1.006ip.com:7778`
+2. **Asia-Pacific (incl. Oceania):** `gate2.006ip.com:7778`
+3. **Europe & Africa:** `gate3.006ip.com:7778`
 
 Pick a gateway based on your workload and where your application runs. The auto-assigned gateway usually offers the lowest latency. Contact 006ip support if you need help choosing.
