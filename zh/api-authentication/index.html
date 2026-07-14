@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">接口认证 | 006ip API Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.006ip.com/zh/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.006ip.com/zh/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.006ip.com/zh/api-authentication/"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="接口认证 | 006ip API Docs"><meta data-rh="true" name="description" content="开放平台客户记录 API：查询客户列表，含认证方式、请求示例、响应格式与错误码说明。"><meta data-rh="true" property="og:description" content="开放平台客户记录 API：查询客户列表，含认证方式、请求示例、响应格式与错误码说明。"><link data-rh="true" rel="icon" href="/zh/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.006ip.com/zh/api-authentication/"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/api-authentication/" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/zh/api-authentication/" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://docs.006ip.com/api-authentication/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"接口认证","item":"https://docs.006ip.com/zh/api-authentication"}]}</script><link rel="stylesheet" href="/zh/assets/css/styles.bc37a2b9.css">
-<script src="/zh/assets/js/runtime~main.680f8a49.js" defer="defer"></script>
+<script src="/zh/assets/js/runtime~main.8f50457e.js" defer="defer"></script>
 <script src="/zh/assets/js/main.ad46476c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -16,8 +16,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-接口概述">1. 接口概述<a href="#1-接口概述" class="hash-link" aria-label="1. 接口概述的直接链接" title="1. 接口概述的直接链接" translate="no">​</a></h2>
 <p><strong>基础 URL：</strong></p>
 <ul>
-<li class=""><strong>HTTP：</strong> <code>http://user.ipweb.cc/prod-api</code></li>
-<li class=""><strong>HTTPS：</strong> <code>https://user.ipweb.cc/prod-api</code></li>
+<li class=""><strong>HTTP：</strong> <code>http://006ip.com/prod-api</code></li>
+<li class=""><strong>HTTPS：</strong> <code>https://006ip.com/prod-api</code></li>
 </ul>
 <p><strong>支持格式：</strong> JSON</p>
 <p><strong>字符编码：</strong> UTF-8</p>
@@ -30,7 +30,7 @@
 <p>在所有 API 请求中，需要在 HTTP 请求头中添加以下认证信息：</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Token: your_access_token_here</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="示例">示例<a href="#示例" class="hash-link" aria-label="示例的直接链接" title="示例的直接链接" translate="no">​</a></h3>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 使用curl命令示例</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -X GET &quot;http://user.ipweb.cc/prod-api/open/customer/list?pageNum=1&amp;pageSize=10&amp;userName=&quot; -H &quot;token: your-access-token&quot;</span><br></span></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 使用curl命令示例</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -X GET &quot;http://006ip.com/prod-api/open/customer/list?pageNum=1&amp;pageSize=10&amp;userName=&quot; -H &quot;token: your-access-token&quot;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="token-格式说明">Token 格式说明<a href="#token-格式说明" class="hash-link" aria-label="Token 格式说明的直接链接" title="Token 格式说明的直接链接" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>请求头名称：</strong> Token</li>
