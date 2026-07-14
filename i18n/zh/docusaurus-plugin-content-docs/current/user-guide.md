@@ -8,7 +8,7 @@ description: 006ip 动态代理使用指南：导出动态住宅代理、解析�
 
 ## 一、如何在 006ip 用户后台导出动态住宅代理？
 
-![006ip 用户后台动态住宅代理页面](https://oss.ipweb.cc/docs/imgs/bf78991b9d05a5d.png)
+![006ip 用户后台动态住宅代理页面](https://oss.ipweb.cc/docs/imgs/ba570353e1fa1bcc5d61f84997266984.png)
 
 登录 006ip 的用户后台，左侧点击"动态住宅代理"后，您将会看到如上图所示内容。在这个页面，就可以生成完整的代理信息，具体操作步骤如下：
 
@@ -69,7 +69,7 @@ gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
 
 ### 图文说明
 
-![代理信息结构说明图](https://oss.ipweb.cc/docs/imgs/503010952dd7970.png)
+![代理信息结构说明图](https://oss.ipweb.cc/docs/imgs/ad1b427c0399b925b86a8743da4ef96b.png)
 
 ### 验证代理有效性
 
@@ -79,7 +79,7 @@ gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
 curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.006ip.com:7778 ipinfo.io
 ```
 
-![curl 验证结果](https://oss.ipweb.cc/docs/imgs/71f9b316d82b791.png)
+![curl 验证结果](https://oss.ipweb.cc/docs/imgs/d68a7024f61a00f362c540d7e975c61b.png)
 
 我们通过执行 curl 命令，成功获取到一条来自美国 US（国家代码：US）纽约州 New York（州代码：1474）纽约城市 New York City（城市代码：10748）的代理 IP。
 
@@ -98,12 +98,6 @@ gate1.006ip.com:7778:B_36424_US___5_Ab000001:123456
 ```
 
 因为这两项并非必填项，如果州代码及地区代码您不填，这表示您要获取一条美国的代理 IP（且不限制州和地区）。
-
-**如何查询国家代码、州代码及地区代码？**
-
-登录 006ip 后台 [https://006ip.com/console/sign-in](https://006ip.com/console/sign-in?channelCode=006)，左侧菜单点击"帮助中心"中的"国家/地区/城市编码"可查询全球 200 多个国家近 20000 多个城市对应的代码。
-
-![国家地区城市编码查询页面](https://oss.ipweb.cc/docs/imgs/2f8f03c1f872bdc.png)
 
 ### 2. 修改国家代码和 IP 持续时间
 
