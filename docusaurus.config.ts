@@ -1,8 +1,12 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { loadDocsEnv, readApiPlaygroundBuildConfig } from './src/components/ApiPlayground/env';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+loadDocsEnv();
+const apiPlaygroundBuildConfig = readApiPlaygroundBuildConfig();
 
 const config: Config = {
   title: '006ip API Docs',
@@ -31,6 +35,15 @@ const config: Config = {
   projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+
+  customFields: {
+    apiPlayground: {
+      defaultBaseUrl: apiPlaygroundBuildConfig.defaultBaseUrl,
+      devBaseUrl: apiPlaygroundBuildConfig.devBaseUrl,
+      apiRootUrl: apiPlaygroundBuildConfig.apiRootUrl,
+      devFetchBaseUrl: apiPlaygroundBuildConfig.devFetchBaseUrl,
+    },
+  },
 
   // 默认语言 en 部署在站点根路径，访问 / 为英文
   i18n: {
@@ -72,6 +85,33 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    () => ({
+      name: 'api-dev-proxy',
+      configureWebpack(_config, isServer) {
+        if (isServer) {
+          return undefined;
+        }
+        return {
+          devServer: {
+            proxy: [
+              {
+                context: [apiPlaygroundBuildConfig.devProxyContext],
+                target: apiPlaygroundBuildConfig.devProxyTarget,
+                changeOrigin: true,
+                pathRewrite: {
+                  [`^${apiPlaygroundBuildConfig.devProxyContext}`]:
+                    apiPlaygroundBuildConfig.devProxyPath || '/api',
+                },
+                secure: false,
+              },
+            ],
+          },
+        } as import('webpack').Configuration;
+      },
+    }),
   ],
 
   themeConfig: {
