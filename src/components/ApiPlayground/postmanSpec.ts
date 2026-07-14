@@ -80,12 +80,31 @@ function extractApiPath(url?: PostmanUrl): string {
 	return '';
 }
 
+/** 契约里常把空值写成 "null" 或 "\"null\""，展示/发送前改成真正的 null */
+function replaceNullStrings(value: unknown): unknown {
+	if (value === 'null' || value === '"null"') {
+		return null;
+	}
+	if (Array.isArray(value)) {
+		return value.map(replaceNullStrings);
+	}
+	if (value !== null && typeof value === 'object') {
+		return Object.fromEntries(
+			Object.entries(value as Record<string, unknown>).map(([key, nested]) => [
+				key,
+				replaceNullStrings(nested),
+			]),
+		);
+	}
+	return value;
+}
+
 function formatDefaultBody(raw?: string): string {
 	if (!raw?.trim()) {
 		return '{}';
 	}
 	try {
-		return JSON.stringify(JSON.parse(raw), null, 2);
+		return JSON.stringify(replaceNullStrings(JSON.parse(raw)), null, 2);
 	} catch {
 		return raw;
 	}

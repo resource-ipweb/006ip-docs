@@ -1,7 +1,7 @@
 {
   "info": {
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_postman_id": "9097a581-0eda-421f-a101-e4474a8a02ae",
+    "_postman_id": "becfa73a-856c-4e7c-a431-7dbb23424ed1",
     "name": "iproxy-static-api-open（开放 API 契约库，由 api-user 加载）"
   },
   "item": [
@@ -111,7 +111,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"continentId\": 1,\n  \"keyword\": \"\\\"\\\"\"\n}",
+                  "raw": "{\n  \"continentId\": 1,\n  \"keyword\": \"\\\"null\\\"\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -217,7 +217,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"stateId\": \"\",\n  \"countryId\": \"\",\n  \"countryCode\": \"HK\",\n  \"keyword\": \"Hong Kong\"\n}",
+                  "raw": "{\n  \"stateId\": \"null\",\n  \"countryId\": \"null\",\n  \"countryCode\": \"HK\",\n  \"keyword\": \"Hong Kong\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -280,7 +280,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"countryCode\": \"\\\"\\\"\",\n  \"continentCode\": \"\\\"\\\"\",\n  \"keyword\": \"\\\"\\\"\",\n  \"needInventory\": true,\n  \"condition\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"maxShare\": \"\",\n    \"allocateStrategy\": 1,\n    \"businessId\": \"\",\n    \"isUdp\": false\n  }\n}",
+                  "raw": "{\n  \"countryCode\": \"\\\"null\\\"\",\n  \"continentCode\": \"\\\"null\\\"\",\n  \"keyword\": \"\\\"null\\\"\",\n  \"needInventory\": true,\n  \"condition\": {\n    \"sellMode\": 1,\n    \"lineType\": \"standard\",\n    \"maxShare\": \"null\",\n    \"allocateStrategy\": 1,\n    \"businessId\": \"null\",\n    \"isUdp\": \"null\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -333,7 +333,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"countryCode\": \"US\",\n  \"cityCode\": \"\\\"\\\"\",\n  \"keyword\": \"\\\"\\\"\",\n  \"condition\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"maxShare\": \"\",\n    \"allocateStrategy\": 1,\n    \"businessId\": \"\",\n    \"isUdp\": false\n  },\n  \"sort\": {\n    \"field\": \"\\\"\\\"\",\n    \"direction\": \"\\\"\\\"\"\n  }\n}",
+                  "raw": "{\n  \"countryCode\": \"US\",\n  \"cityCode\": \"\\\"null\\\"\",\n  \"keyword\": \"\\\"null\\\"\",\n  \"condition\": {\n    \"sellMode\": 1,\n    \"lineType\": \"standard\",\n    \"maxShare\": \"null\",\n    \"allocateStrategy\": 1,\n    \"businessId\": \"null\",\n    \"isUdp\": \"null\"\n  },\n  \"sort\": {\n    \"field\": \"\\\"null\\\"\",\n    \"direction\": \"\\\"null\\\"\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -447,7 +447,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"config\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"businessId\": \"1\",\n    \"isUdp\": false,\n    \"bandwidthLimit\": 0,\n    \"connLimit\": 10,\n    \"days\": 30,\n    \"allocateStrategy\": 1,\n    \"purchaseIpCount\": 1,\n    \"proxyType\": \"socks5\",\n    \"quotaItems\": [\n      {\n        \"type\": \"country_random\",\n        \"quantity\": 1,\n        \"continentCode\": \"\\\"\\\"\",\n        \"countryCode\": \"US\",\n        \"cityId\": \"\",\n        \"cityCode\": \"\\\"\\\"\",\n        \"displayName\": \"\\\"\\\"\"\n      }\n    ],\n    \"segmentItems\": \"\",\n    \"specificIpItems\": \"\"\n  },\n  \"clientQuoteVersion\": \"\\\"\\\"\"\n}",
+                  "raw": "{\n  \"config\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"businessId\": \"1\",\n    \"isUdp\": false,\n    \"bandwidthLimit\": 0,\n    \"connLimit\": 10,\n    \"days\": 30,\n    \"allocateStrategy\": 1,\n    \"purchaseIpCount\": 1,\n    \"proxyType\": \"socks5\",\n    \"quotaItems\": [\n      {\n        \"type\": \"country_random\",\n        \"quantity\": 1,\n        \"continentCode\": \"\\\"null\\\"\",\n        \"countryCode\": \"US\",\n        \"cityId\": \"null\",\n        \"cityCode\": \"\\\"null\\\"\",\n        \"displayName\": \"\\\"null\\\"\"\n      }\n    ],\n    \"segmentItems\": \"null\",\n    \"specificIpItems\": \"null\"\n  },\n  \"clientQuoteVersion\": \"0.97\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -500,7 +500,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"quoteId\": \"1\",\n  \"quoteVersion\": \"1\",\n  \"config\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"businessId\": \"1\",\n    \"isUdp\": false,\n    \"bandwidthLimit\": 0,\n    \"connLimit\": 10,\n    \"days\": 30,\n    \"allocateStrategy\": 1,\n    \"purchaseIpCount\": 1,\n    \"proxyType\": \"socks5\",\n    \"quotaItems\": [\n      {\n        \"type\": \"country_random\",\n        \"quantity\": 1,\n        \"continentCode\": \"\\\"\\\"\",\n        \"countryCode\": \"US\",\n        \"cityId\": \"\",\n        \"cityCode\": \"\\\"\\\"\",\n        \"displayName\": \"\\\"\\\"\"\n      }\n    ],\n    \"segmentItems\": \"\",\n    \"specificIpItems\": \"\"\n  }\n}",
+                  "raw": "{\n  \"quoteId\": \"1\",\n  \"quoteVersion\": \"1\",\n  \"config\": {\n    \"sellMode\": 1,\n    \"lineType\": \"basic\",\n    \"businessId\": \"1\",\n    \"isUdp\": false,\n    \"bandwidthLimit\": 0,\n    \"connLimit\": 10,\n    \"days\": 30,\n    \"allocateStrategy\": 1,\n    \"purchaseIpCount\": 1,\n    \"proxyType\": \"socks5\",\n    \"quotaItems\": [\n      {\n        \"type\": \"country_random\",\n        \"quantity\": 1,\n        \"continentCode\": \"\\\"null\\\"\",\n        \"countryCode\": \"US\",\n        \"cityId\": \"null\",\n        \"cityCode\": \"\\\"null\\\"\",\n        \"displayName\": \"\\\"null\\\"\"\n      }\n    ],\n    \"segmentItems\": \"null\",\n    \"specificIpItems\": \"null\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -546,7 +546,7 @@
                   },
                   {
                     "key": "X-Idempotency-Key",
-                    "value": "l8gbzt",
+                    "value": "lhtv48",
                     "type": "text",
                     "disabled": true,
                     "name": "X-Idempotency-Key",
@@ -671,7 +671,7 @@
                   },
                   {
                     "key": "X-Idempotency-Key",
-                    "value": "102bml",
+                    "value": "qd3tpg",
                     "type": "text",
                     "disabled": true,
                     "name": "X-Idempotency-Key",
@@ -813,7 +813,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"pageIndex\": 1,\n  \"pageSize\": 10,\n  \"query\": {\n    \"proxyIp\": \"\\\"\\\"\",\n    \"latestOrderNo\": \"\\\"\\\"\",\n    \"orderId\": \"\\\"\\\"\",\n    \"countryCode\": \"\\\"\\\"\",\n    \"country\": \"\\\"\\\"\",\n    \"bandwidthLimit\": \"\",\n    \"proxyStatus\": \"\",\n    \"expiredStartDate\": \"\\\"\\\"\",\n    \"expiredEndDate\": \"\\\"\\\"\",\n    \"beginTime\": \"\\\"\\\"\",\n    \"endTime\": \"\\\"\\\"\",\n    \"usageStatus\": \"\\\"\\\"\"\n  }\n}",
+                  "raw": "{\n  \"pageIndex\": 1,\n  \"pageSize\": 10,\n  \"query\": {\n    \"proxyIp\": \"\\\"null\\\"\",\n    \"latestOrderNo\": \"\\\"null\\\"\",\n    \"orderId\": \"\\\"null\\\"\",\n    \"countryCode\": \"\\\"null\\\"\",\n    \"country\": \"\\\"null\\\"\",\n    \"bandwidthLimit\": \"null\",\n    \"proxyStatus\": \"null\",\n    \"expiredStartDate\": \"\\\"null\\\"\",\n    \"expiredEndDate\": \"\\\"null\\\"\",\n    \"beginTime\": \"\\\"null\\\"\",\n    \"endTime\": \"\\\"null\\\"\",\n    \"usageStatus\": \"\\\"null\\\"\"\n  }\n}",
                   "options": {
                     "raw": {
                       "language": "json"
