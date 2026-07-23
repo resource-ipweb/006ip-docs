@@ -18,5 +18,21 @@
   "sidebar.defaultSidebar.category.Static Proxy.link.generated-index.description": {
     "message": "静态 IP 开放平台接口：UserId + Token 鉴权，路径前缀 /open/staticip。",
     "description": "The generated-index page description for category 'Static Proxy' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.configuration-guide": {
+    "message": "配置教程",
+    "description": "The label for category 'configuration-guide' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.configuration-guide.link.generated-index.description": {
+    "message": "006ip 代理客户端配置使用教程",
+    "description": "The generated-index page description for category 'configuration-guide' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.config-static-proxy": {
+    "message": "静态代理",
+    "description": "The label for category 'config-static-proxy' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.config-static-proxy.link.generated-index.description": {
+    "message": "静态代理相关配置教程",
+    "description": "The generated-index page description for category 'config-static-proxy' in sidebar 'defaultSidebar'"
   }
 }
