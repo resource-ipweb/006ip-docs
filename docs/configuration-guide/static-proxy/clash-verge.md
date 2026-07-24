@@ -24,7 +24,7 @@ description: Complete guide to configuring 006ip static residential proxies in C
 
 Step 1: Open the [006ip website](https://006ip.com), then click **Register** in the top-right corner. If you already have an account, click **Log In**.
 
-![006ip homepage — registration entry](/img/guide/static-proxy/006ip-homepage.png)
+![006ip homepage — registration entry](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
 
 Step 2: On the registration page, choose one of the following methods:
 
@@ -32,7 +32,7 @@ Step 2: On the registration page, choose one of the following methods:
 
 Select **Email registration**, then enter your account/email, email verification code, password, and confirm password. Click **Send code**, check your inbox for the code, accept the Terms of Service and Privacy Policy, then click **Register now**.
 
-![006ip email registration](/img/guide/static-proxy/006ip-register-email.png)
+![006ip email registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
 
 #### Option B: Phone registration
 
@@ -40,7 +40,7 @@ Select **Phone registration**, confirm the country/region code, enter your phone
 
 After phone registration succeeds, you are signed in automatically with a default password. Set your own login password in account settings as soon as possible.
 
-![006ip phone registration](/img/guide/static-proxy/006ip-register-phone.png)
+![006ip phone registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
 
 > The homepage also offers **Sign up with Gmail**. If you use Gmail, follow the on-page authorization flow.
 
@@ -69,13 +69,13 @@ Quick Configuration is for users who want platform default network settings and 
 | **Period** | Plans from 30–365 days; longer terms may include tiered discounts. Final pricing follows the purchase page. |
 | **Fixed configuration** | **Connections (QPS)**, **Bandwidth**, and **UDP** use the default values shown on the page. |
 
-![006ip static proxy — Quick Configuration](/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip static proxy — Quick Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
 
 ##### (2) Custom Configuration
 
 Enable **Custom Configuration** to purchase by IP segment and customize **Connections (QPS)**, **Bandwidth**, and **UDP**. You can also set **Use case**, allocate quantity by city/segment inventory, and choose a **Period**. Different settings affect pricing—review the **Order Summary** on the right before submitting.
 
-![006ip static proxy — Custom Configuration](/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip static proxy — Custom Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
 
 #### Step 2: Confirm the order and pay
 
@@ -89,13 +89,13 @@ Supported payment methods include:
 
 If balance is insufficient, the available balance is applied first and the remainder can be paid online. Balance payments require your 006ip payment password. Available online channels and currencies follow the checkout page.
 
-![006ip order confirmation and payment](/img/guide/static-proxy/006ip-order-payment.png)
+![006ip order confirmation and payment](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
 
 ### 4. View and export proxy connection details
 
 After payment succeeds, open **My IPs** to view purchased static IPs. The list shows bandwidth, QPS, UDP status, expiry, and resource state, and supports renew, disable, enable, and details.
 
-![006ip My IPs list](/img/guide/static-proxy/006ip-my-ip-list.png)
+![006ip My IPs list](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
 
 Before configuring Clash Verge, export these four connection fields:
 
@@ -112,7 +112,7 @@ IP:PORT:USERNAME:PASSWORD
 
 Exported files contain plaintext credentials. Store the file securely and do not share credentials via public chats, screenshots, or untrusted channels.
 
-![006ip export credentials](/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip export credentials](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
 
 For purchase, renewal, and export details, see the [006ip Static Proxy User Guide](/static-proxy-user-guide/) and the latest prompts in the dashboard.
 
@@ -156,7 +156,7 @@ proxies:
 
 1. Click **Profiles** in the left sidebar, then click **New** on the right.
 
-![Open Profiles and click New](/img/guide/static-proxy/clash-verge-step1.png)
+![Open Profiles and click New](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step1.png)
 
 2. In the **New Profile** dialog:
    - **Type**: `Local`
@@ -164,25 +164,25 @@ proxies:
    - Click **Choose File** and select the YAML file you created
    - Click **Save**
 
-![Create a local profile and select the file](/img/guide/static-proxy/clash-verge-step2.png)
+![Create a local profile and select the file](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2.png)
 
 **③ Review the imported configuration**
 
 After import, right-click the 006IP profile card and choose **Edit File** to view or adjust the proxy settings.
 
-![View / edit YAML configuration](/img/guide/static-proxy/clash-verge-step3.png)
+![View / edit YAML configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step3.png)
 
 **④ Activate the profile**
 
 Return to Profiles, find the **006IP** card, right-click it, and choose **Use**.
 
-![Right-click the 006IP profile and select Use](/img/guide/static-proxy/clash-verge-step2-5.png)
+![Right-click the 006IP profile and select Use](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2-5.png)
 
 ### 3. Switch to the 006IP proxy node
 
 In the left sidebar, open **Proxies**. Find the **006IP node** (`proxy1`) and select it.
 
-![Select the 006IP node on Proxies](/img/guide/static-proxy/clash-verge-step4.png)
+![Select the 006IP node on Proxies](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step4.png)
 
 ### 4. Enable system proxy and verify
 
@@ -191,11 +191,11 @@ Confirm both:
 1. **System proxy is on**: Open **Home** and make sure **System Proxy** is enabled
 2. **Correct node is active**: Home should show the selected 006IP node name
 
-![Confirm system proxy and node status on Home](/img/guide/static-proxy/clash-verge-step6.png)
+![Confirm system proxy and node status on Home](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step6.png)
 
 Open a browser and visit `https://ipinfo.io` or another IP lookup site. If the returned IP matches your purchased region, configuration succeeded.
 
-![IPinfo result example](/img/guide/static-proxy/ipinfo-result.png)
+![IPinfo result example](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
 
 > If the check shows your local IP, verify: ① the 006IP node is selected on Proxies; ② system proxy is enabled on Home; ③ placeholders in the YAML file were replaced with real credentials.
 

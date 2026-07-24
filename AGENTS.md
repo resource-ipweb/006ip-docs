@@ -91,7 +91,7 @@ Deploy: GitHub Actions → S3 (EN + zh) + SSM sync on EC2
 - **Default reply language:** 简体中文 (see parent `d:\work2\AGENTS.md` if present).
 - **Doc changes:** English source in `docs/`; mirror Chinese under `i18n/zh/docusaurus-plugin-content-docs/current/`.
 - **Sidebar order:** `sidebar_position` on pages; `position` in `_category_.json` for categories.
-- **Images:** Prefer `static/img/...` with no spaces in filenames; reference as `/img/...`.
+- **Images:** Doc screenshots use CDN `https://cdn.006ip.com/docs/img/...` (no spaces in filenames). Keep `favicon.ico` and `logo.svg` local under `static/img/`.
 - **Minimal diffs:** Match existing markdown/frontmatter style; do not commit unless asked.
 - **Before editing:** Read target files first; do not overwrite user edits.
 

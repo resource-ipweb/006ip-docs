@@ -24,7 +24,7 @@ description: Complete guide to configuring 006ip static residential proxies in v
 
 Step 1: Open the [006ip website](https://006ip.com), then click **Register** in the top-right corner. If you already have an account, click **Log In**.
 
-![006ip homepage — registration entry](/img/guide/static-proxy/006ip-homepage.png)
+![006ip homepage — registration entry](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
 
 Step 2: On the registration page, choose one of the following methods:
 
@@ -32,7 +32,7 @@ Step 2: On the registration page, choose one of the following methods:
 
 Select **Email registration**, then enter your account/email, email verification code, password, and confirm password. Click **Send code**, check your inbox for the code, accept the Terms of Service and Privacy Policy, then click **Register now**.
 
-![006ip email registration](/img/guide/static-proxy/006ip-register-email.png)
+![006ip email registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
 
 #### Option B: Phone registration
 
@@ -40,7 +40,7 @@ Select **Phone registration**, confirm the country/region code, enter your phone
 
 After phone registration succeeds, you are signed in automatically with a default password. Set your own login password in account settings as soon as possible.
 
-![006ip phone registration](/img/guide/static-proxy/006ip-register-phone.png)
+![006ip phone registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
 
 > The homepage also offers **Sign up with Gmail**. If you use Gmail, follow the on-page authorization flow.
 
@@ -67,13 +67,13 @@ The purchase page provides **Quick Configuration** and **Custom Configuration**.
 | **Period** | Plans from 30–365 days; longer terms may include tiered discounts. Final pricing follows the purchase page. |
 | **Fixed configuration** | **Connections (QPS)**, **Bandwidth**, and **UDP** use the default values shown on the page. |
 
-![006ip static proxy — Quick Configuration](/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip static proxy — Quick Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
 
 ##### (2) Custom Configuration
 
 Enable **Custom Configuration** to purchase by IP segment and customize **Connections (QPS)**, **Bandwidth**, and **UDP**. You can also set **Use case**, allocate quantity by city/segment inventory, and choose a **Period**. Different settings affect pricing—review the **Order Summary** on the right before submitting.
 
-![006ip static proxy — Custom Configuration](/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip static proxy — Custom Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
 
 #### Step 2: Confirm the order and pay
 
@@ -87,13 +87,13 @@ Supported payment methods include:
 
 If balance is insufficient, the available balance is applied first and the remainder can be paid online. Balance payments require your 006ip payment password. Available online channels and currencies follow the checkout page.
 
-![006ip order confirmation and payment](/img/guide/static-proxy/006ip-order-payment.png)
+![006ip order confirmation and payment](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
 
 ### 4. View and export proxy connection details
 
 After payment succeeds, open **My IPs** to view purchased static IPs. The list shows bandwidth, QPS, UDP status, expiry, and resource state, and supports renew, disable, enable, and details.
 
-![006ip My IPs list](/img/guide/static-proxy/006ip-my-ip-list.png)
+![006ip My IPs list](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
 
 Before configuring v2rayN, export these four connection fields:
 
@@ -110,7 +110,7 @@ IP:PORT:USERNAME:PASSWORD
 
 Exported files contain plaintext credentials. Store the file securely and do not share credentials via public chats, screenshots, or untrusted channels.
 
-![006ip export credentials](/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip export credentials](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
 
 For purchase, renewal, and export details, see the [006ip Static Proxy User Guide](/static-proxy-user-guide/) and the latest prompts in the dashboard.
 
@@ -140,7 +140,7 @@ Open **v2rayN** and follow these steps:
 1. Click **Servers** in the top menu.
 2. Choose **Add [HTTP]** (or **Add [SOCKS]** for SOCKS5). Field layout is the same; only the protocol differs.
 
-![v2rayN Servers menu — Add [HTTP]](/img/guide/static-proxy/v2rayn-step1.png)
+![v2rayN Servers menu — Add [HTTP]](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step1.png)
 
 **② Fill in connection parameters**
 
@@ -154,7 +154,7 @@ Open **v2rayN** and follow these steps:
 
 Leave other fields (transport, etc.) at defaults.
 
-![v2rayN fill address / port / credentials](/img/guide/static-proxy/v2rayn-step2.png)
+![v2rayN fill address / port / credentials](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step2.png)
 
 **③ Save the server**
 
@@ -168,7 +168,7 @@ In the server list, find the node (e.g. `proxy1`), **right-click** it, and choos
 
 From the same menu you can run **Test latency TcPing (multiple)** to check connectivity.
 
-![v2rayN right-click — set active & test latency](/img/guide/static-proxy/v2rayn-step3.png)
+![v2rayN right-click — set active & test latency](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step3.png)
 
 > To manage multiple 006ip accounts, repeat step 2 for each line, then switch nodes as needed.
 
@@ -176,7 +176,7 @@ From the same menu you can run **Test latency TcPing (multiple)** to check conne
 
 After the latency test, the **Latency (ms)** column shows a value (e.g. `353`). A numeric result usually means the proxy path is reachable.
 
-![v2rayN latency test passed](/img/guide/static-proxy/v2rayn-step4.png)
+![v2rayN latency test passed](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step4.png)
 
 ### 4. Enable Tun mode and verify egress IP
 
@@ -184,7 +184,7 @@ After the latency test, the **Latency (ms)** column shows a value (e.g. `353`). 
 
 At the bottom of the v2rayN window, turn on **Enable Tun** (green when on). Tun mode routes system traffic through the selected proxy IP.
 
-![v2rayN enable Tun mode](/img/guide/static-proxy/v2rayn-step5.png)
+![v2rayN enable Tun mode](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step5.png)
 
 > For browser-only proxying you can use PAC or system-proxy-only modes. For data collection and account workloads, **Tun mode** is recommended so all traffic shares one egress.
 
@@ -192,7 +192,7 @@ At the bottom of the v2rayN window, turn on **Enable Tun** (green when on). Tun 
 
 Open a browser and visit `https://ipinfo.io` or another IP lookup site. Confirm the **IP and location** match your purchased region.
 
-![IPinfo result example](/img/guide/static-proxy/ipinfo-result.png)
+![IPinfo result example](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
 
 If the location matches, **v2rayN is configured successfully**.
 

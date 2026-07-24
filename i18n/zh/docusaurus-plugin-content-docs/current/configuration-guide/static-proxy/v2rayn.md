@@ -24,7 +24,7 @@ description: 在 v2rayN 中配置 006ip 静态住宅代理的完整教程。
 
 第一步，打开 [006ip 中文官网](https://006ip.com/zh)，点击页面右上角的「**注册**」。已有账号的用户可直接点击「**登录**」。
 
-![006ip 中文官网注册入口](/img/guide/static-proxy/006ip-homepage.png)
+![006ip 中文官网注册入口](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
 
 第二步，在注册页面选择以下任一方式完成注册：
 
@@ -32,7 +32,7 @@ description: 在 v2rayN 中配置 006ip 静态住宅代理的完整教程。
 
 选择「**邮箱注册**」，依次填写账号 / 邮箱、邮箱验证码、密码和确认密码。点击「**发送验证码**」后前往邮箱查收验证码，填写完成后勾选同意《服务协议》和《隐私政策》，再点击「**立即注册**」。
 
-![006ip 邮箱注册](/img/guide/static-proxy/006ip-register-email.png)
+![006ip 邮箱注册](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
 
 #### 方式二：手机号注册
 
@@ -40,7 +40,7 @@ description: 在 v2rayN 中配置 006ip 静态住宅代理的完整教程。
 
 手机号注册成功后会自动登录，账号初始为默认密码状态。请尽快前往账号设置中设置自己的登录密码。
 
-![006ip 手机号注册](/img/guide/static-proxy/006ip-register-phone.png)
+![006ip 手机号注册](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
 
 > 官网首页还提供「**使用 Gmail 账号注册**」快捷入口；如使用 Gmail，可按页面授权提示完成注册。
 
@@ -69,13 +69,13 @@ description: 在 v2rayN 中配置 006ip 静态住宅代理的完整教程。
 | **订阅时长**          | 官方指南列出 30–365 天等周期；中长期套餐可能自动匹配阶梯折扣，最终以购买页面为准。                                     |
 | **固定配置**          | 并发连接数（QPS）、端口带宽和 UDP 协议使用页面显示的默认配置。                                                         |
 
-![006ip 静态代理快速模式](/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip 静态代理快速模式](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
 
 ##### （2）自定义模式
 
 如需指定 IP 段，或需要调整连接数（QPS）、端口带宽和 UDP 协议，可开启「**自定义模式**」。该模式还支持选择业务用途、按城市和网段库存分配采购数量，并配置订阅时长。不同配置会影响最终计价，提交前应核对页面右侧的订单详情。
 
-![006ip 静态代理自定义模式](/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip 静态代理自定义模式](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
 
 #### 第二步：确认订单并完成支付
 
@@ -89,13 +89,13 @@ description: 在 v2rayN 中配置 006ip 静态住宅代理的完整教程。
 
 当账户余额不足时，可先扣减余额，再通过页面提供的在线渠道补齐差额。使用账户余额抵扣时，需要输入在 006ip 平台设置的支付密码。在线渠道及可用币种以结算页面实际显示为准。
 
-![006ip 订单确认与支付](/img/guide/static-proxy/006ip-order-payment.png)
+![006ip 订单确认与支付](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
 
 ### 4、查看并导出代理连接信息
 
 支付成功后，进入左侧「**我的 IP**」菜单，即可查看已购买的静态 IP。列表会显示带宽、QPS、UDP 状态、有效期和资源状态，并支持续费、停用、启用及查看详情等操作。
 
-![006ip 我的 IP 列表](/img/guide/static-proxy/006ip-my-ip-list.png)
+![006ip 我的 IP 列表](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
 
 配置 v2rayN 前，需要导出以下四项连接信息：
 
@@ -112,7 +112,7 @@ IP:PORT:USERNAME:PASSWORD
 
 导出文件包含明文连接凭证。请妥善保存导出文件，不要通过公开聊天、截图或不受信任的渠道发送账密。
 
-![006ip 导出账号凭证](/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip 导出账号凭证](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
 
 购买与账密导出流程以 [006ip 静态代理使用指南](https://docs.006ip.com/zh/static-proxy-user-guide/) 和后台页面的最新提示为准。
 
@@ -142,7 +142,7 @@ IP:PORT:USERNAME:PASSWORD
 1. 点击顶部菜单栏的「**配置项**」。
 2. 在下拉菜单中找到并点击「**添加 [HTTP]**」（如果你的代理协议是 SOCKS5，则选择「**添加 [SOCKS]**」），两者后续填写字段一致，仅协议类型不同。
 
-![v2rayN 配置项菜单 — 选择添加[HTTP]](/img/guide/static-proxy/v2rayn-step1.png)
+![v2rayN 配置项菜单 — 选择添加[HTTP]](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step1.png)
 
 **② 填写代理连接参数**
 
@@ -158,7 +158,7 @@ IP:PORT:USERNAME:PASSWORD
 
 其余字段（底层传输方式、传输协议等）保持默认即可，无需修改。
 
-![v2rayN 填写代理参数 — 地址/端口/账密](/img/guide/static-proxy/v2rayn-step2.png)
+![v2rayN 填写代理参数 — 地址/端口/账密](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step2.png)
 
 **③ 保存服务器**
 
@@ -172,7 +172,7 @@ IP:PORT:USERNAME:PASSWORD
 
 同时你也可以在同一右键菜单中直接选择「**测试延迟 TcPing（多选）**」，快速检测该节点的连通性。
 
-![v2rayN 右键节点 — 设为活动 & 测试延迟](/img/guide/static-proxy/v2rayn-step3.png)
+![v2rayN 右键节点 — 设为活动 & 测试延迟](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step3.png)
 
 > 如果你有多个 006IP 代理账号需要管理，可以重复第二步逐一添加，之后根据需要在节点间切换即可。
 
@@ -180,7 +180,7 @@ IP:PORT:USERNAME:PASSWORD
 
 延迟测试完成后，服务器列表右侧的「**延迟 (ms)**」列会显示出具体的延迟数值（如 `353`）。只要能看到数值（通常在数百毫秒范围内），说明代理连接通畅。
 
-![v2rayN 测试通过 — 延迟正常显示](/img/guide/static-proxy/v2rayn-step4.png)
+![v2rayN 测试通过 — 延迟正常显示](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step4.png)
 
 ### 4、开启 Tun 模式并验证出口 IP
 
@@ -188,7 +188,7 @@ IP:PORT:USERNAME:PASSWORD
 
 在 v2rayN 主界面**底部区域**，找到「**启用 Tun**」开关并将其打开（开关变为绿色即为已开启）。Tun 模式会接管系统所有网络流量，确保全部请求都通过你选中的代理 IP 发出。
 
-![v2rayN 底部开启 Tun 模式 — 流量日志实时显示](/img/guide/static-proxy/v2rayn-step5.png)
+![v2rayN 底部开启 Tun 模式 — 流量日志实时显示](https://cdn.006ip.com/docs/img/guide/static-proxy/v2rayn-step5.png)
 
 > 如果你只需要浏览器走代理而其他应用不走，也可以选择底部「**清除系统代理**」旁的下拉菜单切换为 PAC 或仅代理模式。但对于数据采集、账号运营等场景，建议使用 **Tun 模式**以确保所有流量统一出口。
 
@@ -200,7 +200,7 @@ IP:PORT:USERNAME:PASSWORD
 
 打开浏览器访问 `https://ipinfo.io` 或其他 IP 检测网站，检查返回的 **IP 地址和归属地**是否为你所选购地区的代理 IP。
 
-![IPinfo检测结果示例 — 显示代理IP归属地](/img/guide/static-proxy/ipinfo-result.png)
+![IPinfo检测结果示例 — 显示代理IP归属地](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
 
 如果显示正确（IP 归属地与选购的国家/地区一致），说明 **v2rayN 配置成功**。
 

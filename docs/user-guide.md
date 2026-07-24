@@ -8,7 +8,7 @@ description: 006ip dynamic proxy user guide — export dynamic residential proxi
 
 ## 1. How to export dynamic residential proxies in the 006ip dashboard?
 
-![006ip dashboard — dynamic residential proxies](https://oss.ipweb.cc/docs/imgs/en/ba570353e1fa1bcc5d61f84997266984.png)
+![006ip dashboard — dynamic residential proxies](https://cdn.006ip.com/docs/img/en/ba570353e1fa1bcc5d61f84997266984.png)
 
 After logging in to the 006ip dashboard, click **Dynamic Residential Proxy** in the left menu. You will see the page above. Follow these steps to generate full proxy credentials:
 
@@ -69,7 +69,7 @@ gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
 
 ### Diagram
 
-![Proxy string structure](https://oss.ipweb.cc/docs/imgs/en/ad1b427c0399b925b86a8743da4ef96b.png)
+![Proxy string structure](https://cdn.006ip.com/docs/img/en/ad1b427c0399b925b86a8743da4ef96b.png)
 
 ### Verify the proxy
 
@@ -79,7 +79,7 @@ Test the exported line with `curl`:
 curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.006ip.com:7778 ipinfo.io
 ```
 
-![curl verification result](https://oss.ipweb.cc/docs/imgs/d68a7024f61a00f362c540d7e975c61b.png)
+![curl verification result](https://cdn.006ip.com/docs/img/d68a7024f61a00f362c540d7e975c61b.png)
 
 A successful response shows a US IP (country `US`), New York state (code `1474`), New York City (code `10748`).
 

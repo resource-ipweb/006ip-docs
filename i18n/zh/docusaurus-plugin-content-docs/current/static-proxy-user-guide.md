@@ -14,7 +14,7 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 #### （1）快速模式
 
-![静态代理购买 — 快速模式](/img/static-proxy/purchase-quick-mode.png)
+![静态代理购买 — 快速模式](https://cdn.006ip.com/docs/img/static-proxy/purchase-quick-mode.png)
 
 - **独享级别：** 平台提供「独享」与「共享」两种资源分配模式。**独享 IP** 则提供更高的环境纯净度与网络稳定性，适用于对 IP 关联度有严格要求的进阶业务场景；**共享 IP** 适合对成本控制要求较高的常规网络访问场景。
 
@@ -26,7 +26,7 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 #### （2）自定义模式
 
-![静态代理购买 — 自定义模式](/img/static-proxy/purchase-custom-mode.png)
+![静态代理购买 — 自定义模式](https://cdn.006ip.com/docs/img/static-proxy/purchase-custom-mode.png)
 
 打开自定义模式开关之后，支持指定 IP 段进行采购，同时支持自定义连接数（QPS）、端口带宽、UDP 协议的配置，不同配置将影响计价的结果。
 
@@ -48,7 +48,7 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 - 支持点击「加入购物车」后进行统一购买。点击顶栏的购物车图标可进入购物车页面查看加购的内容，点击「确认下单」进行统一结算确认。
 
-![静态代理 — 订单详情与购物车](/img/static-proxy/order-summary-cart.png)
+![静态代理 — 订单详情与购物车](https://cdn.006ip.com/docs/img/static-proxy/order-summary-cart.png)
 
 - 或者点击「确认下单」直接进入订单确认页面。
 
@@ -60,7 +60,7 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 - 使用账户余额支付需要输入在本平台设置的支付密码。
 
-![静态代理 — 订单支付](/img/static-proxy/order-payment.png)
+![静态代理 — 订单支付](https://cdn.006ip.com/docs/img/static-proxy/order-payment.png)
 
 **资源库存锁定：** 进入订单确认页面后，系统将根据您的配置清单，自动在底层网络池中锁定对应的代理 IP 资源库存。锁定期为 15 分钟，若超时未完成结算，系统将自动释放该批次节点的配额。
 
@@ -72,7 +72,7 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 支付成功后，进入「我的 IP」菜单，可以查看所有已购买 IP 的信息，支持续费、停用、启用、导出账密等操作。
 
-![静态代理 — 我的 IP 列表](/img/static-proxy/my-ip-list.png)
+![静态代理 — 我的 IP 列表](https://cdn.006ip.com/docs/img/static-proxy/my-ip-list.png)
 
 **节点状态监控：** 列表直观呈现各项核心网络参数（带宽、QPS、UDP 协议状态等），并实时追踪资源的使用状态（可用、已停用、即将到期、已过期保留等）。
 
@@ -84,19 +84,19 @@ description: 006ip 静态代理使用指南：购买静态住宅代理、查看�
 
 到期后自动扣取账户余额进行续费。
 
-![静态代理 — 自动续费设置](/img/static-proxy/auto-renewal.png)
+![静态代理 — 自动续费设置](https://cdn.006ip.com/docs/img/static-proxy/auto-renewal.png)
 
 开启此策略并设定触发阈值（如「到期 3 天前续费」），系统将在设定的临期节点，自动从您的账户可用余额中划扣相应款项并完成授权延期。该策略可有效避免因遗忘操作导致节点被系统释放，确保底层网络环境的长效稳定。
 
 ### 手动续费
 
-![静态代理 — 手动续费](/img/static-proxy/manual-renewal.png)
+![静态代理 — 手动续费](https://cdn.006ip.com/docs/img/static-proxy/manual-renewal.png)
 
 当您需要即时延长代理节点的授权期限时，可通过「手动续费」功能进行单次结算。在弹窗面板中，您可通过下拉菜单灵活指定所需的「续费周期」（如 30 天）。系统将根据您选定的底层节点数量与续费时长，实时自动计算并展示对应的「预计金额」。
 
 ### 导出静态 IP 账密数据
 
-![静态代理 — 导出账号凭证](/img/static-proxy/export-credentials.png)
+![静态代理 — 导出账号凭证](https://cdn.006ip.com/docs/img/static-proxy/export-credentials.png)
 
 为满足大规模环境部署与自动化集成需求，系统支持一键导出所选代理节点的连接凭证。
 
@@ -122,7 +122,7 @@ curl -x http://username:password@IP:PORT https://ifconfig.co
 curl -x socks5h://username:password@IP:PORT https://ifconfig.co
 ```
 
-![静态代理 — IPv4 连通性测试](/img/static-proxy/ipv4-connectivity-test.png)
+![静态代理 — IPv4 连通性测试](https://cdn.006ip.com/docs/img/static-proxy/ipv4-connectivity-test.png)
 
 在发起请求前，请将上述命令中的 `username:password@IP:PORT` 替换为您实际提取的节点鉴权信息。在终端执行该命令后，系统会通过代理节点向目标检测站点（如 ifconfig.co）发起访问；若网络连通与鉴权均正常，终端将直接返回该代理节点的真实出口 IP 地址。核对返回结果与所购节点 IP 一致，即代表该资源已准备就绪。
 
@@ -136,6 +136,6 @@ curl -x http://username:password@[IPv6]:PORT https://v6.ipinfo.io
 curl -x socks5h://username:password@[IPv6]:PORT https://v6.ipinfo.io
 ```
 
-![静态代理 — IPv6 连通性测试](/img/static-proxy/ipv6-connectivity-test.png)
+![静态代理 — IPv6 连通性测试](https://cdn.006ip.com/docs/img/static-proxy/ipv6-connectivity-test.png)
 
 请将命令中的鉴权信息替换为您的真实节点凭证。执行请求后，代理节点将向支持纯 IPv6 访问的检测站点（如 `v6.ipinfo.io`）发起路由转发。若测试成功，终端将以 JSON 格式完整返回该节点的地理位置快照（包含真实的出口 IPv6 地址、城市、ASN 机构等网络环境信息），您可借此比对资源状态是否符合预期。

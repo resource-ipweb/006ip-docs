@@ -14,7 +14,7 @@ Log in to the 006ip dashboard, open **Static Proxies** in the left sidebar, then
 
 #### Quick Configuration
 
-![Static proxy purchase — Quick Configuration](/img/static-proxy/en/purchase-quick-mode.png)
+![Static proxy purchase — Quick Configuration](https://cdn.006ip.com/docs/img/static-proxy/en/purchase-quick-mode.png)
 
 - **Access Type:** Choose between **Dedicated** and **Shared** allocation. **Dedicated IPs** offer higher environment purity and stability for workloads with strict IP isolation requirements. **Shared IPs** suit cost-sensitive, general browsing scenarios.
 
@@ -26,7 +26,7 @@ Log in to the 006ip dashboard, open **Static Proxies** in the left sidebar, then
 
 #### Custom Configuration
 
-![Static proxy purchase — Custom Configuration](/img/static-proxy/en/purchase-custom-mode.png)
+![Static proxy purchase — Custom Configuration](https://cdn.006ip.com/docs/img/static-proxy/en/purchase-custom-mode.png)
 
 After enabling **Custom Configuration**, you can purchase by specific IP segment and customize **Connections (QPS)**, **Bandwidth**, and **UDP**. Different settings affect pricing.
 
@@ -48,7 +48,7 @@ The **Order Summary** panel on the right of the purchase page is your real-time 
 
 - You can click **Add to cart** for batch purchasing. Click the cart icon in the top bar to open the cart page, review items, then click **Place Order** to check out together.
 
-![Static proxy — order summary and cart](/img/static-proxy/en/order-summary-cart.png)
+![Static proxy — order summary and cart](https://cdn.006ip.com/docs/img/static-proxy/en/order-summary-cart.png)
 
 - Or click **Place Order** to go directly to the checkout page.
 
@@ -58,7 +58,7 @@ The **Order Summary** panel on the right of the purchase page is your real-time 
 
 - Payment methods include account balance, online payment, and combined balance + online payment. Balance payment requires your platform payment password.
 
-![Static proxy — order payment](/img/static-proxy/en/order-payment.png)
+![Static proxy — order payment](https://cdn.006ip.com/docs/img/static-proxy/en/order-payment.png)
 
 **Inventory lock:** On checkout, the system locks the configured proxy IPs in the network pool for 15 minutes. If payment is not completed in time, the batch is released automatically.
 
@@ -70,7 +70,7 @@ The **Order Summary** panel on the right of the purchase page is your real-time 
 
 After payment succeeds, open **My IPs** to see all purchased IPs. You can renew, disable, enable, export credentials, and more.
 
-![Static proxy — My IPs list](/img/static-proxy/en/my-ip-list.png)
+![Static proxy — My IPs list](https://cdn.006ip.com/docs/img/static-proxy/en/my-ip-list.png)
 
 **Node status monitoring:** The list shows bandwidth, QPS, UDP status, and lifecycle state (available, disabled, expiring soon, expired retention, etc.).
 
@@ -80,19 +80,19 @@ After payment succeeds, open **My IPs** to see all purchased IPs. You can renew,
 
 ### Auto-Renewal
 
-![Static proxy — Auto-Renewal settings](/img/static-proxy/en/auto-renewal.png)
+![Static proxy — Auto-Renewal settings](https://cdn.006ip.com/docs/img/static-proxy/en/auto-renewal.png)
 
 Enable **Auto-Renewal** and set a trigger threshold (e.g. renew 3 days before expiry). The system deducts your account balance and extends authorization automatically, reducing the risk of accidental release due to missed manual renewals.
 
 ### Manual Renewal
 
-![Static proxy — Manual Renewal](/img/static-proxy/en/manual-renewal.png)
+![Static proxy — Manual Renewal](https://cdn.006ip.com/docs/img/static-proxy/en/manual-renewal.png)
 
 Use **Manual Renewal** for one-off extensions. In the dialog, select a **Renewal period** (e.g. 30 days). The system calculates the estimated amount based on selected nodes and duration.
 
 ### Export static IP credentials
 
-![Static proxy — export credentials](/img/static-proxy/en/export-credentials.png)
+![Static proxy — export credentials](https://cdn.006ip.com/docs/img/static-proxy/en/export-credentials.png)
 
 For large-scale deployment and automation, export connection credentials for selected nodes:
 
@@ -118,7 +118,7 @@ curl -x http://username:password@IP:PORT https://ifconfig.co
 curl -x socks5h://username:password@IP:PORT https://ifconfig.co
 ```
 
-![Static proxy — IPv4 connectivity test](/img/static-proxy/en/ipv4-connectivity-test.png)
+![Static proxy — IPv4 connectivity test](https://cdn.006ip.com/docs/img/static-proxy/en/ipv4-connectivity-test.png)
 
 Replace `username:password@IP:PORT` with your actual credentials. If connectivity and authentication succeed, the terminal returns the proxy's egress IP from the test site (e.g. ifconfig.co). Confirm it matches your purchased node IP.
 
@@ -132,6 +132,6 @@ curl -x http://username:password@[IPv6]:PORT https://v6.ipinfo.io
 curl -x socks5h://username:password@[IPv6]:PORT https://v6.ipinfo.io
 ```
 
-![Static proxy — IPv6 connectivity test](/img/static-proxy/en/ipv6-connectivity-test.png)
+![Static proxy — IPv6 connectivity test](https://cdn.006ip.com/docs/img/static-proxy/en/ipv6-connectivity-test.png)
 
 Replace the placeholders with your node credentials. On success, the proxy forwards the request to an IPv6-only test endpoint (e.g. `v6.ipinfo.io`) and returns a JSON snapshot including egress IPv6 address, city, ASN, and related network details.

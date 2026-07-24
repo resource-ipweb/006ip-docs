@@ -24,7 +24,7 @@ description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程�
 
 第一步，打开 [006ip 中文官网](https://006ip.com/zh)，点击页面右上角的「**注册**」。已有账号的用户可直接点击「**登录**」。
 
-![006ip 中文官网注册入口](/img/guide/static-proxy/006ip-homepage.png)
+![006ip 中文官网注册入口](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
 
 第二步，在注册页面选择以下任一方式完成注册：
 
@@ -32,7 +32,7 @@ description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程�
 
 选择「**邮箱注册**」，依次填写账号 / 邮箱、邮箱验证码、密码和确认密码。点击「**发送验证码**」后前往邮箱查收验证码，填写完成后勾选同意《服务协议》和《隐私政策》，再点击「**立即注册**」。
 
-![006ip 邮箱注册](/img/guide/static-proxy/006ip-register-email.png)
+![006ip 邮箱注册](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
 
 #### 方式二：手机号注册
 
@@ -40,7 +40,7 @@ description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程�
 
 手机号注册成功后会自动登录，账号初始为默认密码状态。请尽快前往账号设置中设置自己的登录密码。
 
-![006ip 手机号注册](/img/guide/static-proxy/006ip-register-phone.png)
+![006ip 手机号注册](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
 
 > 官网首页还提供「**使用 Gmail 账号注册**」快捷入口；如使用 Gmail，可按页面授权提示完成注册。
 
@@ -69,13 +69,13 @@ description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程�
 | **订阅时长**          | 官方指南列出 30–365 天等周期；中长期套餐可能自动匹配阶梯折扣，最终以购买页面为准。                                     |
 | **固定配置**          | 并发连接数（QPS）、端口带宽和 UDP 协议使用页面显示的默认配置。                                                         |
 
-![006ip 静态代理快速模式](/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip 静态代理快速模式](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
 
 ##### （2）自定义模式
 
 如需指定 IP 段，或需要调整连接数（QPS）、端口带宽和 UDP 协议，可开启「**自定义模式**」。该模式还支持选择业务用途、按城市和网段库存分配采购数量，并配置订阅时长。不同配置会影响最终计价，提交前应核对页面右侧的订单详情。
 
-![006ip 静态代理自定义模式](/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip 静态代理自定义模式](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
 
 #### 第二步：确认订单并完成支付
 
@@ -89,13 +89,13 @@ description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程�
 
 当账户余额不足时，可先扣减余额，再通过页面提供的在线渠道补齐差额。使用账户余额抵扣时，需要输入在 006ip 平台设置的支付密码。在线渠道及可用币种以结算页面实际显示为准。
 
-![006ip 订单确认与支付](/img/guide/static-proxy/006ip-order-payment.png)
+![006ip 订单确认与支付](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
 
 ### 4、查看并导出代理连接信息
 
 支付成功后，进入左侧「**我的 IP**」菜单，即可查看已购买的静态 IP。列表会显示带宽、QPS、UDP 状态、有效期和资源状态，并支持续费、停用、启用及查看详情等操作。
 
-![006ip 我的 IP 列表](/img/guide/static-proxy/006ip-my-ip-list.png)
+![006ip 我的 IP 列表](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
 
 配置 Clash Verge 前，需要导出以下四项连接信息：
 
@@ -112,7 +112,7 @@ IP:PORT:USERNAME:PASSWORD
 
 导出文件包含明文连接凭证。请妥善保存导出文件，不要通过公开聊天、截图或不受信任的渠道发送账密。
 
-![006ip 导出账号凭证](/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip 导出账号凭证](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
 
 购买与账密导出流程以 [006ip 静态代理使用指南](https://docs.006ip.com/zh/static-proxy-user-guide/) 和后台页面的最新提示为准。
 
@@ -156,7 +156,7 @@ proxies:
 
 1. 点击左侧导航栏的「**订阅**」，然后点击右侧的「**新建**」按钮。
 
-![进入订阅页面并点击新建](/img/guide/static-proxy/clash-verge-step1.png)
+![进入订阅页面并点击新建](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step1.png)
 
 2. 在弹出的「**新建配置**」窗口中：
    - **类型**：选择 `Local`
@@ -164,25 +164,25 @@ proxies:
    - 点击「**选择文件**」选中你刚才创建的 YAML 文件
    - 点击「**保存**」
 
-![新建本地配置并选择文件](/img/guide/static-proxy/clash-verge-step2.png)
+![新建本地配置并选择文件](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2.png)
 
 **③ 查看已导入的配置内容**
 
 导入成功后，右键 006IP 配置卡片，在弹出的菜单中选择「**编辑文件**」，可以看到刚才写入的代理配置信息。如果需要修改也可以在此处直接调整。
 
-![查看/编辑YAML配置文件内容](/img/guide/static-proxy/clash-verge-step3.png)
+![查看/编辑YAML配置文件内容](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step3.png)
 
 **④ 激活配置**
 
 回到订阅页面，找到 **006IP** 配置卡片，右键点击它，在弹出的菜单中选择「**使用**」（即激活该配置）。
 
-![右键006IP配置卡片选择使用以激活](/img/guide/static-proxy/clash-verge-step2-5.png)
+![右键006IP配置卡片选择使用以激活](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2-5.png)
 
 ### 3、切换到 006IP 代理节点
 
 回到左侧导航栏，点击「**代理**」。在代理组列表中找到刚才添加的 **006IP 节点**（`proxy1`），点击选中它。
 
-![在代理页面选中006IP节点](/img/guide/static-proxy/clash-verge-step4.png)
+![在代理页面选中006IP节点](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step4.png)
 
 ### 4、开启系统代理并验证
 
@@ -191,11 +191,11 @@ proxies:
 1. **系统代理已开启**：点击左侧导航栏「**首页**」，在网络设置区域确认「**系统代理**」开关处于**打开状态**
 2. **当前节点正确**：首页右侧应显示你选中的 006IP 节点名称
 
-![首页确认系统代理开启与节点状态](/img/guide/static-proxy/clash-verge-step6.png)
+![首页确认系统代理开启与节点状态](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step6.png)
 
 打开浏览器访问 `https://ipinfo.io` 或其他 IP 检测网站，检查返回的 IP 地址是否为你所选购地区的代理 IP。如果显示正确，说明配置成功。
 
-![IPinfo检测结果示例 — 显示代理IP归属地](/img/guide/static-proxy/ipinfo-result.png)
+![IPinfo检测结果示例 — 显示代理IP归属地](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
 
 > 如果 IP 检测显示的是你本地 IP，请确认：① Proxies 页面当前选中的节点是 006IP 节点；② 首页系统代理开关已打开；③ 配置文件中的占位符已替换为实际的连接信息。
 

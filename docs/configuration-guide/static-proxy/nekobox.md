@@ -24,7 +24,7 @@ description: Complete guide to configuring 006ip static residential proxies in N
 
 Step 1: Open the [006ip website](https://006ip.com), then click **Register** in the top-right corner. If you already have an account, click **Log In**.
 
-![006ip homepage — registration entry](/img/guide/static-proxy/006ip-homepage.png)
+![006ip homepage — registration entry](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
 
 Step 2: On the registration page, choose one of the following methods:
 
@@ -32,7 +32,7 @@ Step 2: On the registration page, choose one of the following methods:
 
 Select **Email registration**, then enter your account/email, email verification code, password, and confirm password. Click **Send code**, check your inbox for the code, accept the Terms of Service and Privacy Policy, then click **Register now**.
 
-![006ip email registration](/img/guide/static-proxy/006ip-register-email.png)
+![006ip email registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
 
 #### Option B: Phone registration
 
@@ -40,7 +40,7 @@ Select **Phone registration**, confirm the country/region code, enter your phone
 
 After phone registration succeeds, you are signed in automatically with a default password. Set your own login password in account settings as soon as possible.
 
-![006ip phone registration](/img/guide/static-proxy/006ip-register-phone.png)
+![006ip phone registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
 
 > The homepage also offers **Sign up with Gmail**. If you use Gmail, follow the on-page authorization flow.
 
@@ -67,13 +67,13 @@ The purchase page provides **Quick Configuration** and **Custom Configuration**.
 | **Period** | Plans from 30–365 days; longer terms may include tiered discounts. Final pricing follows the purchase page. |
 | **Fixed configuration** | **Connections (QPS)**, **Bandwidth**, and **UDP** use the default values shown on the page. |
 
-![006ip static proxy — Quick Configuration](/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip static proxy — Quick Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
 
 ##### (2) Custom Configuration
 
 Enable **Custom Configuration** to purchase by IP segment and customize **Connections (QPS)**, **Bandwidth**, and **UDP**. You can also set **Use case**, allocate quantity by city/segment inventory, and choose a **Period**. Different settings affect pricing—review the **Order Summary** on the right before submitting.
 
-![006ip static proxy — Custom Configuration](/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip static proxy — Custom Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
 
 #### Step 2: Confirm the order and pay
 
@@ -87,13 +87,13 @@ Supported payment methods include:
 
 If balance is insufficient, the available balance is applied first and the remainder can be paid online. Balance payments require your 006ip payment password. Available online channels and currencies follow the checkout page.
 
-![006ip order confirmation and payment](/img/guide/static-proxy/006ip-order-payment.png)
+![006ip order confirmation and payment](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
 
 ### 4. View and export proxy connection details
 
 After payment succeeds, open **My IPs** to view purchased static IPs. The list shows bandwidth, QPS, UDP status, expiry, and resource state, and supports renew, disable, enable, and details.
 
-![006ip My IPs list](/img/guide/static-proxy/006ip-my-ip-list.png)
+![006ip My IPs list](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
 
 Before configuring NekoBox, export these four connection fields:
 
@@ -110,7 +110,7 @@ IP:PORT:USERNAME:PASSWORD
 
 Exported files contain plaintext credentials. Store the file securely and do not share credentials via public chats, screenshots, or untrusted channels.
 
-![006ip export credentials](/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip export credentials](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
 
 For purchase, renewal, and export details, see the [006ip Static Proxy User Guide](/static-proxy-user-guide/) and the latest prompts in the dashboard.
 
@@ -137,7 +137,7 @@ Open **NekoBox** and follow these steps:
 
 On the main window, **right-click an empty area in the server list** and choose **Manual Input**.
 
-![NekoBox right-click Manual Input](/img/guide/static-proxy/nekoray-step1.png)
+![NekoBox right-click Manual Input](https://cdn.006ip.com/docs/img/guide/static-proxy/nekoray-step1.png)
 
 #### ② Fill in node settings
 
@@ -162,13 +162,13 @@ Then fill the **Socks** auth section:
 
 Click **OK** to save.
 
-![NekoBox edit dialog](/img/guide/static-proxy/nekoray-step2.png)
+![NekoBox edit dialog](https://cdn.006ip.com/docs/img/guide/static-proxy/nekoray-step2.png)
 
 ### Step 3: Confirm the node appears in the list
 
 Back on the main window, the server list should show the new node as type `Socks` with the correct address and name.
 
-![NekoBox server list](/img/guide/static-proxy/nekoray-step3.png)
+![NekoBox server list](https://cdn.006ip.com/docs/img/guide/static-proxy/nekoray-step3.png)
 
 > For multiple exported accounts, repeat Step 2 for each line, then switch nodes as needed.
 
@@ -185,11 +185,11 @@ Confirm both:
 - The node row shows test results and traffic counters
 - The bottom log shows connection activity
 
-![NekoBox start node](/img/guide/static-proxy/nekoray-step4.png)
+![NekoBox start node](https://cdn.006ip.com/docs/img/guide/static-proxy/nekoray-step4.png)
 
 Open a browser and visit `https://ipinfo.io` or another IP lookup site. If the returned IP matches your purchased region, configuration succeeded.
 
-![IPinfo result example](/img/guide/static-proxy/ipinfo-result.png)
+![IPinfo result example](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
 
 > If the check shows your local IP:
 >
