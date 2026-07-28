@@ -51,19 +51,19 @@ username:password:proxy_host(IP_or_domain):port
 **Sample line:**
 
 ```
-gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_10_JFGpdebg:123456
 ```
 
 **Field breakdown:**
 
 - **Proxy server:** `gate1.006ip.com`
 - **Port:** `7778`
-- **User ID:** `B_36307`
+- **User ID:** `B_91246`
 - **Country code:** `US`
 - **State code:** `1474`
 - **City code:** `10748`
-- **Session duration (minutes):** `5`
-- **SID:** `Ab000001`
+- **Session duration (minutes):** `10`
+- **SID:** `JFGpdebg`
 - **Proxy password:** `123456`
 - **Protocols:** SOCKS5 and HTTP(S) on the same port
 
@@ -76,7 +76,7 @@ gate1.006ip.com:7778:B_36307_US_1474_10748_5_Ab000001:123456
 Test the exported line with `curl`:
 
 ```bash
-curl -x B_36424_US_1474_10748_5_Ab000001:123456@gate1.006ip.com:7778 ipinfo.io
+curl -x B_91246_US_1474_10748_10_JFGpdebg:123456@gate1.006ip.com:7778 ipinfo.io
 ```
 
 ![curl verification result](https://cdn.006ip.com/docs/img/d68a7024f61a00f362c540d7e975c61b.png)
@@ -94,7 +94,7 @@ A successful response shows a US IP (country `US`), New York state (code `1474`)
 From the sample above, change country/state/city codes to target other locations. State and city are optional:
 
 ```
-gate1.006ip.com:7778:B_36424_US___5_Ab000001:123456
+gate1.006ip.com:7778:B_91246_US___5_JFGpdebg:123456
 ```
 
 Empty state and city means any location within the US.
@@ -104,19 +104,19 @@ Empty state and city means any location within the US.
 Starting from:
 
 ```
-gate1.006ip.com:7778:B_36424_US___5_Ab000001:123456
+gate1.006ip.com:7778:B_91246_US___5_JFGpdebg:123456
 ```
 
 For Hong Kong, replace `US` with `HK`:
 
 ```
-gate1.006ip.com:7778:B_36424_HK___5_Ab000001:123456
+gate1.006ip.com:7778:B_91246_HK___5_JFGpdebg:123456
 ```
 
 For a 10-minute session instead of 5, change `5` to `10`:
 
 ```
-gate1.006ip.com:7778:B_36424_HK___10_Ab000001:123456
+gate1.006ip.com:7778:B_91246_HK___10_JFGpdebg:123456
 ```
 
 ### 3.3 Generate many proxies by changing SID
@@ -124,17 +124,17 @@ gate1.006ip.com:7778:B_36424_HK___10_Ab000001:123456
 Example base line:
 
 ```
-gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000001:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_5_JFGpdebg:123456
 ```
 
 Change the **SID** to obtain different exit IPs:
 
 ```
-gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000001:123456
-gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000002:123456
-gate1.006ip.com:7778:B_36424_US_1474_10748_5_Ab000003:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_5_JFGpdebg:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_5_Ab000002:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_5_Ab000003:123456
 ...
-gate1.006ip.com:7778:B_36424_US_1474_10748_5_X9999999:123456
+gate1.006ip.com:7778:B_91246_US_1474_10748_5_X9999999:123456
 ```
 
 > **Note:** SID must be exactly **8** alphanumeric characters (letters and digits). Special characters (e.g. `@!%*`) are not allowed.
@@ -146,7 +146,7 @@ Changing SID lets you scale proxies or rotate IPs on demand.
 Set the country code to **`000`** for a random country:
 
 ```
-gate1.006ip.com:7778:B_36424_000___10_Ab000001:123456
+gate1.006ip.com:7778:B_91246_000___10_JFGpdebg:123456
 ```
 
 ---

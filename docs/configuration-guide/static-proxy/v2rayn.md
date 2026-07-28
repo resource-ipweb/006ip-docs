@@ -6,7 +6,7 @@ description: Complete guide to configuring 006ip static residential proxies in v
 
 # v2rayN Configuration Guide
 
-***Before using 006ip proxy services, make sure your network can access international resources normally. If you encounter connection issues, check your local network or contact customer support for assistance. [006ip Acceptable Use Policy](https://006ip.com/company/acceptable-use-policy)***
+***If you already have a working overseas network environment, follow the "Configure v2rayN" section. If you do not, follow the "Chain Proxy" section first.***
 
 006ip provides residential proxy infrastructure for businesses, developers, and cross-border teams, including **dynamic residential IPs** and **static residential IPs**. The platform supports country/region and city-level targeting, plus dashboard options such as IP allowlists, authentication methods, and location modes—suitable for compliant data collection, localized page testing, price monitoring, ad verification, and maintaining cross-border business environments.
 
@@ -201,6 +201,130 @@ If the location matches, **v2rayN is configured successfully**.
 > 2. Confirm **Enable Tun** is on (green)
 > 3. Confirm address, port, username, and password match the dashboard exactly (no extra spaces)
 > 4. Right-click the node and run **Test latency TcPing** again
+
+## Chain Proxy
+
+If your local network cannot directly connect to the downstream target-country proxy, configure a chain in v2rayN: connect to a reachable overseas upstream proxy first, then reach the downstream proxy through it.
+
+Path order:
+
+> **Local machine → Upstream proxy (overseas node) → Downstream proxy (target country) → Target website**
+
+Example: upstream is a Hong Kong node, downstream is a US node. After setup, websites should see the **US downstream IP** as final egress, not the HK upstream IP.
+
+### 1. Prepare two proxy nodes
+
+Prepare these:
+
+| Node role | Purpose | Example alias |
+| --- | --- | --- |
+| **Upstream proxy** | First hop forwarding local traffic overseas; must be directly reachable | `proxy1-HK` |
+| **Downstream proxy** | Target-country proxy and final business egress | `proxy2-US` |
+
+Both nodes require **address, port, username, and password**. Use unique aliases for easy management.
+
+> This section uses HTTP examples. If your node protocol is SOCKS5, choose **Add [SOCKS]** when adding nodes; the workflow is the same.
+
+### 2. Create an upstream proxy group
+
+Open v2rayN, click **Subscription Group** on the top menu, and in **Subscription Group Settings** click **Add**.
+
+Set alias to `pre` (or any recognizable name), leave other settings as default, and click **OK**. No subscription URL is required.
+
+![Create upstream proxy group in v2rayN](https://cdn.006ip.com/docs/img/v2rayn-chain-step1.png)
+
+### 3. Add the upstream proxy in `pre`
+
+Back in the main window:
+
+1. Select the `pre` group.
+2. Click **Servers** → **Add [HTTP]**.
+3. Fill upstream alias, address, port, username, and password (e.g. alias `proxy1-HK`).
+4. Keep other transport settings default and click **OK**.
+
+![Add upstream proxy in pre group](https://cdn.006ip.com/docs/img/v2rayn-chain-step2.png)
+
+After saving, in `pre` group right-click this node and run **Test latency TcPing (multiple)**. When latency value appears, set it as active to confirm upstream works.
+
+> The upstream proxy is hop 1. If it times out or fails, downstream proxy cannot be used.
+
+### 4. Create downstream group and bind the upstream
+
+Click **Subscription Group** → **Add** again to create a new group for downstream proxies.
+
+1. Set **Alias** to `land` (customizable).
+2. Find **Pre-proxy config alias**, then click **Select config** on the right.
+3. Select the upstream node you added, e.g. `proxy1-HK`.
+4. Save the group.
+
+![Create downstream group and select upstream alias](https://cdn.006ip.com/docs/img/v2rayn-chain-step3.png)
+
+> Make sure you select **Pre-proxy config alias**, not **Landing proxy config alias** below it. In this guide, `proxy1-HK` is upstream, and `proxy2-US` is downstream final egress.
+
+### 5. Add the downstream proxy in `land`
+
+Back in main window, select `land`, then click **Servers** → **Add [HTTP]**.
+
+Fill downstream connection details:
+
+| Field | Value |
+| --- | --- |
+| **Alias (remarks)** | e.g. `proxy2-US` |
+| **Address** | Downstream proxy address |
+| **Port** | Downstream proxy port |
+| **Username (optional)** | Downstream username |
+| **Password (optional)** | Downstream password |
+
+Keep other fields default and click **OK**. Since `land` is bound to the upstream alias, downstream connections in this group are routed through `proxy1-HK`.
+
+![Add downstream proxy in land group](https://cdn.006ip.com/docs/img/v2rayn-chain-step4.png)
+
+### 6. Activate downstream proxy and enable Tun
+
+In `land`, set the downstream node (e.g. `proxy2-US`) as **active**. After the red **Active** marker appears, enable **Enable Tun** at the bottom.
+
+Traffic path is now:
+
+> **Local machine → `proxy1-HK` → `proxy2-US` → Target website**
+
+![Enable downstream proxy and Tun in v2rayN](https://cdn.006ip.com/docs/img/v2rayn-chain-step5.png)
+
+> The node that must be active is the **downstream node in `land`**, not the upstream node in `pre`. v2rayN automatically invokes upstream based on group binding.
+
+### 7. Verify final egress IP
+
+Open `https://ipinfo.io` and check IP/location:
+
+![IPinfo result example](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
+
+Expected:
+
+- Displayed IP equals the **downstream proxy IP**
+- Country/region matches your purchased target route
+- It is not your local public IP and not upstream egress IP
+
+If all are true, chain proxy is configured successfully.
+
+### 8. Common troubleshooting
+
+**Downstream proxy cannot connect or always times out**
+
+1. Switch to `pre` and test upstream latency first.
+2. Check whether `land` actually selects `proxy1-HK` in **Pre-proxy config alias**.
+3. Re-check downstream address, port, username, and password (no extra spaces).
+4. Save changes and click **Restart Service** before re-testing.
+
+**IP check shows the upstream region**
+
+This usually means the active node is still upstream. Switch to `land`, set downstream node active, then re-enable Tun and refresh IP check.
+
+**IP check still shows local public IP**
+
+Ensure **Enable Tun** is green. Try running v2rayN as administrator. Also check whether browser or other proxy apps have conflicting proxy settings.
+
+**Chain connects but speed is slow**
+
+Chain mode adds one extra hop, so latency is usually higher than direct mode. Use a near, low-latency, stable upstream node and avoid stacking unnecessary proxy apps.
 
 ---
 

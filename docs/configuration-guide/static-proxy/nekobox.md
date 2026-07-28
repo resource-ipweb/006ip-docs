@@ -6,7 +6,7 @@ description: Complete guide to configuring 006ip static residential proxies in N
 
 # NekoBox Configuration Guide (Windows)
 
-***Before using 006ip proxy services, make sure your network can access international resources normally. If you encounter connection issues, check your local network or contact customer support for assistance. [006ip Acceptable Use Policy](https://006ip.com/company/acceptable-use-policy)***
+***If you already have a working overseas network environment, follow the "Configure NekoBox" section. If you do not, follow the "Chain Proxy" section first.***
 
 006ip provides residential proxy infrastructure for businesses, developers, and cross-border teams, including **dynamic residential IPs** and **static residential IPs**. The platform supports country/region and city-level targeting, plus dashboard options such as IP allowlists, authentication methods, and location modes—suitable for compliant data collection, localized page testing, price monitoring, ad verification, and maintaining cross-border business environments.
 
@@ -209,6 +209,118 @@ To send only specific traffic through 006ip, open **Settings** → **Routing**, 
 | Default → Direct / other node | Remaining traffic as needed |
 
 Only matching traffic goes through the 006ip proxy; other traffic keeps its original path.
+
+## Chain Proxy
+
+If your current network cannot directly reach the target-country proxy server, you can configure a chain in NekoBox: first build a path through a reachable overseas upstream proxy, then connect to the downstream target-country proxy.
+
+Path order:
+
+> **Local machine → Upstream proxy (overseas node) → Downstream proxy (target country/region) → Target website**
+
+For example, use a Hong Kong node as upstream and a US static residential node as downstream. After configuration, websites should see the **downstream US IP** as the final egress, not your local IP and not the upstream HK IP.
+
+### 1. Prepare two proxy node credentials
+
+Prepare address, port, username, and password for both:
+
+| Node role | Purpose | Example name |
+| --- | --- | --- |
+| **Upstream proxy** | First hop that must be reachable in your current network | `proxy1-hk` |
+| **Downstream proxy** | Target country/region node and final business egress | `proxy2-us` |
+
+Use a low-latency stable upstream node close to your location. Choose downstream country/region based on business requirements.
+
+> This section uses SOCKS5 nodes as examples. If your nodes are HTTP, choose HTTP type accordingly and ensure protocol matches provider details.
+
+### 2. Add the upstream proxy
+
+In NekoBox, right-click an empty area in the server list and choose **Manual Input**, then fill:
+
+| Field | Value |
+| --- | --- |
+| **Type** | `Socks` |
+| **Name** | e.g. `proxy1-hk` |
+| **Address** | Upstream proxy server address |
+| **Port** | Upstream proxy port |
+| **Version** | `5` |
+| **Username / Password** | Upstream proxy credentials |
+
+Click **OK** to save.
+
+![Add upstream overseas proxy in NekoBox](https://cdn.006ip.com/docs/img/nekobox-chain-step1.png)
+
+> The upstream proxy is hop 1 of the full chain. If it fails or has high latency, downstream proxy will also fail. Test it alone first.
+
+### 3. Add the downstream target proxy
+
+Again right-click an empty area in the server list, choose **Manual Input**, and fill:
+
+| Field | Value |
+| --- | --- |
+| **Type** | Protocol used by downstream proxy, `Socks` in this example |
+| **Name** | e.g. `proxy2-us` |
+| **Address** | Downstream proxy server address |
+| **Port** | Downstream proxy port |
+| **Version** | `5` for SOCKS5 |
+| **Username / Password** | Downstream proxy credentials |
+
+Click **OK** to save.
+
+![Add downstream target-country proxy in NekoBox](https://cdn.006ip.com/docs/img/nekobox-chain-step2.png)
+
+After saving, both `proxy1-hk` and `proxy2-us` should appear in the list. Test both nodes separately and verify server, port, protocol, and credentials.
+
+### 4. Create a chain proxy and set node order
+
+Right-click an empty area in the server list, choose **Manual Input**, then:
+
+1. Set **Type** to **Chain Proxy**.
+2. Set name to `chain-proxy` (or any recognizable name).
+3. Click **Select Configurations** and add `proxy1-hk` and `proxy2-us`.
+4. Ensure order is `proxy1-hk` on top and `proxy2-us` below.
+5. Click **OK** to save.
+
+![Create chain proxy and set node order in NekoBox](https://cdn.006ip.com/docs/img/nekobox-chain-step3.png)
+
+> NekoBox chain order is **top to bottom**, and the last node is the final egress. Keep `proxy1-hk → proxy2-us`. Reversing order may cause wrong egress IP or failures.
+
+### 5. Start the chain proxy
+
+Back in the main window:
+
+1. Select `chain-proxy` in the server list.
+2. Right-click it and choose **Start**. Confirm a ✓ marker appears.
+3. Enable **Tun Mode** and **System Proxy** at the top.
+4. Check logs for connection events and verify traffic counters on the chain entry.
+
+![Start chain proxy and enable Tun/System Proxy in NekoBox](https://cdn.006ip.com/docs/img/nekobox-chain-step4.png)
+
+> Start `chain-proxy` itself, not `proxy1-hk` or `proxy2-us` individually. NekoBox will route through both nodes in the configured order.
+
+### 6. Verify final egress IP
+
+Open `https://ipinfo.io` (or another trusted IP checker) and verify:
+
+- IP matches the downstream proxy IP
+- Country/region matches your purchased target route
+- Result is neither your local public IP nor the upstream egress IP
+
+![IPinfo result example](https://cdn.006ip.com/docs/img/guide/static-proxy/ipinfo-result.png)
+
+If the result shows the target IP of `proxy2-us`, the chain is configured correctly. Slightly higher latency than single-hop mode is normal.
+
+### 7. Common troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| Chain cannot start | Re-check both nodes' address, port, protocol, username, and password; test upstream node first |
+| Downstream keeps timing out | Confirm upstream works in current network; try a lower-latency, more stable upstream node |
+| Result shows upstream IP | Check whether downstream is missing from chain list or order is reversed; correct order is `proxy1-hk → proxy2-us` |
+| Result still shows local public IP | Ensure `chain-proxy` is started and both **Tun Mode** and **System Proxy** are enabled |
+| Connected but slow | Chain adds one extra hop; use nearer/lower-latency upstream and avoid unnecessary proxy layers |
+
+> UI names and button locations may differ slightly by NekoBox version. Follow your current client UI. Use proxies only for legal/compliant scenarios and follow website terms and local laws.
 
 ---
 

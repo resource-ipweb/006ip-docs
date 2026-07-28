@@ -6,7 +6,7 @@ description: Complete guide to configuring 006ip static residential proxies in C
 
 # Clash Verge Configuration Guide
 
-***Before using 006ip proxy services, make sure your network can access international resources normally. If you encounter connection issues, check your local network or contact customer support for assistance. [006ip Acceptable Use Policy](https://006ip.com/company/acceptable-use-policy)***
+***If you already have a working overseas network environment, follow the "Configure Clash Verge" section. If you do not, follow the "Chain Proxy" section first.***
 
 006ip provides residential proxy infrastructure for businesses, developers, and cross-border teams, including **dynamic residential IPs** and **static residential IPs**. The platform supports country/region and city-level targeting, plus dashboard options such as IP allowlists, authentication methods, and location modes—suitable for compliant data collection, localized page testing, price monitoring, ad verification, and maintaining cross-border business environments.
 
@@ -211,6 +211,117 @@ rules:
 ```
 
 Only requests to the target domain (e.g. `target-website.com`) go through the 006ip proxy via `proxy1`; other traffic follows your existing rules.
+
+## Chain Proxy
+
+If your local network cannot directly connect to overseas proxy servers, configure a two-hop chain in Clash Verge: first connect through a reachable upstream proxy, then connect to the target-country static residential proxy.
+
+The full path is:
+
+> **Local machine → Upstream proxy (`proxy1`) → Downstream proxy (`proxy2`) → Target website**
+
+`proxy1` is only used to establish a stable overseas path. `proxy2` is the final egress IP used by your business traffic. After setup, IP check tools should show the IP and location of `proxy2` (not your local IP, and not `proxy1`).
+
+### 1. Prepare two proxy nodes
+
+Before configuration, prepare:
+
+| Node | Purpose | Recommendation |
+| --- | --- | --- |
+| `proxy1` | Upstream proxy for overseas connectivity | Use a stable, low-latency overseas node reachable from your local network |
+| `proxy2` | Final business egress IP | Use the static residential proxy for your target country/region |
+
+### 2. Add both nodes to one config file
+
+① Create a local YAML file
+
+Create a text file and place both nodes under the same `proxies` list (replace sample values with real credentials):
+
+```yaml
+proxies:
+  # First hop: reachable overseas upstream proxy
+  - name: "proxy1"
+    type: socks5
+    server: your-upstream-proxy-server
+    port: your-upstream-port
+    username: "your-upstream-username"
+    password: "your-upstream-password"
+    udp: true
+
+  # Second hop: target-country static residential proxy
+  - name: "proxy2"
+    type: http
+    server: your-downstream-proxy-server
+    port: your-downstream-port
+    username: "your-downstream-username"
+    password: "your-downstream-password"
+```
+
+② Create a profile and import the file
+
+Open **Profiles** in the left sidebar, then click **New**.
+
+![Open Profiles and click New](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step1.png)
+
+In the **New Profile** dialog:
+- **Type**: `Local`
+- **Name**: `006IP` (or any recognizable name)
+- Click **Choose File** and select your YAML file
+- Click **Save**
+
+![Create a local profile and select the file](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2.png)
+
+![Add upstream and 006IP nodes in one config](https://cdn.006ip.com/docs/img/clash-verge-chain-config.png)
+
+Notes:
+
+- `type` must match the actual protocol supported by each node.
+- `port` must be the real port value; do not copy placeholders directly.
+- If your file already has `proxies:`, append missing nodes to that existing list. Do not create a second `proxies:`.
+
+③ Activate the profile
+
+Return to **Profiles**, right-click the **006IP** card, and choose **Use** (activate it), otherwise settings may not take effect.
+
+![Right-click the 006IP profile and select Use](https://cdn.006ip.com/docs/img/guide/static-proxy/clash-verge-step2-5.png)
+
+### 3. Build the chain in the correct order
+
+Open **Proxies** in Clash Verge and do the following:
+
+1. Click **Chain Proxy** in the top-right to enter chain mode.
+2. Click upstream node `proxy1` to add it as hop **1**.
+3. Click downstream node `proxy2` to add it as hop **2**.
+4. Verify the right-side order is `1 proxy1`, `2 proxy2`.
+5. Click **Connect** to enable this chain.
+
+![Build chain order from proxy1 to proxy2 in Clash Verge](https://cdn.006ip.com/docs/img/clash-verge-chain-mode.png)
+
+> Do not reverse node order. Correct order is upstream first, downstream second. If order is wrong, remove and re-add nodes.
+
+### 4. Enable system proxy and verify final egress
+
+Return to **Home** and ensure **System Proxy** is enabled. Then open `https://ipinfo.io` (or another trusted IP check site) and verify:
+
+- Current IP matches the target IP purchased from 006IP
+- Country/region, city, and ASN match the selected route
+- Result stays stable after refresh and does not fall back to local IP
+
+![Check final egress IP location and ASN after chain setup](https://cdn.006ip.com/docs/img/clash-verge-chain-ip-check.jpg)
+
+If the page shows the target IP of `proxy2`, chain proxy is active. Because traffic passes two hops, latency is usually higher than single-node mode—this is expected.
+
+### 5. Common troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| `proxy1` / `proxy2` not shown | Check YAML indentation, save file, then reactivate profile |
+| No latency or connect failure | Re-check server, port, protocol, username, and password for both nodes |
+| Result still shows local IP | Ensure profile is updated, system proxy is on, and **Connect** is clicked in chain mode |
+| Result shows upstream IP | Check whether `proxy2` is missing, and whether order is `proxy1 → proxy2` |
+| Connected but slow | Use a lower-latency, more stable upstream node and avoid unnecessary proxy layers |
+
+> UI names and button positions may vary slightly by Clash Verge version. Follow your current client UI. Use proxies only for legal/compliant scenarios and follow target website terms and local laws.
 
 ---
 
