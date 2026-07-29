@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-sidebar_label: NekoBox Configuration Guide
+sidebar_label: NekoBox Configuration Guide (Windows)
 description: Complete guide to configuring 006ip static residential proxies in NekoBox (Windows).
 ---
 

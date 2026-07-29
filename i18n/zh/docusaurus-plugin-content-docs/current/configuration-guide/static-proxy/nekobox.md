@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-sidebar_label: NekoBox 配置使用教程
+sidebar_label: NekoBox 配置使用教程（Windows）
 description: 在 NekoBox（Windows）中配置 006ip 静态住宅代理的完整教程。
 ---
 
