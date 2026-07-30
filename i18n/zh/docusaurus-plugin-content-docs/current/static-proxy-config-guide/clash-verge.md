@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-sidebar_label: Clash Verge 配置使用教程
+sidebar_label: Clash Verge 链式代理使用教程
 description: 在 Clash Verge 中配置 006ip 静态住宅代理的完整教程。
 ---
 
-# Clash Verge 配置使用教程
+# Clash Verge 链式代理使用教程
 
 ***如果当前已有可用的境外网络环境，请按「clash verge 配置」章节操作；如果当前无可用的境外网络环境，请按「链式代理」章节配置。***
 

@@ -1,10 +1,10 @@
 ---
 sidebar_position: 2
-sidebar_label: v2rayN Configuration Guide
+sidebar_label: v2rayN Chain Proxy Guide
 description: Complete guide to configuring 006ip static residential proxies in v2rayN.
 ---
 
-# v2rayN Configuration Guide
+# v2rayN Chain Proxy Guide
 
 ***If you already have a working overseas network environment, follow the "Configure v2rayN" section. If you do not, follow the "Chain Proxy" section first.***
 

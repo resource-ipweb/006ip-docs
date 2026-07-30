@@ -1,10 +1,10 @@
 ---
 sidebar_position: 4
-sidebar_label: NekoBox Configuration Guide (Android)
+sidebar_label: NekoBox Chain Proxy Guide (Android)
 description: Complete guide to configuring 006ip static residential proxies in NekoBox (Android).
 ---
 
-# NekoBox Configuration Guide (Android)
+# NekoBox Chain Proxy Guide (Android)
 
 ***If you already have a working overseas network environment, follow the "Configure NekoBox" section. If you do not, follow the "Chain Proxy" section first.***
 

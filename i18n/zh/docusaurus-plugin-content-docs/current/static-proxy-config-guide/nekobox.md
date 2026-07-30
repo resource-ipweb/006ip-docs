@@ -1,10 +1,10 @@
 ---
 sidebar_position: 3
-sidebar_label: NekoBox 配置使用教程（Windows）
+sidebar_label: NekoBox 链式代理使用教程（Windows）
 description: 在 NekoBox（Windows）中配置 006ip 静态住宅代理的完整教程。
 ---
 
-# NekoBox 配置使用教程（Windows 版）
+# NekoBox 链式代理使用教程（Windows 版）
 
 ***如果当前已有可用的境外网络环境，请按「NekoBox 配置」章节操作；如果当前无可用的境外网络环境，请按「链式代理」章节配置。***
 

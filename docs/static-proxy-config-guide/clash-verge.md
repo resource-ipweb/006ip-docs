@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-sidebar_label: Clash Verge Configuration Guide
+sidebar_label: Clash Verge Chain Proxy Guide
 description: Complete guide to configuring 006ip static residential proxies in Clash Verge.
 ---
 
-# Clash Verge Configuration Guide
+# Clash Verge Chain Proxy Guide
 
 ***If you already have a working overseas network environment, follow the "Configure Clash Verge" section. If you do not, follow the "Chain Proxy" section first.***
 

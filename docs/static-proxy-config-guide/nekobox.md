@@ -1,10 +1,10 @@
 ---
 sidebar_position: 3
-sidebar_label: NekoBox Configuration Guide (Windows)
+sidebar_label: NekoBox Chain Proxy Guide (Windows)
 description: Complete guide to configuring 006ip static residential proxies in NekoBox (Windows).
 ---
 
-# NekoBox Configuration Guide (Windows)
+# NekoBox Chain Proxy Guide (Windows)
 
 ***If you already have a working overseas network environment, follow the "Configure NekoBox" section. If you do not, follow the "Chain Proxy" section first.***
 

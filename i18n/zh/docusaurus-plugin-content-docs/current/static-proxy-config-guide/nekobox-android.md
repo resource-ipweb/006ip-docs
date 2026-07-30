@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-sidebar_label: NekoBox 配置使用教程（Android）
+sidebar_label: NekoBox 链式代理使用教程（Android）
 description: 在 NekoBox（Android）中配置 006IP 静态住宅代理的完整教程。
 ---
-# NekoBox 配置使用教程（Android 版）
+# NekoBox 链式代理使用教程（Android 版）
 
 ***如果当前已有可用的境外网络环境，请按「NekoBox 配置」章节操作；如果当前无可用的境外网络环境，请按「链式代理」章节配置。***
 
