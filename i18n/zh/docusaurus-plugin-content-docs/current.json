@@ -19,12 +19,20 @@
     "message": "静态 IP 开放平台接口：UserId + Token 鉴权，路径前缀 /open/staticip。",
     "description": "The generated-index page description for category 'Static Proxy' in sidebar 'defaultSidebar'"
   },
-  "sidebar.defaultSidebar.category.config-static-proxy": {
-    "message": "静态代理-配置教程",
-    "description": "The label for category 'config-static-proxy' in sidebar 'defaultSidebar'"
+  "sidebar.defaultSidebar.category.integration-guide": {
+    "message": "集成教程",
+    "description": "The label for category 'integration-guide' in sidebar 'defaultSidebar'"
   },
-  "sidebar.defaultSidebar.category.config-static-proxy.link.generated-index.description": {
-    "message": "静态代理相关配置教程",
-    "description": "The generated-index page description for category 'config-static-proxy' in sidebar 'defaultSidebar'"
+  "sidebar.defaultSidebar.category.integration-guide.link.generated-index.description": {
+    "message": "代理软件与指纹浏览器集成教程",
+    "description": "The generated-index page description for category 'integration-guide' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.proxy-software": {
+    "message": "代理软件",
+    "description": "The label for category 'proxy-software' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.fingerprint-browser": {
+    "message": "指纹浏览器",
+    "description": "The label for category 'fingerprint-browser' in sidebar 'defaultSidebar'"
   }
 }
