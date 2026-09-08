@@ -6,11 +6,12 @@ description: Complete guide to configuring 006ip static residential proxies in S
 
 # SessionBox Fingerprint Browser — 006IP Proxy Guide
 
-***Before using 006IP proxy services, make sure your network can access overseas resources normally. If you have connection issues, check your local network or contact support.***
+***Before using 006IP proxy services, make sure your local network can reliably access international websites and services. If you encounter connection issues, check your local network connection or contact customer support for assistance.***
 
-006ip provides residential proxy infrastructure for businesses, developers, and cross-border teams, including **dynamic residential IPs** and **static residential IPs**. The platform supports country/region and city-level targeting, plus dashboard options such as IP allowlists, authentication methods, and location modes—suitable for compliant data collection, localized page testing, price monitoring, ad verification, and maintaining cross-border business environments.
 
-**Static residential IPs** offer long-lived fixed egress addresses and are a better fit when you need continuity and connection stability. This guide walks through registration, trial traffic, purchasing, exporting credentials, and configuring 006IP proxies in **SessionBox**.
+006IP is a residential proxy infrastructure provider serving enterprises, developers, and teams operating across international markets. Its offerings include **dynamic residential IPs  and static residential IPs**. The platform supports country/region- and city-level geo-targeting, with dashboard controls for IP allowlisting, proxy authentication methods, and location targeting options. It is suitable for compliant web data collection, localized website testing, price monitoring, ad verification, and maintaining stable network environments for cross-border operations.
+
+Among these offerings, **static residential IPs** provide a long-term, fixed egress IP address, making them better suited for use cases that require IP consistency and stable connectivity. In this guide, we will use a 006IP static residential proxy as an example and walk through account registration, claiming free trial proxy traffic, purchasing a proxy, exporting proxy credentials, and configuring and testing the 006IP proxy in the **SessionBox fingerprint browser**.
 
 > **Need help? Contact us anytime:**
 >
@@ -18,128 +19,148 @@ description: Complete guide to configuring 006ip static residential proxies in S
 > - Phone: `15673887335`
 > - Email: [support@006ip.com](mailto:support@006ip.com)
 
-## Getting Started
+## Basic Setup
 
-### 1. Create and sign in to a 006ip account
+### 1. Register and Sign In to 006IP
 
-Step 1: Open the [006ip website](https://006ip.com), then click **Register** in the top-right corner. If you already have an account, click **Log In**.
+First, open the [006IP website](https://006ip.com/) and click **Sign up** in the upper-right corner. If you already have an account, click **Sign in** instead.
 
-![006ip homepage — registration entry](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-homepage.png)
+![006ip website sign-up entry](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/006ip-homepage-en.png)
 
-Step 2: On the registration page, choose one of the following methods:
+Next, choose either of the following registration methods:
 
-#### Option A: Email registration
+#### Option 1: Register by Email
 
-Select **Email registration**, then enter your account/email, email verification code, password, and confirm password. Click **Send code**, check your inbox for the code, accept the Terms of Service and Privacy Policy, then click **Register now**.
+Select **Email Register**, then enter your account/email, email verification code, password, and confirmation password. Click **Send Code**, check your email for the verification code, enter it, agree to the **Terms** and **Privacy Policy**, and then click **Sign Up**.
 
-![006ip email registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-email.png)
+![006ip email registration](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/006ip-register-email-en.png)
 
-#### Option B: Phone registration
+#### Option 2: Register by Mobile Number
 
-Select **Phone registration**, confirm the country/region code, enter your phone number, click **Send code**, and enter the SMS code. Accept the Terms of Service and Privacy Policy, then click **Register now**.
+Select **Mobile Register**, confirm the correct country or region calling code, enter your phone number, click **Send Code**, and enter the SMS verification code. Agree to the **Terms** and **Privacy Policy**, then click **Sign Up**.
 
-After phone registration succeeds, you are signed in automatically with a default password. Set your own login password in account settings as soon as possible.
+After registering with a mobile number, you will be signed in automatically. The account initially uses the default password state, so go to your account settings and set your own login password as soon as possible.
 
-![006ip phone registration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-register-phone.png)
+![006ip mobile registration](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/006ip-register-phone-en.png)
 
-> The homepage also offers **Sign up with Gmail**. If you use Gmail, follow the on-page authorization flow.
+> The homepage also provides a **Sign Up with Gmail** shortcut. If you use Gmail, follow the on-screen authorization prompts to complete registration.
 
-### 2. Claim trial traffic
+### 2. Claim Free Trial Proxy Traffic
 
-006ip currently offers a new-user trial: contact support to receive **1GB trial traffic** for free. Eligibility, available products, and validity follow the campaign page and support reply.
+006IP currently offers a trial promotion for new users: contact customer support to receive **1 GB of free proxy traffic**. Eligibility requirements, supported products, and the validity period are subject to the current promotion page and confirmation from customer support.
 
-> Use trial traffic first to validate target regions, protocol compatibility, and business connectivity before choosing a paid plan.
+> You can use the trial traffic to verify the target location, proxy protocol compatibility, and connectivity for your use case before purchasing a paid plan.
 
-### 3. Purchase static residential proxies
+### 3. Purchase a Static Residential Proxy
 
-After signing in to the 006ip dashboard, open **Static Proxies** in the left sidebar, then choose **ISP Proxies** or **Datacenter Proxies** to enter the purchase page.
+After signing in to the 006IP dashboard, click **Static Proxies** in the left-hand navigation menu, then select **ISP Proxies** or **Datacenter Proxies** as needed to open the purchase page.
 
-#### Step 1: Choose a purchase mode and set proxy attributes
+#### Step 1: Choose a Purchase Mode and Configure Proxy Settings
 
-The purchase page provides **Quick Configuration** and **Custom Configuration**. Both modes calculate pricing in real time based on your selections, but they fit different needs.
+The purchase page provides two configuration options: **Quick Configuration** and **Custom Configuration**. Both calculate pricing in real time based on the selected resources and configuration, but they are designed for different requirements.
 
 ##### (1) Quick Configuration
 
-Quick Configuration is for users who want platform default network settings and a fast checkout. Configure:
+Quick Configuration is suitable for users who want to use the platform's default network configuration and place an order quickly. In this mode, you mainly configure the following options:
 
-| Parameter | Description |
+| Setting | Description |
 | --- | --- |
-| **Access Type** | Choose **Dedicated** or **Shared**. Dedicated IPs suit stricter purity, stability, and isolation needs; Shared IPs suit cost-sensitive general access. |
-| **Country / region and city** | Target by country/region and city, or choose **Random range** for country-wide distribution. |
-| **Period** | Plans from 30–365 days; longer terms may include tiered discounts. Final pricing follows the purchase page. |
-| **Fixed configuration** | **Connections (QPS)**, **Bandwidth**, and **UDP** use the default values shown on the page. |
+| **Access Type** | Choose **Dedicated** or **Shared**. Dedicated IPs are better suited for use cases with stricter requirements for IP reputation, stability, and isolation from other users. Shared IPs are better suited for standard access scenarios where cost is the priority. |
+| **Country/Region and City** | Target a specific country/region and city, or select a random location for country-level IP allocation. |
+| **Subscription Period** | The official guide lists subscription periods ranging from 30 to 365 days. Medium- and long-term plans may automatically qualify for tiered discounts. Final pricing is subject to the purchase page. |
+| **Default Settings** | **Connections (QPS)**, port bandwidth, and UDP use the default values displayed on the page. |
 
-![006ip static proxy — Quick Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-quick-mode.png)
+![006ip static proxy Quick Configuration](https://cdn.006ip.com/docs/img/static-proxy/en/purchase-quick-mode.png)
 
 ##### (2) Custom Configuration
 
-Enable **Custom Configuration** to purchase by IP segment and customize **Connections (QPS)**, **Bandwidth**, and **UDP**. You can also set **Use case**, allocate quantity by city/segment inventory, and choose a **Period**. Different settings affect pricing—review the **Order Summary** on the right before submitting.
+If you need to specify an IP range or adjust **Connections (QPS)**, port bandwidth, or UDP, enable **Custom Configuration**. This mode also allows you to select a use case, allocate the purchase quantity based on city and subnet inventory, and choose the subscription period. Different configurations affect the final price, so review the **Order Summary** on the right before submitting the order.
 
-![006ip static proxy — Custom Configuration](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-purchase-custom-mode.png)
+![006ip static proxy Custom Configuration](https://cdn.006ip.com/docs/img/static-proxy/en/purchase-custom-mode.png)
 
-#### Step 2: Confirm the order and pay
+#### Step 2: Confirm the Order and Complete Payment
 
-On the checkout page, selected IP inventory is locked for **15 minutes**. If payment is not completed in time, resources are released and you must place the order again.
+After entering the order confirmation page, the system reserves the selected IP inventory for **15 minutes**. If payment is not completed within that time, the reserved IP resources will be released automatically and you will need to place the order again.
 
-Supported payment methods include **Account balance**, **Online payment**, and **Balance + online** combined payment. If balance is insufficient, the available balance is applied first and the remainder can be paid online. Balance payments require your 006ip payment password. Available online channels and currencies follow the checkout page.
+The payment methods listed in the official 006IP guide include:
 
-![006ip order confirmation and payment](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-order-payment.png)
+- **Account balance**;
+- **Online payment**;
+- **A combination of account balance and online payment**.
 
-### 4. View and export proxy connection details
+If your account balance is insufficient, you can apply the available balance first and pay the remaining amount through one of the online payment methods shown on the page. When using your account balance, you need to enter the payment password configured on the 006IP platform. Available online payment channels and supported currencies are subject to what is displayed on the checkout page.
 
-After payment succeeds, open **My IPs** to view purchased static IPs. The list shows bandwidth, QPS, UDP status, expiry, and resource state, and supports renew, disable, enable, and details.
+![006ip order confirmation and payment](https://cdn.006ip.com/docs/img/static-proxy/en/order-payment.png)
 
-![006ip My IPs list](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-my-ip-list.png)
+### 4. View and Export Proxy Connection Details
 
-Before configuring SessionBox, prepare these four connection fields:
+After payment is completed, open **My IPs** from the left-hand menu to view your purchased static IPs. The list displays bandwidth, QPS, UDP status, expiration date, and resource status, and also provides options to renew, disable, enable, and view details.
+
+![006ip My IPs list](https://cdn.006ip.com/docs/img/static-proxy/en/my-ip-list.png)
+
+Before configuring SessionBox, prepare the following four proxy connection details:
 
 - **Proxy IP address**
 - **Port**
 - **Username**
 - **Password**
 
-On **My IPs**, click **Export Credentials** in the top-right corner and choose a format that fits your client:
+On the **My IPs** page, click **Export Credentials** in the upper-right corner and select the proxy credential format required by your client. You can use the standard format:
 
 ```text
 HOST:PORT:USERNAME:PASSWORD
 ```
 
-Exported files contain plaintext credentials. Store the file securely and do not share credentials via public chats, screenshots, or untrusted channels.
+The exported file contains plaintext proxy credentials. Store it securely and do not share the credentials through public chats, screenshots, or untrusted channels.
 
-![006ip export credentials](https://cdn.006ip.com/docs/img/guide/static-proxy/006ip-export-credentials.png)
+![006ip export proxy credentials](https://cdn.006ip.com/docs/img/static-proxy/en/export-credentials.png)
 
-For purchase, renewal, and export details, see the [006ip Static Proxy User Guide](/static-proxy-user-guide/) and the latest prompts in the dashboard.
+For the latest purchase and credential export procedures, refer to the [006IP Static Proxy User Guide](/static-proxy-user-guide/) and the current instructions shown in the dashboard.
 
 ## Configure SessionBox
 
-After obtaining the 006IP proxy server address, port, username, and password, add the proxy to a SessionBox browser profile.
+After completing the steps above and obtaining the proxy server address, port, username, and password from 006IP, you can add the proxy to a SessionBox browser profile.
 
-### 1. Create a browser profile
+### 1. Create a Browser Profile
 
-Open **SessionBox** and click **Create profile** in the top-right of **My Profiles**.
+Open **SessionBox** and click **Create profile** in the upper-right corner of the **My Profiles** page.
 
-![SessionBox create profile](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-1.png)
+![Create a SessionBox profile](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-1.png)
 
-Enter the profile's **Name**, optionally select a **Group**, and choose a **Color** if desired. Under **Proxy**, click **Manage proxies** if no proxy is available.
+On the profile creation page, you can first configure the basic profile information, such as:
 
-![SessionBox open proxy management](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-2.png)
+- **Name**: Enter a profile name.
+- **Group**: Select a group as needed.
+- **Color**: Choose an identification color if needed.
 
-### 2. Add a 006IP proxy
+Under **Proxy**, if you have not added a proxy yet, click **Manage proxies** in the lower-right corner to open the proxy management page.
 
-On **My proxies**, click **Add proxy** in the top-right.
+![Open SessionBox proxy management](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-2.png)
 
-![SessionBox add proxy](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-3.png)
+### 2. Add a 006IP Proxy
 
-Complete the **Create proxy** form:
+On the **My proxies** page, click **Add proxy** in the upper-right corner.
 
-| SessionBox field | What to enter |
+![Add a proxy in SessionBox](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-3.png)
+
+On the **Create proxy** page, enter the proxy information obtained from the 006IP dashboard in the previous section:
+
+| SessionBox Setting | What to Enter |
 | --- | --- |
-| **Name** | A custom name for easy identification. |
-| **Type** | Match the 006IP protocol, such as `HTTP`. |
-| **Address** | The 006IP proxy host. |
-| **Port** | The corresponding port. |
-| **Username** | The 006IP proxy account. |
-| **Password** | The corresponding password. |
+| **Name** | Enter a custom proxy name for easier identification. |
+| **Type** | Select the proxy type that matches your current 006IP proxy protocol, such as `HTTP`. |
+| **Address** | Enter the proxy host address provided by 006IP. |
+| **Port** | Enter the corresponding proxy port. |
+| **Username** | Enter the proxy username provided by 006IP. |
+| **Password** | Enter the corresponding proxy password. |
+
+For example, if the credentials exported from 006IP use the following format:
+
+```text
+HOST:PORT:USERNAME:PASSWORD
+```
+
+Enter them in SessionBox as follows:
 
 ```text
 HOST      → SessionBox "Address"
@@ -148,40 +169,54 @@ USERNAME  → SessionBox "Username"
 PASSWORD  → SessionBox "Password"
 ```
 
-Click **Create** in the top-right to save.
+After confirming that the information is correct, click **Create** in the upper-right corner to save the proxy.
 
-![SessionBox enter 006IP proxy details](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-4.png)
+![Enter 006IP proxy information in SessionBox](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-4.png)
 
-> **Note:** SessionBox's proxy type must match the protocol used by the 006IP proxy.
+> **Note:** The proxy type selected in SessionBox must match the protocol used when obtaining the proxy from 006IP.
 
-### 3. Test the proxy connection
+### 3. Test the Proxy Connection
 
-On **My proxies**, click **⋮** beside the new proxy and select **Test proxy**. If the test fails, verify Type, Address, Port, Username, and Password.
+After the proxy is created, SessionBox will return to the **My proxies** list.
 
-![SessionBox test 006IP proxy](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-5.png)
+Find the proxy you just added, click the **⋮** menu on the right, and then select **Test proxy**.
 
-### 4. Bind the proxy and launch the profile
+SessionBox will test the current proxy connection. If the test passes, the proxy information is correct and the proxy can be assigned to a browser profile.
 
-Click **Back**, select the tested 006IP proxy from the **Proxy** dropdown, complete the remaining settings, and click **Create**. Launch it from **My Profiles**. Verify the egress IP at `https://ipinfo.io` if needed.
+If the test fails, verify that the proxy type, **Address**, **Port**, **Username**, and **Password** match the information provided in the 006IP dashboard.
+
+![Test the 006IP proxy in SessionBox](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/sessionbox-5.png)
+
+### 4. Assign the Proxy and Launch the Profile
+
+After the proxy test passes, click **Back** to return to the profile creation page.
+
+Under **Proxy**, select the 006IP proxy you just added and successfully tested, then continue configuring the remaining profile settings.
+
+Once everything is confirmed, click **Create** in the upper-right corner to create the profile.
+
+After the profile is created, launch it from **My Profiles**. Network traffic from that profile will then be routed through the configured 006IP proxy.
+
+To further verify that the proxy is active, you can visit `https://ipinfo.io` or another IP lookup service from within the current SessionBox browser profile and confirm that the displayed egress IP matches your 006IP proxy.
 
 ### 5. Troubleshooting
 
-| Symptom | What to check |
+| Issue | What to Check |
 | --- | --- |
-| Test proxy fails | Verify Type, Address, and Port and confirm the 006IP proxy is active. |
-| Authentication failed | Re-check Username and Password; avoid trailing spaces. |
-| Tests keep failing | Confirm your local network can reach the proxy server. |
-| Browser shows the local IP | Ensure the tested 006IP proxy is selected in the profile's Proxy dropdown. |
-| Region mismatch | Confirm the proxy matches the country/region or city purchased. |
+| **Test proxy** fails | Verify that the proxy type, **Address**, and **Port** are entered correctly, and make sure the current 006IP proxy is still active. |
+| Authentication failed | Recheck the **Username** and **Password**, and make sure no extra spaces were included when copying the credentials. |
+| Proxy test keeps failing | Check whether your local network can reach the proxy server. |
+| The browser shows your local IP after launch | Confirm that the tested 006IP proxy is selected in the profile's **Proxy** dropdown. |
+| The detected geolocation does not match the expected location | Verify that the 006IP proxy you entered corresponds to the country/region or city you purchased. |
 
-> UI layout and button names may vary slightly by SessionBox version. Follow your current client UI. Use proxies only for legal/compliant scenarios and follow website terms and local laws.
+> Interface layouts and button labels may vary slightly between SessionBox versions. Always follow the interface shown in your current client. Use proxies only for lawful and compliant business purposes, and comply with the target website's Terms of Service and all applicable local laws and regulations.
 
 ---
 
-> For issues not covered above, contact support:
+> If you encounter an issue not covered above, feel free to contact us for technical support:
 >
 > - **Telegram**: [https://telegram.me/ip006ip](https://telegram.me/ip006ip)
 > - **Phone**: 15673887335
 > - **Email**: [support@006ip.com](mailto:support@006ip.com)
 >
-> For purchase, renewal, and credential export details, see the [006ip Static Proxy User Guide](/static-proxy-user-guide/).
+> For detailed instructions on purchasing, renewing, and exporting account credentials, see the [006IP Static Proxy User Guide](/static-proxy-user-guide/).
