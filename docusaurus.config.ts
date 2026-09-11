@@ -80,6 +80,7 @@ const config: Config = {
           routeBasePath: '/',
         },
         blog: false,
+        sitemap: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -118,8 +119,7 @@ const config: Config = {
     metadata: [
       {
         name: 'robots',
-        content:
-          'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+        content: 'noindex, nofollow',
       },
     ],
     // Replace with your project's social card
