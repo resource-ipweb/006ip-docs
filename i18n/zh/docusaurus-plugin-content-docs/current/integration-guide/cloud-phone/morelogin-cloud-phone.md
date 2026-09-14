@@ -6,8 +6,7 @@ description: 在 MoreLogin 云手机中配置 006IP 静态住宅代理的完整�
 
 # MoreLogin 云手机配置 006IP 静态住宅代理教程
 
-***在使用 006IP 代理服务之前，请确保您的网络环境可以正常访问境外资源。如遇连接问题，请检查本地网络或联系客服获取协助。***
-
+**_在使用 006IP 代理服务之前，请确保您的网络环境可以正常访问境外资源。如遇连接问题，请检查本地网络或联系客服获取协助。_**
 
 006ip 是面向企业、开发者及跨境业务团队的住宅代理基础设施服务商，提供**动态住宅 IP、静态住宅 IP** 等产品。平台支持国家 / 地区及城市级定位，并可在后台配置 IP 白名单、认证方式和定位模式，适用于合规的数据采集、区域化页面测试、价格监控、广告验证及跨境业务环境维护等场景。
 
@@ -152,18 +151,18 @@ HOST:PORT:USERNAME:PASSWORD
 
 本文以 HTTP 代理为例：
 
-| MoreLogin 配置项 | 006IP 对应信息 |
-| --- | --- |
-| 代理类型 | `HTTP` |
-| IP 查询渠道 | `IP2Location` |
-| 代理服务器 | 006IP 提供的代理 IP / 主机和端口 |
-| 代理账号 | 006IP 提供的代理账号 |
-| 代理密码 | 006IP 提供的代理密码 |
-| 刷新 URL | 按需填写，没有可留空 |
+| MoreLogin 配置项 | 006IP 对应信息                   |
+| ---------------- | -------------------------------- |
+| 代理类型         | `HTTP`                           |
+| IP 查询渠道      | `IP2Location`                    |
+| 代理服务器       | 006IP 提供的代理 IP / 主机和端口 |
+| 代理账号         | 006IP 提供的代理账号             |
+| 代理密码         | 006IP 提供的代理密码             |
+| 刷新 URL         | 按需填写，没有可留空             |
 
 在 **代理服务器** 一栏中，分别填写代理主机和端口；再将 006IP 的账号、密码填写到对应位置。
 
-![在 MoreLogin 中填写 006IP 代理信息](https://cdn.006ip.com/docs/img/static-proxy/config-tutorialmorelogin-cloud-phone-proxy-configuration.png)
+![在 MoreLogin 中填写 006IP 代理信息](https://cdn.006ip.com/docs/img/static-proxy/config-tutorial/morelogin-cloud-phone-proxy-configuration.png)
 
 ### 3、检测代理连接
 
